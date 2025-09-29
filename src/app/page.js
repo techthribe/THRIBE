@@ -102,7 +102,7 @@ export default function Home() {
         <div className="hidden sm:flex justify-center items-center w-[40px] h-[40px] relative ">
               <div
                 ref={outerCircle}
-                className="absolute w-[30px] h-[30px] rounded-full bg-[#FFE1C7] opacity-0"
+                className="absolute w-[30px] h-[30px] rounded-full bg-[#FFFCF5] opacity-0"
               ></div>
               <div
                 ref={innerCircle}
@@ -341,7 +341,7 @@ export default function Home() {
                     <span className={`w-[24px] h-[24px] border border-[#AEACA3]  rounded-full flex items-center justify-center ${selectedPrice === 'quaterly' ? 'border-primaryGreen bg-primaryGreen' : 'border-[#AEACA3]'}`}>
                       <span className={`w-[10px] h-[10px] bg-[#fff] border border-[#fff] rounded-full`}></span>
                     </span>
-                    <span className={`${selectedPrice === 'quaterly' ? 'text-primaryGreen font-[500]' : ''}`}>Quaterly (save 15%) </span>
+                    <span className={`${selectedPrice === 'quaterly' ? 'text-primaryGreen font-[500]' : ''}`}>Quaterly (save 5%) </span>
                   </label>
               </li>
               <li className="flex items-center gap-x-[24px]">
@@ -350,7 +350,7 @@ export default function Home() {
                     <span className={`w-[24px] h-[24px] border border-[#AEACA3]  rounded-full flex items-center justify-center ${selectedPrice === 'yearly' ? 'border-primaryGreen bg-primaryGreen' : 'border-[#AEACA3]'}`}>
                       <span className={`w-[10px] h-[10px] bg-[#fff] border border-[#fff] rounded-full`}></span>
                     </span>
-                    <span className={`${selectedPrice === 'yearly' ? 'text-primaryGreen font-[500]' : ''}`}>Yearly (save 20%) </span>
+                    <span className={`${selectedPrice === 'yearly' ? 'text-primaryGreen font-[500]' : ''}`}>Yearly (save 15%) </span>
                   </label>
               </li>
             </ul>
@@ -396,8 +396,6 @@ export default function Home() {
                 <PricingList title="Everything in free plan" />
                 <PricingList title="Monthly Masterclasses" />
                 <PricingList title="Discounts on external paid events" />
-                {/* <PricingList title="Project reviews" /> */}
-                {/* <PricingList title="Exclusive job boards" /> */}
                 <PricingList title="Legal employment contract reviews and advise." />
                 <PricingList title="Yearly merch & rewards" />
               </ul>
@@ -405,7 +403,7 @@ export default function Home() {
 
             {/* <div className="absolute bottom-[24px] sm:bottom-[60px] left-[24px] sm:left-[60px] w-[calc(100%-48px)] sm:w-[calc(100%-120px)]"> */}
              <div className="mt-[40px] w-full">
-               <Button name="Join the waiting list" classname="bg-primaryColor w-full shadow-[4px_4px_0px_0px_#003E39]" />
+               <Button name="Be a Premium Member" classname="bg-primaryColor w-full shadow-[4px_4px_0px_0px_#003E39]" />
             </div>
           </div>
 
