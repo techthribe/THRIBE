@@ -5,12 +5,19 @@ import { useAllContext } from "../context/allcontext";
 
 const Footer = () => {
     const {toggleLendYourVoiceThribeModal, toggleJoinTournamentModal} = useAllContext()
+      const scrollToTop = () => {
+            window.scrollTo({
+            top: 0,
+            behavior: "smooth", // this makes it smooth
+            });
+        };
+
     return (
         <div className="text-[20px]">
         <section className="bg-[#FFF] pt-[40px] md:pt-[120px] pb-[40px] md:pb-[74px]">
           <div className="max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0">
             <div className="flex flex-col gap-y-[40px] md:gap-y-0 md:flex-row justify-between  items-start">
-                <div>
+                <div className="mr-[80px]">
                     <div className="relative w-[119px] h-[36px]">
                         <Image 
                         src="/logo.png"
@@ -22,39 +29,39 @@ const Footer = () => {
                     <div className="mt-[40px] md:mt-[150px] ">
                         <p>hello@thribe.com</p>
                         <div className="flex gap-x-[14px] mt-[24px]">
-                            <div className="w-[32px] h-[32px] rounded-full shrink-0 bg-[#0A1A18] flex items-center justify-center">
+                            <div className="w-[32px] h-[32px] rounded-full shrink-0 bg-[#0A1A18] flex items-center justify-center cursor-pointer">
                                  <Image 
                                     src="/img/tiktok.png"
                                     width={11}
                                     height={13}
-                                    alt="thribe community tit-tok account"
+                                    alt="thribe tech community tit-tok account"
                                     className="object-center"
                                     />
                             </div>
-                            <div className="w-[32px] h-[32px] rounded-full shrink-0 bg-[#0A1A18] flex items-center justify-center">
+                            <div className="w-[32px] h-[32px] rounded-full shrink-0 bg-[#0A1A18] flex items-center justify-center cursor-pointer">
                                  <Image 
                                     src="/img/xlogo.png"
                                     width={11}
                                     height={13}
-                                    alt="thribe community tit-tok account"
+                                    alt="thribe tech community x account"
                                     className="object-center"
                                     />
                             </div>
-                            <div className="w-[32px] h-[32px] rounded-full shrink-0 bg-[#0A1A18] flex items-center justify-center">
+                            <div className="w-[32px] h-[32px] rounded-full shrink-0 bg-[#0A1A18] flex items-center justify-center cursor-pointer">
                                  <Image 
                                     src="/img/Instagram.png"
                                     width={11}
                                     height={11}
-                                    alt="thribe community tit-tok account"
+                                    alt="thribe tech community instagram account"
                                     className="object-center"
                                     />
                             </div>
-                            <div className="w-[32px] h-[32px] rounded-full shrink-0 bg-[#0A1A18] flex items-center justify-center">
+                            <div className="w-[32px] h-[32px] rounded-full shrink-0 bg-[#0A1A18] flex items-center justify-center cursor-pointer">
                                  <Image 
-                                    src="/img/whatssap.png"
-                                    width={13}
-                                    height={13}
-                                    alt="thribe community tit-tok account"
+                                    src="/icons/linkedin.png"
+                                    width={14}
+                                    height={14}
+                                    alt="thribe tech community linkedin account"
                                     className="object-center"
                                     />
                             </div>
@@ -85,15 +92,17 @@ const Footer = () => {
                     </div>
                 </div>
                 <div>
-                    <h3 className="text-[#6B788E] text-[20px] leading-[150%] tracking-[2%] md:px-[10px]">EXPLORE</h3>
-                    <div className="mt-[38px] text-[#354764] text-[20px] tracking-[2%] flex flex-col gap-y-[18px]">
+                    <h3 className="text-[#6B788E] leading-[150%] tracking-[2%] md:px-[10px]">EXPLORE</h3>
+                    <div className="mt-[38px] text-[#354764] tracking-[2%] flex flex-col gap-y-[18px]">
+                        
+                        <span>
                         <Link href="#" className="navLinkFooter md:p-[10px] cursor-pointer">Shop</Link>
+                         </span>
                         <span className="md:p-[10px] cursor-pointer" onClick={toggleLendYourVoiceThribeModal} >
                         Lend Your Voice
                         </span>
-
                           <span>
-                        <Link href="#" className="md:p-[10px] flex space-x-[10px]">
+                        <Link href="#" className="md:px-[10px] flex space-x-[10px]">
                         <span>Outdoor Fun</span>
                          <button className="bg-[#FEF1E6] w-[93px] h-[28px] rounded-[10px] text-[#B15301] text-[12px]">Coming soon</button>
                         </Link>
@@ -111,7 +120,7 @@ const Footer = () => {
                     <h3 className="text-[#6B788E] text-[20px] leading-[150%] tracking-[2%] md:px-[10px]">MEDIA</h3>
                     <div className="mt-[38px] text-[#354764] text-[20px] tracking-[2%] flex flex-col gap-y-[18px]">
                         <span>
-                        <Link href="#" className="md:p-[10px] flex items-center space-x-[10px]">
+                        <Link href="#" className="md:px-[10px] flex items-center space-x-[10px]">
                         <span>Blog & News</span>
                          <button className="bg-[#FEF1E6] w-[93px] h-[28px] rounded-[10px] text-[#B15301] text-[12px]">Coming soon</button>
                         </Link>
@@ -128,7 +137,7 @@ const Footer = () => {
                     <h3 className="text-[#6B788E] text-[20px] leading-[150%] tracking-[2%] md:px-[10px]">LEGAL</h3>
                     <div className="mt-[38px] text-[#354764] text-[20px] tracking-[2%] flex flex-col gap-y-[18px]">
                         <span>
-                        <Link href="/legal/privacy-policy" className="navLinkFooter md:p-[10px] ">Privacy policy</Link>
+                        <Link href="/legal/privacy-policy" className="navLinkFooter md:px-[10px] ">Privacy policy</Link>
                         </span>
                         <Link href="/legal/terms-of-service" className="navLinkFooter md:p-[10px]">Terms of service</Link>
                     </div>
@@ -136,7 +145,16 @@ const Footer = () => {
 
             </div>
 
-            <div className="border border-t-[#DFE2E6] border-b-0 border-l-0 border-r-0 mt-[80px] pt-[80px] hidden md:block">
+            <div className="flex w-full">
+                <div 
+                    onClick={scrollToTop}
+                    className="cursor-pointer w-[76px] h-[76px] rounded-full bg-[#fff] shadow-[0px_4px_40px_0px_#00000014] ml-auto flex items-center justify-center">
+                      <Image src="/icons/arrow-up.png" width={32} height={32} alt="thribe community banner" className="obejct-cover" />
+                </div>
+
+            </div>
+
+            <div className="border border-t-[#DFE2E6] border-b-0 border-l-0 border-r-0 mt-[20px] pt-[80px] hidden md:block">
                 <div className="flex justify-center items-center font-[400] text-[20px] leading-[150%] tracking-[3%] text-secondaryColor">
                     <span>Copyright Ⓒ 2025 THR!BE</span>
                 </div>

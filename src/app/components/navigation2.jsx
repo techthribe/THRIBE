@@ -104,7 +104,9 @@ const NavigationBar = () => {
              </div>
 
                 <div className="flex w-[30px] md:w-[152px] justify-between items-center ">
+                  <Link href="/#joinCommunity">
                 <Button name="Join Us" classname="w-[101px] h-[47px] md:w-[141px] bg-[#107269] hidden md:block"/>
+                </Link>
                 <div className="relative w-[24px] h-[24px]" onClick={toggleMobileNavbarFunction}>
                 <Image src="/img/open_menu_white.png" fill alt="thribe community menu option" className="object-center md:hidden shrink-0" />
                 </div>
