@@ -9,6 +9,7 @@ import Collaborate from "../components/collaborate";
 import JoinCommunity from "../components/joinCommunity";
 import Footer from "../components/Footer";
 import gsap from "gsap";
+import Link from "next/link";
 
 
 const About = () => {
@@ -232,10 +233,12 @@ const About = () => {
                         </div>
                         </h2>
                         <div className="mt-[45px] hidden md:block">
+                            <Link href="/#joinCommunity">
                             <button className="w-[192px] h-[47px] border border-[#FFE198] text-[#FFE198] rounded-[100px] flex gap-[24px] py-[10px] justify-center">
                                 <span>Join THR!BE</span>
                                 <Image src="/icons/arrow-right.png" width={24} height={24} alt="thribe community" className="object-center rounded-full" />
                             </button>
+                            </Link>
                         </div>
                     </div>
 
