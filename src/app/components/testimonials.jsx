@@ -47,11 +47,8 @@ const Testimaonial = () => {
 
       <div className="mt-[24px] md:mt-[48px] flex flex-row gap-y-[24px] md:gap-y-0 justify-between md:gap-x-[16px] flex-wrap md:flex-nowrap">
         <div className="w-full lg:w-[816px] min-h-[281px] bg-[#F8F8F8] p-[24px] md:p-[32px] rounded-[20px] relative">
-          <p className="text-[#0A1A18] leading-[150%] tracking-[2%]">
+          <p className="text-[#0A1A18] leading-[150%] tracking-[2%] h-[125px]">
             {reviews[currentReview].post}
-            {/* It&#39;s a home for people building with heart. Whether you&#39;re coding, designing, strategizing, or just learning, 
-            there&#39;s a space for you here. It&#39;s a home for people building with heart. 
-            Whether you&#39;re coding, designing, strategizing, or just learning, there&#39;s a space for you here. */}
           </p>
 
           <div className=" mt-[40px] flex items-center w-full gap-x-[3.5px]">
