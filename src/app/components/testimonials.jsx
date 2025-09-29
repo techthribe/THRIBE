@@ -55,12 +55,12 @@ const Testimaonial = () => {
             </div>
           </div>
 
-        <div className="w-[48%] md:w-[200px] h-[207px] bg-[#013D37] rounded-[20px] pt-[24px] md:pt-[32px] pl-[24px] md:pl-[26px] relative trackingg-[3%] text-[#fff]">
+        <div className="w-[48%] md:w-[200px] min-h-[207px] bg-[#013D37] rounded-[20px] pt-[24px] md:pt-[32px] pl-[24px] md:pl-[26px] relative trackingg-[3%] text-[#fff]">
           <div className="font-clash text-[36px] md:text-[46px] leading-[100%] font-[600]">200+</div>
           <span className="absolute text-[18px] leading-[150%] absolute bottom-[35px] left-[26px]">MEMBERS</span>
         </div>
 
-        <div className="w-[48%] md:w-[200px] h-[207px] bg-[#FFE299] rounded-[20px] pt-[24px] md:pt-[32px] pl-[24px] md:pl-[26px] relative trackingg-[3%] text-[#fff]">
+        <div className="w-[48%] md:w-[200px] min-h-[207px] bg-[#FFE299] rounded-[20px] pt-[24px] md:pt-[32px] pl-[24px] md:pl-[26px] relative trackingg-[3%] text-[#fff]">
           <div className="font-clash text-[36px] md:text-[46px] leading-[100%] font-[600] text-[#0A1A18]">5+</div>
           <span className="absolute text-[18px] leading-[150%] absolute bottom-[35px] left-[26px] text-[#354764]">Huts</span>
         </div>
