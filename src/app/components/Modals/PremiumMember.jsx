@@ -6,6 +6,7 @@ import Button from "../Button";
 
 export default function Modal({ }) {
     const {premiumMemberModal, togglePremiumMemberModal} = useAllContext();
+    const [errorMessage, setErrorMessage] = useState("")
     const [formDatas, setFormDatas] = useState({
         fullname: "",
         role: "",
@@ -16,9 +17,36 @@ export default function Modal({ }) {
         accept_terms: false
     })
 
-    const onChangeFormDataFunctions = (e) => {
-      const { name, type, value, checked } = e.target;
+    console.log(formDatas)
 
+    const numberRegex = /^[0-9]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+
+    const onSubmitForm = (e) => {
+        e.preventDefault();
+        const {fullname, role, email, phone_no, why_join_thribe, accept_terms} = formDatas;
+
+        if(!fullname || !role || !email || !phone_no || !why_join_thribe || !accept_terms){
+            return setErrorMessage("please, fill and check all fields")
+        }
+        if (!emailRegex.test(email)) {
+             return setErrorMessage("Invalid Email")
+        }
+         if (!numberRegex.test(phone_no)) {
+             return setErrorMessage("Phone number shouuld contain only digits")
+        }
+
+        setErrorMessage("")
+
+        return console.log('regestered successfully')
+
+    }
+
+    const onChangeFormDataFunctions = (e) => {
+        setErrorMessage("")
+      const { name, type, value, checked } = e.target;
 
         setFormDatas((prev) => ({
             ...prev,
@@ -55,7 +83,7 @@ export default function Modal({ }) {
         </div>
         </h1>
 
-        <form className="mt-[24px] lg:mt-[48px] w-full">
+        <form onSubmit={onSubmitForm} className="mt-[24px] lg:mt-[48px] w-full">
              {/*form for mobile view */}
             <div className="leading-[150%] tracking-[3%] w-full mt-[24px] md:mt-[48px] flex gap-x-[24px] gap-y-[24px] md:gap-y-[40px] flex-wrap items-end block md:hidden">
                     <div className="flex flex-col md:flex-row gap-y-[16px] md:gap-y-0 md:gap-x-[24px]">
@@ -123,9 +151,9 @@ export default function Modal({ }) {
                             name="role"
                             value={formDatas.role}
                             onChange={onChangeFormDataFunctions}
-                            className="appearance-none cursor-pointer bg-[#E8F6F4] w-[433px] placeholder-[#87857F] text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none"
+                            className={`appearance-none cursor-pointer bg-[#E8F6F4] w-[433px] placeholder-[#87857F] ${formDatas.role == "" ? "text-[#87857f]" : ""} text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none`}
                          >
-                            <option vlaue="">What field are you in? (developer, designer...)</option>
+                            <option value="" disabled>What field are you in? (developer, designer...)</option>
                             <option value="Product Designer" className="hover:bg-[#fff] cursor-pointer">Product Designer</option>
                             <option value="Product MAanager" className="hover:bg-[#fff] cursor-pointer">Product Manager</option>
                             <option value="Unit Tester" className="hover:bg-[#fff] cursor-pointer">Unit Tester</option>
@@ -168,9 +196,9 @@ export default function Modal({ }) {
                         value={formDatas.payment_plan}
                         onChange={onChangeFormDataFunctions}
                          id="payment"  
-                         className="appearance-none cursor-pointer bg-[#E8F6F4] w-[433px] placeholder-[#87857F] text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none"
+                         className={`${formDatas.payment_plan == "" ? "text-[#87857f]" : ""} appearance-none cursor-pointer bg-[#E8F6F4] w-[433px] placeholder-[#87857F] text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none`}
                          >
-                            <option value="">Select your preferred plan</option>
+                            <option value="" disabled>Select your preferred plan</option>
                             <option value="monthly" className="cursor-pointer">Monthly Plan</option>
                             <option value="quarterly" className="cursor-pointer">Quarterly Plan</option>
                             <option value="yearly" className="cursor-pointer">Yearly Plan</option>
@@ -200,9 +228,11 @@ export default function Modal({ }) {
                  />
                 <span className="text-secondaryText">I have read and agree to the <span className="text-primaryGreen font-[500]">terms & conditions</span></span>
             </div>
+            {/* error message */}
+            <div className="text-red font-[500] p-[10px] inline bg-[ #FF7F7F] text-[#FF0000]">{errorMessage}</div>
 
             <div className="mt-[48px]">
-             <Button name="Upgrade to Premium" classname="w-full md:w-[257px] bg-[#107269]"/>
+             <Button type="submit" name="Upgrade to Premium" classname="w-full md:w-[257px] bg-[#107269]"/>
              </div>
 
         </form>

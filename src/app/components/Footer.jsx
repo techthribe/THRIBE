@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useAllContext } from "../context/allcontext";
 
 const Footer = () => {
-    const {toggleLendYourVoiceThribeModal, toggleJoinTournamentModal} = useAllContext()
+    const {toggleLendYourVoiceThribeModal, togglePartnerWithUsModal} = useAllContext()
       const scrollToTop = () => {
             window.scrollTo({
             top: 0,
@@ -29,8 +29,13 @@ const Footer = () => {
                     </div>
                     </Link>
                     <div className="mt-[40px] md:mt-[150px] ">
-                        <p>hello@thribe.com</p>
+                        <p>
+                            <a href="mailto:hello@techthribe.com" className="">
+                            hello@techthribe.com
+                            </a>
+                        </p>
                         <div className="flex gap-x-[14px] mt-[24px]">
+                            <Link href="https://www.tiktok.com/@tech_thribe?_t=ZN-902wl3rVUO3&_r=1" target="_blank">
                             <div className="w-[32px] h-[32px] rounded-full shrink-0 bg-[#0A1A18] flex items-center justify-center cursor-pointer">
                                  <Image 
                                     src="/img/tiktok.png"
@@ -40,6 +45,8 @@ const Footer = () => {
                                     className="object-center"
                                     />
                             </div>
+                            </Link>
+                            <Link href="https://x.com/techthribe" target="_blank">
                             <div className="w-[32px] h-[32px] rounded-full shrink-0 bg-[#0A1A18] flex items-center justify-center cursor-pointer">
                                  <Image 
                                     src="/img/xlogo.png"
@@ -49,6 +56,8 @@ const Footer = () => {
                                     className="object-center"
                                     />
                             </div>
+                            </Link>
+                            <Link href="https://www.instagram.com/thribe_hq?igsh=eDRudXpkd3N3MTh5&utm_source=qr" target="_blank">
                             <div className="w-[32px] h-[32px] rounded-full shrink-0 bg-[#0A1A18] flex items-center justify-center cursor-pointer">
                                  <Image 
                                     src="/img/Instagram.png"
@@ -58,6 +67,8 @@ const Footer = () => {
                                     className="object-center"
                                     />
                             </div>
+                            </Link>
+                            <Link href="https://www.linkedin.com/company/tech-thribe/" target="_blank">
                             <div className="w-[32px] h-[32px] rounded-full shrink-0 bg-[#0A1A18] flex items-center justify-center cursor-pointer">
                                  <Image 
                                     src="/icons/linkedin.png"
@@ -67,6 +78,7 @@ const Footer = () => {
                                     className="object-center"
                                     />
                             </div>
+                            </Link>
 
                         </div>
                     </div>
@@ -81,8 +93,8 @@ const Footer = () => {
                         <span>
                         <Link href="/events" className="navLinkFooter md:p-[10px]">Events</Link>
                         </span>
-                        <span>
-                        <Link href="/" className="navLinkFooter md:p-[10px]">Partner with Us</Link>
+                        <span onClick={togglePartnerWithUsModal}>
+                        <span className="navLinkFooter md:p-[10px] cursor-pointer">Partner with Us</span>
                         </span>
                         <span>
                         <Link href="/#joinCommunity" className="navLinkFooter md:p-[10px]">
@@ -104,17 +116,17 @@ const Footer = () => {
                         Lend Your Voice
                         </span>
                           <span>
-                        <Link href="#" className="md:px-[10px] flex space-x-[10px]">
+                        <span className="md:px-[10px] flex space-x-[10px] cursor-pointer">
                         <span>Outdoor Fun</span>
                          <button className="bg-[#FEF1E6] w-[93px] h-[28px] rounded-[10px] text-[#B15301] text-[12px]">Coming soon</button>
-                        </Link>
+                        </span>
                         </span>
                         
                         <span>
-                        <Link href="#" className="md:p-[10px] flex space-x-[10px]">
+                        <span className="md:p-[10px] flex space-x-[10px] cursor-pointer">
                         <span>Join The Tournament</span>
                          <button className="bg-[#FEF1E6] w-[93px] h-[28px] rounded-[10px] text-[#B15301] text-[12px]">Coming soon</button>
-                        </Link>
+                        </span>
                         </span>
                     </div>
                 </div>
@@ -122,16 +134,16 @@ const Footer = () => {
                     <h3 className="text-[#6B788E] text-[20px] leading-[150%] tracking-[2%] md:px-[10px]">MEDIA</h3>
                     <div className="mt-[38px] text-[#354764] text-[20px] tracking-[2%] flex flex-col gap-y-[18px]">
                         <span>
-                        <Link href="#" className="md:px-[10px] flex items-center space-x-[10px]">
+                        <span className="md:px-[10px] flex items-center space-x-[10px] cursor-pointer">
                         <span>Blog & News</span>
                          <button className="bg-[#FEF1E6] w-[93px] h-[28px] rounded-[10px] text-[#B15301] text-[12px]">Coming soon</button>
-                        </Link>
+                        </span>
                         </span>
                         <span>
-                        <Link href="#" className="md:p-[10px] flex space-x-[10px]">
+                        <span href="#" className="md:p-[10px] flex space-x-[10px] cursor-pointer">
                         <span>Podcast</span>
                          <button className="bg-[#FEF1E6] w-[93px] h-[28px] rounded-[10px] text-[#B15301] text-[12px]">Coming soon</button>
-                        </Link>
+                        </span>
                         </span>
                     </div>
                 </div>
