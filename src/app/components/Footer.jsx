@@ -85,7 +85,7 @@ const Footer = () => {
                         <Link href="/" className="navLinkFooter md:p-[10px]">Partner with Us</Link>
                         </span>
                         <span>
-                        <Link href="#" className="navLinkFooter md:p-[10px]">
+                        <Link href="/#joinCommunity" className="navLinkFooter md:p-[10px]">
                         Join the community
                         </Link>
                         </span>
