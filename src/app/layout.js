@@ -5,6 +5,7 @@ import { AllContextProvider } from "./context/allcontext";
 import LendYourVoice from "./components/Modals/LendYourVoice"
 import JoinTournament from "./components/Modals/JoinTournament" 
 import PartnerWithUs from "./components/Modals/PartnerWithUs"
+import PremiumMember from "./components/Modals/PremiumMember"
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -53,6 +54,7 @@ export default function RootLayout({ children }) {
             <LendYourVoice />
             <JoinTournament />
             <PartnerWithUs />
+            <PremiumMember />
             {children}
         </AllContextProvider>
       </body>

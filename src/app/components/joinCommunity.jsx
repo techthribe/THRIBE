@@ -36,7 +36,7 @@ const JoinCommunity = () => {
                     <div className="flex flex-col md:flex-row gap-y-[16px] md:gap-y-0 md:gap-x-[24px] w-full">
                     <label htmlFor="job" className="">I will love to join THRIBE because </label>
                     <div><input id="job" type="text" placeholder="Tell us why you would love to join THR!BE"  className="w-full md:w-[502px] placeholder-[#87857F] text-[16px] md:text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none"/></div>
-                    <div className="block min-w-[100%]"><input id="job" type="text" placeholder="Tell us why you would love to join THR!BE"  className="w-[100%] placeholder-[#87857F] text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none"/></div>
+                    {/* <div className="block min-w-[100%]"><input id="job" type="text" placeholder="Tell us why you would love to join THR!BE"  className="w-[100%] placeholder-[#87857F] text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none"/></div> */}
                     </div>
             </div>
 

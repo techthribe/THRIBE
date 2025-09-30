@@ -44,6 +44,7 @@ const NavigationBar = () => {
     return(
         <div className="w-full px-[16px] md:px-[20px] py-[24px]">
         <nav className="tracking-[3%] leading-[150%] max-w-[1248px] mx-auto h-[88px] flex justify-between items-center md:px-[32px]  border border-l-0 md:border-l-[6px] border-t-0 border-r-[0] border-b-[0] border-l-[#E36A02]">
+            <Link href="/">
             <div className="relative w-[99px] md:w-[119px] h-[30px] md:h-[36px]">
             <Image 
              src="/img/white-logo.png"
@@ -52,6 +53,7 @@ const NavigationBar = () => {
              className="object-center"
              />
              </div>
+             </Link>
 
              <div className="hidden md:flex flex-row justify-between text-[16px] text-[#C2C7D0] items-center space-x-[40px]">
                <Link href="/"  className={`${pathname==="/" ? "text-[#fff] font-[600]" : ""} navLink`}>Home</Link>
@@ -90,9 +92,10 @@ const NavigationBar = () => {
                     </span>
                     
                     <div className={`${openMedia ? "block" : "hidden"} transition-all duration-500 ease-in-out min-w-[244px] text-secondaryColor text-[16px] z-50 bg-[#fff] space-y-[16px] absolute top-[100%] left-0 rounded-[20px] p-[16px] shadow-[0px_2px_10px_0px_#0000001A]`}>
-                        <div>
-                        <Link href="/events" className={`cursor-pointer ${pathname==="/blog" ? "text-[#087C72] font-[600]" : ""}`}>Blog & News</Link>
-                        </div>
+                         <Link href="#" className="flex space-x-[10px]">
+                         <span>Blog & News</span>
+                         <button className="bg-[#FEF1E6] w-[93px] h-[28px] rounded-[10px] text-[#B15301] text-[12px]">Coming soon</button>
+                        </Link>
                          
                          <Link href="#" className="flex space-x-[10px]">
                          <span>Podcast</span>
@@ -104,7 +107,7 @@ const NavigationBar = () => {
              </div>
 
                 <div className="flex w-[30px] md:w-[152px] justify-between items-center ">
-                  <Link href="/#joinCommunity">
+                  <Link href="/#price">
                 <Button name="Join Us" classname="w-[101px] h-[47px] md:w-[141px] bg-[#107269] hidden md:block"/>
                 </Link>
                 <div className="relative w-[24px] h-[24px]" onClick={toggleMobileNavbarFunction}>
