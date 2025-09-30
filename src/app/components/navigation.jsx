@@ -47,6 +47,7 @@ const NavigationBar = () => {
     return(
         <div className="w-full px-[16px] md:px-[20px] py-[24px] bg-[#fff] md:relative ">
         <nav className="shadow-[0px_4px_12.6px_0px_#D2D2D21F] tracking-[3%] leading-[150%] md:max-w-[1248px] mx-auto h-[48px] md:h-[88px] flex justify-between items-center md:px-[32px]  border border-l-0 md:border-l-[6px] border-t-0 border-r-[0] border-b-[0] border-l-[#E36A02]">
+           <Link href="/">
             <div className="relative w-[99px] md:w-[119px] h-[30px] md:h-[36px]">
             <Image 
              src="/logo.png"
@@ -55,6 +56,7 @@ const NavigationBar = () => {
              className="object-center"
              />
              </div>
+             </Link>
 
              <div className="hidden md:flex justify-between space-x-[40px] text-[16px] text-[#354764]  items-center">
                <Link href="/"  className={`navLink ${pathname==="/" ? "text-[#087C72] font-[600]" : ""}`}>Home</Link>
@@ -109,7 +111,7 @@ const NavigationBar = () => {
              </div>
 
                 <div className="flex w-[30px] md:w-[152px] justify-between items-center ">
-                  <Link href="/#joinCommunity">
+                  <Link href="/#price">
                  <Button name="Join Us" classname="w-[101px] h-[47px] md:w-[141px] bg-[#107269] hidden md:block"/>
                   </Link>
                 <div className="relative w-[24px] h-[24px]" onClick={toggleMobileNavbarFunction} >

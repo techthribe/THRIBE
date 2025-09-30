@@ -13,9 +13,12 @@ import Testimaonial from "./components/testimonials";
 import Collaborate from "./components/collaborate";
 import Footer from "./components/Footer";
 import Link from "next/link";
+import { useAllContext } from "./context/allcontext";
 
 
 export default function Home() {
+   const {togglePremiumMemberModal} = useAllContext();
+
   const outerCircle = useRef(null);
   const innerCircle = useRef(null)
   const contentRef = useRef(null);
@@ -103,7 +106,7 @@ export default function Home() {
         <div className="hidden sm:flex justify-center items-center w-[40px] h-[40px] relative ">
               <div
                 ref={outerCircle}
-                className="absolute w-[30px] h-[30px] rounded-full bg-[#FFFCF5] opacity-0"
+                className="absolute w-[30px] h-[30px] rounded-full bg-[#FFE198] opacity-0"
               ></div>
               <div
                 ref={innerCircle}
@@ -125,7 +128,7 @@ export default function Home() {
          </div>
 
     <div className="mt-[32px] flex justify-center">
-      <Link href="#joinCommunity">
+      <Link href="#price">
      <button className={`flex items-center space-x-[5px] justify-center bg-[#107269] w-[244px] md:w-[284px] h-[47px] md:h-[56px] cursor-pointer shadow-[4px_4px_0px_0px_#003E39] hover:shadow-[4px_4px_0px_0px_#64C0B7] font-[500] text-[18px] text-[#fff] rounded-[100px]`}>
         <span>Join The community</span>
         <Image src="/img/arrow-right.png" width={24} height={24} alt="thribe community" className="" />
@@ -208,7 +211,7 @@ export default function Home() {
 
         <p className="mt-[24px]">This is your THR!BE - The tribe that thrives.</p>
         </div>
-        <Link href="/#joinCommunity">
+        <Link href="/#price">
         <Button name="Join The tribe Now" classname="w-[196px] md:w-[236px] h-[47px] md:h-[56px] bg-primaryColor" />
         </Link>
       </div>
@@ -257,7 +260,7 @@ export default function Home() {
            not hustle culture. Tech isn&#39;t just about work - it&#39;s about people. At THR!BE, you&#39;ll find a tribe that gets it. 
            We mix learning with laughter, growth with community, and celebration with impact. We laugh, play, grow, and thrive - together. 
           </p>
-          <Link href="/#joinCommunity">
+          <Link href="/#price">
           <Button name="Join THR!BE" classname="bg-[#B15301] w-[144px] md:w-[184px] h-[47px] md:h-[56px] shadow-[4px_4px_0px_0px_#693101] hover:shadow-[4px_4px_0px_0px_#FBA355]" />
           </Link>
         </div>
@@ -314,7 +317,7 @@ export default function Home() {
     <Testimaonial />
 
     {/* pricing */}
-    <section className="py-[40px] md:py-[120px] leading-[150%]">
+    <section className="py-[40px] md:py-[120px] leading-[150%]" id="price">
       <div className="mx-auto max-w-[1248px] px-[16px] md:px-[20px] xl:px-0">
         
         <h1 className="text-[16px] tracking-[16%] text-[#107269]">PRICING</h1>
@@ -385,10 +388,11 @@ export default function Home() {
                 {/* <PricingList title="Access to job listings & posts" /> */}
               </ul>
             </div>
-
+            <Link href="/#joinCommunity">
              <div className="mt-[40px] w-full">
                <Button name="Join THR!BE for free" classname="bg-[#B15301] w-[100%] shadow-[4px_4px_0px_0px_#693101] hover:shadow-[4px_4px_0px_0px_#FBA355]" />
             </div>
+            </Link>
           </div>
 
           <div className="relative bg-[#E8F6F4] p-[24px] sm:p-[60px] rounded-[20px] md:rounded-[40px] w-full md:w-[480px] min-h-[485px] sm:min-h-[650px]">
@@ -409,8 +413,8 @@ export default function Home() {
             </div>
 
             {/* <div className="absolute bottom-[24px] sm:bottom-[60px] left-[24px] sm:left-[60px] w-[calc(100%-48px)] sm:w-[calc(100%-120px)]"> */}
-             <div className="mt-[40px] w-full">
-               <Button name="Be a Premium Member" classname="bg-primaryColor w-full shadow-[4px_4px_0px_0px_#003E39]" />
+             <div className="mt-[40px] w-full" onClick={togglePremiumMemberModal}>
+               <Button  name="Be a Premium Member" classname="bg-primaryColor w-full shadow-[4px_4px_0px_0px_#003E39]" />
             </div>
           </div>
 

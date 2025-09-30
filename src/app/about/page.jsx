@@ -112,7 +112,7 @@ const About = () => {
                 {/* our vision */}
                  <div className="w-full bg-[#000] flex flex-col md:flex-row justify-between gap-y-[24px] md:gap-y-0 md:gap-x-[42px] items-center p-[24px] sm:p-[40px] rounded-[16px] sm:rounded-[20px] bg-[#FFF6DF]">
                     <div className="w-full md:w-[679px] space-y-[12px] leading-[150%] text-secondaryColor tracking-[1%]">
-                        <h2 className="font-[600] font-clash text-[46px] text-[#6B5F40] leading-[100%]">Our Vision</h2>
+                        <h2 className="font-[600] font-clash text-[26px] sm:text-[46px] text-[#6B5F40] leading-[100%]">Our Vision</h2>
                         <div>
                             To become the most empowering and connected tech tribe in Africa and beyond. 
                             A tribe of people from any background who can thrive through community, build with purpose, 
@@ -232,11 +232,12 @@ const About = () => {
                         <Image src="/img/join-team.png" fill alt="thribe community" className="object-center rounded-full" />
                         </div>
                         </h2>
+                        {/* for web view */}
                         <div className="mt-[45px] hidden md:block">
-                            <Link href="/#joinCommunity">
-                            <button className="w-[192px] h-[47px] border border-[#FFE198] text-[#FFE198] rounded-[100px] flex gap-[24px] py-[10px] justify-center">
+                            <Link href="/#price">
+                            <button className="cursor-pointer w-[192px] h-[47px] border border-[#FFE198] text-[#FFE198] rounded-[100px] flex items-center gap-x-[24px] justify-center">
                                 <span>Join THR!BE</span>
-                                <Image src="/icons/arrow-right.png" width={24} height={24} alt="thribe community" className="object-center rounded-full" />
+                                <Image src="/icons/arrow-right.png" width={24} height={24} alt="thribe community" className="object-center" />
                             </button>
                             </Link>
                         </div>
@@ -259,9 +260,9 @@ const About = () => {
                             <Image src="/icons/arrow-right.png" width={24} height={24} alt="thribe community" className="object-center rounded-full" />
                             <span>Laugh, grow, and build together</span>
                         </div>
-
+                        {/* button for mobile view */}
                         <div className="block md:hidden pt-[16px]">
-                            <button className="w-[192px] h-[47px] border border-[#FFE198] text-[#FFE198] rounded-[100px] flex gap-[24px] py-[10px] justify-center">
+                            <button className="w-[192px] h-[47px] border border-[#FFE198] text-[#FFE198] rounded-[100px] flex items-center gap-x-[24px] py-[10px] justify-center">
                                 <span>Join THR!BE</span>
                                 <Image src="/icons/arrow-right.png" width={24} height={24} alt="thribe community" className="object-center rounded-full" />
                             </button>

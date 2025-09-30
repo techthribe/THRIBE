@@ -18,6 +18,7 @@ const Footer = () => {
           <div className="max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0">
             <div className="flex flex-col gap-y-[40px] md:gap-y-0 md:flex-row justify-between  items-start">
                 <div className="mr-[80px]">
+                    <Link href="/">
                     <div className="relative w-[119px] h-[36px]">
                         <Image 
                         src="/logo.png"
@@ -26,6 +27,7 @@ const Footer = () => {
                         className="object-center"
                         />
                     </div>
+                    </Link>
                     <div className="mt-[40px] md:mt-[150px] ">
                         <p>hello@thribe.com</p>
                         <div className="flex gap-x-[14px] mt-[24px]">
