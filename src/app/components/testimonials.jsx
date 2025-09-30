@@ -11,16 +11,16 @@ const Testimaonial = () => {
     img:"/img/member1.png"
   },
   {
-    post: "Here, builders come together with passion and purpose. It's a welcoming home for innovators, learners, and dreamers — where creativity meets community, and everyone has a seat at the table.",
-    name: "Osuji Chiaka",
-    role: "Frontend Developer",
-    img:"https://res.cloudinary.com/chiaka/image/upload/v1759145575/WhatsApp_Image_2025-09-23_at_8.00.21_PM_zyn32v.jpg"
+    post: "“Joining THR!BE changed my journey. It's more than a tech community - it's a supportive space for growth. I've gained knowledge, confidence, and opportunities through inspiring members, helpful discussions, and valuable connections. THR!BE gives me belonging, motivation and the push to thrive.”",
+    name: "Najeebat Abdul Azeez",
+    role: "Product Designer",
+    img:"/img/reviewer2.png"
   },
   {
-    post: "This is more than just a platform — it's a space where ideas come alive. Whether you're writing code, sketching designs, or exploring your first big idea, you'll find support, inspiration, and people who truly care.",
-    name: "Jesse Croffie",
+    post: `“THR!BE came when I was battling impostor syndrome. Instead of hype, I found honesty, real experiences, and accountability. The community balances me, fuels genuine confidence, and opens opportunities. Here, I'm learning to trust my process, celebrate progress, and grow without walking alone.”`,
+    name: "Mubarak Shittu",
     role: "Product Manager",
-    img:"/img/member2.png"
+    img:"/img/reviewer3.png"
   }
 ]
 
@@ -47,11 +47,11 @@ const Testimaonial = () => {
 
       <div className="mt-[24px] md:mt-[48px] flex flex-row gap-y-[24px] md:gap-y-0 justify-between md:gap-x-[16px] flex-wrap md:flex-nowrap">
         <div className="w-full lg:w-[816px] min-h-[281px] bg-[#F8F8F8] p-[24px] md:p-[32px] rounded-[20px] relative">
-          <p className="text-[#0A1A18] leading-[150%] tracking-[2%] h-[125px]">
+          <p className="text-[#0A1A18] leading-[150%] tracking-[2%] h-[270px] md:h-[125px] ">
             {reviews[currentReview].post}
           </p>
 
-          <div className=" mt-[40px] flex items-center w-full gap-x-[3.5px]">
+          <div className="mt-[15px] md:mt-[40px] flex items-center w-full gap-x-[3.5px]">
             <div className="relative w-[60px] h-[60px] rounded-full">
             <Image src={reviews[currentReview].img} fill alt="thribe community testimonial" className="object-fill shrink-0 rounded-full" />
             </div>
@@ -61,7 +61,7 @@ const Testimaonial = () => {
             </div>
           </div>
 
-          <div className="hidden absolute bottom-0 right-0 rounded-[20px] bg-[#fff] w-[176px] h-[104px] p-[32px] md:flex gap-x-[16px]">
+          <div className="hidden md:flex absolute bottom-0 right-0 rounded-[20px] bg-[#fff] w-[176px] h-[104px] p-[32px] items-center justify-center gap-x-[16px]">
             <div
             onClick={PreviousReviewFunction}
             className="text-primaryGreen hover:text-[#fff] cursor-pointer hover:bg-primaryGreen w-[40px] h-[40px] rounded-full bg-[#F8F8F8] flex justify-center items-center">

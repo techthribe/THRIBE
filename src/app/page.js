@@ -130,7 +130,7 @@ export default function Home() {
     <div className="mt-[32px] flex justify-center">
       <Link href="#price">
      <button className={`flex items-center space-x-[5px] justify-center bg-[#107269] w-[244px] md:w-[284px] h-[47px] md:h-[56px] cursor-pointer shadow-[4px_4px_0px_0px_#003E39] hover:shadow-[4px_4px_0px_0px_#64C0B7] font-[500] text-[18px] text-[#fff] rounded-[100px]`}>
-        <span>Join The community</span>
+        <span>Join The Community</span>
         <Image src="/img/arrow-right.png" width={24} height={24} alt="thribe community" className="" />
      </button>
      </Link>
@@ -170,13 +170,13 @@ export default function Home() {
 
     <div ref={mobileContentRef} className=" w-[1800px] overflow-hidden flex md:hidden ">
       <div className="slide relative w-[600px] h-[62px] mt-[40px]">
-        <Image src="/img/carousel-gif.gif" fill alt="thribe community" className="" unoptimized />
+        <Image src="/img/carousel_gif_mobile.gif" fill alt="thribe community" className="" unoptimized />
       </div>
       <div className="slide relative w-[600px] h-[62px] mt-[40px]">
-        <Image src="/img/carousel-gif.gif" fill alt="thribe community" className="" unoptimized />
+        <Image src="/img/carousel_gif_mobile.gif" fill alt="thribe community" className="" unoptimized />
       </div>
       <div className="slide relative w-[600px] h-[62px] mt-[40px]">
-        <Image src="/img/carousel-gif.gif" fill alt="thribe community" className="" unoptimized />
+        <Image src="/img/carousel_gif_mobile.gif" fill alt="thribe community" className="" unoptimized />
       </div>
     </div>
 
@@ -212,7 +212,7 @@ export default function Home() {
         <p className="mt-[24px]">This is your THR!BE - The tribe that thrives.</p>
         </div>
         <Link href="/#price">
-        <Button name="Join The tribe Now" classname="w-[196px] md:w-[236px] h-[47px] md:h-[56px] bg-primaryColor" />
+        <Button name="Join The Tribe Now" classname="w-[196px] md:w-[236px] h-[47px] md:h-[56px] bg-primaryColor" />
         </Link>
       </div>
 

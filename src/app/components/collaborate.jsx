@@ -226,7 +226,7 @@ const Collaborate = () => {
                           !hoverJoinTournament
                             ? "opacity-0 delay-500"
                             : "opacity-100 delay-0"
-                        } min-w-[160px] transition-all  duration-500 ease-in-out`}
+                        } min-w-[50px] transition-all  duration-500 ease-in-out`}
                       >
                         Rep the Brand
                       </div>
