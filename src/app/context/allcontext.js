@@ -9,13 +9,24 @@ export const AllContextProvider = ({children}) => {
     const [joinTournament, setJoinTournament] = useState(false)
      const [partnerWithUs, setPartnerWithUs] = useState(false)
      const [premiumMemberModal, setPremiumMemberModal] = useState(false)
+     const [premiumThankYouModal, setPremiumThankYouModal] = useState(false)
 
     const toggleMobileNavbarFunction = () => setToggleNavbar((prev) => !prev)
+
+    const togglePremiumThankYouModal = () => {
+             setJoinTournament(false)
+            setPartnerWithUs(false)
+            setLendYourVoiceThribeModal(false)
+            setPremiumMemberModal(false)
+            setPremiumThankYouModal((prev) => !prev)
+
+    }
 
     const togglePremiumMemberModal = () => {
             setJoinTournament(false)
             setPartnerWithUs(false)
             setLendYourVoiceThribeModal(false)
+            setPremiumThankYouModal(false)
             setPremiumMemberModal((prev) => !prev)
     }
 
@@ -23,6 +34,7 @@ export const AllContextProvider = ({children}) => {
          setJoinTournament(false)
          setPartnerWithUs(false)
          setPremiumMemberModal(false)
+          setPremiumThankYouModal(false)
         setLendYourVoiceThribeModal((prev) => !prev)
     }
 
@@ -30,6 +42,7 @@ export const AllContextProvider = ({children}) => {
         setLendYourVoiceThribeModal(false)
         setPartnerWithUs(false)
          setPremiumMemberModal(false)
+          setPremiumThankYouModal(false)
         setJoinTournament((prev) => !prev)
     }
 
@@ -37,6 +50,7 @@ export const AllContextProvider = ({children}) => {
         setLendYourVoiceThribeModal(false)
          setJoinTournament(false)
           setPremiumMemberModal(false)
+           setPremiumThankYouModal(false)
         setPartnerWithUs((prev) => !prev)
     }
 
@@ -52,7 +66,9 @@ export const AllContextProvider = ({children}) => {
                partnerWithUs,
                togglePartnerWithUsModal,
                premiumMemberModal,
-               togglePremiumMemberModal
+               togglePremiumMemberModal,
+               premiumThankYouModal,
+               togglePremiumThankYouModal
             }}
         >
             {children}
