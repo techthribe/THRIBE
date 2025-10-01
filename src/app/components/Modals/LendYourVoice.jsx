@@ -26,27 +26,34 @@ export default function Modal({ }) {
       ></div>
 
       {/* modal content */}
-      <div className="relative bg-white rounded-lg shadow-lg z-10 w-[1004px] max-h-[90vh] rounded-[16px] p-[40px] overflow-y-scroll mt-[40px]">
+      <div className="relative bg-white rounded-lg shadow-lg z-10 w-[96%] md:w-[1004px] max-h-[90vh] rounded-[16px] p-[20px] sm:p-[40px] overflow-y-auto mt-[20px]">
         <div className="flex justify-between items-center">
-            <h1 className="text-[32px] leading-[100%] tracking-[1%] text-primaryTextColor font-[600] font-clash">Support THR!BE </h1>
+            <h1 className="text-[20px] md:text-[32px] leading-[100%] tracking-[1%] text-primaryTextColor font-[600] font-clash hidden md:block">Explore THR!BE </h1>
+            <h1 className="text-[20px] md:text-[32px] leading-[100%] tracking-[1%] text-primaryTextColor font-[600] font-clash block md:hidden">Lend  Your Voice</h1>
             <Image src="/icons/close-square.png" width={24} height={24} alt="close thribe modal" className="cursor-pointer" onClick={toggleLendYourVoiceThribeModal} />
         </div>
 
+        {/* only show for mobile */}
+        <div className="flex items-center space-x-[12px] my-[20px]">
+        <Image src="/icons/arrow-left.png" width={24} height={24} alt="back arrow for tech community" className="cursor-pointer" onClick={toggleLendYourVoiceThribeModal} />
+        <span className="text-[20px]">Back</span>
+        </div>
+
         <div className="mt-[36px] flex justify-between items-start">
-            <div className="w-[300px] space-y-[40px] font-clash text-secondaryColor">
+            <div className="w-[300px] space-y-[40px] font-clash text-secondaryColor hidden md:block">
                 <div className="font-[600] text-primaryGreen">Lend Your Voice</div>
                 <div className="cursor-pointer" onClick={toggleJoinTournamentModal}>Join The Tournament</div>
                 <div className="cursor-pointer" onClick={togglePartnerWithUsModal}>Partner with us</div>
-                <div className="cursor-pointer">Buy a merch (coming soon)</div>
+                {/* <div className="cursor-pointer">Buy a merch (coming soon)</div> */}
             </div>
 
-            <form className="w-[544px] overflow-y-auto leading-[150%] space-y-[16px] pb-[40px] pr-[5px]">
+            <form className="w-full md:w-[544px] overflow-y-auto leading-[150%] space-y-[16px] pb-[20px] md:pb-[40px] md:pr-[5px]">
                 <div className="sapce-y-[4px]">
-                    <label>Name</label>
+                    <label>Title</label>
                     <input type="text" placeholder="What&#39;s your name" className="outline-none placeholder-[#98A1B0] w-full h-[62px] rounded-[16px] px-[24px] border border-[#C2C7D0] text-[#98A1B0]" />
                 </div>
                 <div className="sapce-y-[4px]">
-                    <label>Any message or reason behind your sponsorship?<span className="text-[#FF0000]">*</span></label>
+                    <label>Tell your story?<span className="text-[#FF0000]">*</span></label>
                     <textarea  defaultValue="Enter your message" className="outline-none placeholder-[#98A1B0] w-full h-[62px] rounded-[16px] px-[24px] pt-[16px] h-[367px] border border-[#C2C7D0] text-[#98A1B0]" />
                 </div>
 
@@ -57,7 +64,7 @@ export default function Modal({ }) {
                     </label>
                 </div>
                 
-                    <button className={`flex justify-center items-center gap-x-[10px] bg-primaryColor mt-[20px] cursor-pointer shadow-[4px_4px_0px_0px_#003E39] font-[500] text-[18px] text-[#fff] h-[47px] md:h-[56px] w-full rounded-[100px]`}>
+                    <button className={`flex justify-center items-center gap-x-[10px] bg-primaryColor mt-[20px] cursor-pointer shadow-[4px_4px_0px_0px_#003E39] font-[500] text-[18px] text-[#fff] h-[47px] md:h-[56px] w-[98%] sm:w-full rounded-[100px]`}>
                         <span>Proceed</span>
                           <Image src="/icons/arrow-white.png" width={24} height={24} alt="close thribe modal" className=""/>
                     </button>
