@@ -1,10 +1,46 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAllContext } from "../../context/allcontext";
 import Image from "next/image";
 
 export default function Modal({ }) {
-    const {lendYourVoiceThribeModal, toggleLendYourVoiceMobileSideBar, toggleJoinTournamentModal, toggleLendYourVoiceThribeModal, togglePartnerWithUsModal} = useAllContext();
+    const {lendYourVoiceThribeModal, togglePartnerThankYouModal, toggleLendYourVoiceMobileSideBar, toggleLendYourVoiceThribeModal, togglePartnerWithUsModal, toggleLendVoiceThankYouModal} = useAllContext();
+
+    const [errorMessage, setErrorMessage] = useState("")
+    const [formDatas, setFormDatas] = useState({
+        title: "",
+        story: "",
+        anonymous: ""
+    })
+
+     const onSubmitForm = (e) => {
+        e.preventDefault();
+        const {title, story, anonymous} = formDatas;
+
+        // if(!title || !story){
+        //     return setErrorMessage("please, fill all required fields")
+        // }
+
+        // setErrorMessage("")
+        // setFormDatas({
+        //      title: "",
+        //     story: "",
+        //     anonymous: ""
+        // })
+
+        return togglePartnerThankYouModal;
+    }
+
+    const onChangeFormDataFunctions = (e) => {
+        setErrorMessage("")
+      const { name, type, value, checked } = e.target;
+
+        setFormDatas((prev) => ({
+            ...prev,
+            [name]: type === "checkbox" ? checked :  value
+        }))
+    }
+ 
 
   // prevent background scroll when modal is open
   useEffect(() => {
@@ -34,7 +70,7 @@ export default function Modal({ }) {
         </div>
 
         {/* only show for mobile */}
-        <span className="flex items-center space-x-[12px] my-[20px] w-[90px]" onClick={toggleLendYourVoiceMobileSideBar}>
+        <span className="flex items-center space-x-[12px] my-[20px] w-[90px] block md:hidden" onClick={toggleLendYourVoiceMobileSideBar}>
         <Image src="/icons/arrow-left.png" width={24} height={24} alt="back arrow for tech community" className="cursor-pointer" />
         <span className="text-[20px]">Back</span>
         </span>
@@ -42,29 +78,44 @@ export default function Modal({ }) {
         <div className="mt-[36px] flex justify-between items-start">
             <div className="w-[300px] space-y-[40px] font-clash text-secondaryColor hidden md:block">
                 <div className="font-[600] text-primaryGreen">Lend Your Voice</div>
-                <div className="cursor-pointer" onClick={toggleJoinTournamentModal}>Join The Tournament</div>
+                {/* <div className="cursor-pointer" onClick={toggleJoinTournamentModal}>Join The Tournament</div> */}
                 <div className="cursor-pointer" onClick={togglePartnerWithUsModal}>Partner with us</div>
                 {/* <div className="cursor-pointer">Buy a merch (coming soon)</div> */}
             </div>
 
-            <form className="w-full md:w-[544px] overflow-y-auto leading-[150%] space-y-[16px] pb-[20px] md:pb-[40px] md:pr-[5px]">
+            <form onSubmit={onSubmitForm} className="w-full md:w-[544px] overflow-y-auto leading-[150%] space-y-[16px] pb-[20px] md:pb-[40px] md:pr-[5px]">
                 <div className="sapce-y-[4px]">
                     <label>Title</label>
-                    <input type="text" placeholder="What&#39;s your name" className="outline-none placeholder-[#98A1B0] w-full h-[62px] rounded-[16px] px-[24px] border border-[#C2C7D0] text-[#98A1B0]" />
+                    <input
+                     name="title"
+                    value={formDatas.title}
+                    onChange={onChangeFormDataFunctions}
+                    type="text" placeholder="What&#39;s your name" className="outline-none placeholder-[#98A1B0] w-full h-[62px] rounded-[16px] px-[24px] border border-[#C2C7D0] text-[#98A1B0]" />
                 </div>
                 <div className="sapce-y-[4px]">
                     <label>Tell your story?<span className="text-[#FF0000]">*</span></label>
-                    <textarea  defaultValue="Enter your message" className="outline-none placeholder-[#98A1B0] w-full h-[62px] rounded-[16px] px-[24px] pt-[16px] h-[367px] border border-[#C2C7D0] text-[#98A1B0]" />
+                    <textarea
+                     name="story"
+                    value={formDatas.story}
+                    onChange={onChangeFormDataFunctions}
+                    className="outline-none placeholder-[#98A1B0] w-full h-[62px] rounded-[16px] px-[24px] pt-[16px] h-[367px] border border-[#C2C7D0] text-[#98A1B0]" />
                 </div>
 
                 <div>
                     <label className="flex items-center space-x-[16px]">
-                    <input type="checkbox" className="form-checkbox h-[24px] w-[24px] text-blue-600" />
+                    <input 
+                     name="anonymous"
+                    checked={formDatas.anonymous}
+                    onChange={onChangeFormDataFunctions}
+                    type="checkbox" className="form-checkbox h-[24px] w-[24px] text-blue-600" />
                     <span className="text-secondaryColor">Keep me anonymous</span>
                     </label>
                 </div>
+
+                    {/* error message */}
+                    {errorMessage ? <div className="mt-[20px] text-red font-[500] p-[10px] inline bg-[#FF7F7F] text-[#FF0000]">{errorMessage}</div> : ""}
                 
-                    <button className={`flex justify-center items-center gap-x-[10px] bg-primaryColor mt-[20px] cursor-pointer shadow-[4px_4px_0px_0px_#003E39] font-[500] text-[18px] text-[#fff] h-[47px] md:h-[56px] w-[98%] sm:w-full rounded-[100px]`}>
+                    <button type="submit" className={`flex justify-center items-center gap-x-[10px] bg-primaryColor mt-[20px] cursor-pointer shadow-[4px_4px_0px_0px_#003E39] font-[500] text-[18px] text-[#fff] h-[47px] md:h-[56px] w-[98%] sm:w-full rounded-[100px]`}>
                         <span>Proceed</span>
                           <Image src="/icons/arrow-white.png" width={24} height={24} alt="close thribe modal" className=""/>
                     </button>

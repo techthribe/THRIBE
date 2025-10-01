@@ -123,6 +123,7 @@ export default function Modal({ }) {
                             <option value="Backend Developer" className="hover:bg-[#fff] cursor-pointer">Backend Developer</option>
                             <option value="Graphic Designer" className="hover:bg-[#fff] cursor-pointer">Graphic Designer</option>
                             <option value="Graphic Designer" className="hover:bg-[#fff] cursor-pointer">Others</option>
+                            
                         </select>
                          <div className="absolute md:relative bottom-[-7px] right-0">.</div>
                         </div>
