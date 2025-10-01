@@ -4,7 +4,7 @@ import { useAllContext } from "../../context/allcontext";
 import Image from "next/image";
 
 export default function Modal({ }) {
-    const {lendYourVoiceThribeModal, toggleJoinTournamentModal, toggleLendYourVoiceThribeModal, togglePartnerWithUsModal} = useAllContext();
+    const {lendYourVoiceThribeModal, toggleLendYourVoiceMobileSideBar, toggleJoinTournamentModal, toggleLendYourVoiceThribeModal, togglePartnerWithUsModal} = useAllContext();
 
   // prevent background scroll when modal is open
   useEffect(() => {
@@ -26,7 +26,7 @@ export default function Modal({ }) {
       ></div>
 
       {/* modal content */}
-      <div className="relative bg-white rounded-lg shadow-lg z-10 w-[96%] md:w-[1004px] max-h-[90vh] rounded-[16px] p-[20px] sm:p-[40px] overflow-y-auto mt-[20px]">
+      <div className="border border-[8px] border-b-[#F97502] border-x-0 border-t-0 relative bg-white rounded-lg shadow-lg z-10 w-[96%] md:w-[1004px] max-h-[90vh] rounded-[16px] p-[20px] sm:p-[40px] overflow-y-auto mt-[20px]">
         <div className="flex justify-between items-center">
             <h1 className="text-[20px] md:text-[32px] leading-[100%] tracking-[1%] text-primaryTextColor font-[600] font-clash hidden md:block">Explore THR!BE </h1>
             <h1 className="text-[20px] md:text-[32px] leading-[100%] tracking-[1%] text-primaryTextColor font-[600] font-clash block md:hidden">Lend  Your Voice</h1>
@@ -34,10 +34,10 @@ export default function Modal({ }) {
         </div>
 
         {/* only show for mobile */}
-        <div className="flex items-center space-x-[12px] my-[20px]">
-        <Image src="/icons/arrow-left.png" width={24} height={24} alt="back arrow for tech community" className="cursor-pointer" onClick={toggleLendYourVoiceThribeModal} />
+        <span className="flex items-center space-x-[12px] my-[20px] w-[90px]" onClick={toggleLendYourVoiceMobileSideBar}>
+        <Image src="/icons/arrow-left.png" width={24} height={24} alt="back arrow for tech community" className="cursor-pointer" />
         <span className="text-[20px]">Back</span>
-        </div>
+        </span>
 
         <div className="mt-[36px] flex justify-between items-start">
             <div className="w-[300px] space-y-[40px] font-clash text-secondaryColor hidden md:block">

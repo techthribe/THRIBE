@@ -10,8 +10,21 @@ export const AllContextProvider = ({children}) => {
      const [partnerWithUs, setPartnerWithUs] = useState(false)
      const [premiumMemberModal, setPremiumMemberModal] = useState(false)
      const [premiumThankYouModal, setPremiumThankYouModal] = useState(false)
+     const [lendYourVoiceMobileSideBar, setLendYourVoiceMobileSideBar] = useState(false);
 
     const toggleMobileNavbarFunction = () => setToggleNavbar((prev) => !prev)
+
+    
+
+    const toggleLendYourVoiceMobileSideBar = () => {
+             setJoinTournament(false)
+            setPartnerWithUs(false)
+            setLendYourVoiceThribeModal(false)
+            setPremiumMemberModal(false)
+            setPremiumThankYouModal(false)
+            setLendYourVoiceMobileSideBar((prev) => !prev)
+}
+
 
     const togglePremiumThankYouModal = () => {
              setJoinTournament(false)
@@ -19,6 +32,7 @@ export const AllContextProvider = ({children}) => {
             setLendYourVoiceThribeModal(false)
             setPremiumMemberModal(false)
             setPremiumThankYouModal((prev) => !prev)
+            setLendYourVoiceMobileSideBar(false)
 
     }
 
@@ -27,6 +41,7 @@ export const AllContextProvider = ({children}) => {
             setPartnerWithUs(false)
             setLendYourVoiceThribeModal(false)
             setPremiumThankYouModal(false)
+            setLendYourVoiceMobileSideBar(false)
             setPremiumMemberModal((prev) => !prev)
     }
 
@@ -35,6 +50,7 @@ export const AllContextProvider = ({children}) => {
          setPartnerWithUs(false)
          setPremiumMemberModal(false)
           setPremiumThankYouModal(false)
+          setLendYourVoiceMobileSideBar(false)
         setLendYourVoiceThribeModal((prev) => !prev)
     }
 
@@ -43,6 +59,7 @@ export const AllContextProvider = ({children}) => {
         setPartnerWithUs(false)
          setPremiumMemberModal(false)
           setPremiumThankYouModal(false)
+          setLendYourVoiceMobileSideBar(false)
         setJoinTournament((prev) => !prev)
     }
 
@@ -51,6 +68,7 @@ export const AllContextProvider = ({children}) => {
          setJoinTournament(false)
           setPremiumMemberModal(false)
            setPremiumThankYouModal(false)
+           setLendYourVoiceMobileSideBar(false)
         setPartnerWithUs((prev) => !prev)
     }
 
@@ -68,7 +86,9 @@ export const AllContextProvider = ({children}) => {
                premiumMemberModal,
                togglePremiumMemberModal,
                premiumThankYouModal,
-               togglePremiumThankYouModal
+               togglePremiumThankYouModal,
+               lendYourVoiceMobileSideBar,
+               toggleLendYourVoiceMobileSideBar
             }}
         >
             {children}
