@@ -4,7 +4,7 @@ import { useAllContext } from "../../context/allcontext";
 import Image from "next/image";
 
 export default function Modal({ }) {
-    const { partnerWithUs, toggleJoinTournamentModal, toggleLendYourVoiceThribeModal, togglePartnerWithUsModal} = useAllContext();
+    const { partnerWithUs, toggleLendYourVoiceMobileSideBar, toggleJoinTournamentModal, toggleLendYourVoiceThribeModal, togglePartnerWithUsModal} = useAllContext();
     const [opponent, setOpponent] = useState('play a particular opponent')
 
   // prevent background scroll when modal is open
@@ -27,21 +27,28 @@ export default function Modal({ }) {
       ></div>
 
       {/* modal content */}
-      <div className="relative bg-white rounded-lg shadow-lg z-10 w-[1004px] max-h-[90vh] rounded-[16px] p-[40px] overflow-y-scroll mt-[40px]">
+      <div className="border border-[8px] border-b-[#F97502] border-x-0 border-t-0 relative bg-white rounded-lg shadow-lg z-10 w-[96%] lg:w-[1004px] max-h-[90vh] rounded-[16px] p-[20px] sm:p-[40px] overflow-y-scroll mt-[20px]">
         <div className="flex justify-between items-center">
-            <h1 className="text-[32px] leading-[100%] tracking-[1%] text-primaryTextColor font-[600] font-clash">Support THR!BE </h1>
+           <h1 className="text-[20px] md:text-[32px] leading-[100%] tracking-[1%] text-primaryTextColor font-[600] font-clash hidden md:block">Explore THR!BE </h1>
+            <h1 className="text-[20px] md:text-[32px] leading-[100%] tracking-[1%] text-primaryTextColor font-[600] font-clash block md:hidden">Partner with us</h1>
             <Image src="/icons/close-square.png" width={24} height={24} alt="close thribe modal" className="cursor-pointer" onClick={togglePartnerWithUsModal} />
         </div>
 
+         {/* only show for mobile */}
+                <span className="flex items-center space-x-[12px] my-[20px] w-[90px]" onClick={toggleLendYourVoiceMobileSideBar}>
+                <Image src="/icons/arrow-left.png" width={24} height={24} alt="back arrow for tech community" className="cursor-pointer" />
+                <span className="text-[20px]">Back</span>
+                </span>
+
         <div className="mt-[36px] flex justify-between items-start">
-            <div className="w-[300px] space-y-[40px] font-clash text-secondaryColor">
+            <div className="w-[300px] space-y-[40px] font-clash text-secondaryColor hidden md:block">
                 <div className="cursor-pointer" onClick={toggleLendYourVoiceThribeModal}>Lend Your Voice</div>
                 <div className="cursor-pointer" onClick={toggleJoinTournamentModal}>Join The Tournament</div>
                 <div className="font-[600] text-primaryGreen">Partner with us</div>
                 <div className="cursor-pointer">Buy a merch (coming soon)</div>
             </div>
 
-            <form className="w-[544px] overflow-y-auto h-[100%] leading-[150%] space-y-[16px] pb-[40px] pr-[5px]">
+            <form className="w-full md:w-[544px] overflow-y-auto h-[100%] leading-[150%] space-y-[16px] pb-[40px] pr-[5px]">
                 <div className="sapce-y-[4px]">
                     <label>Name of Company / Organization / Individual<span className="text-[#FF0000]">*</span></label>
                     <input type="text" placeholder="What&#39;s your company name" className="outline-none placeholder-[#98A1B0] w-full h-[62px] rounded-[16px] px-[24px] border border-[#C2C7D0]" />

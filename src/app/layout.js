@@ -6,6 +6,8 @@ import LendYourVoice from "./components/Modals/LendYourVoice"
 import JoinTournament from "./components/Modals/JoinTournament" 
 import PartnerWithUs from "./components/Modals/PartnerWithUs"
 import PremiumMember from "./components/Modals/PremiumMember"
+import PremiumThankYouMember from "./components/Modals/PremiumThankYouModal";
+import LendYourVoiceMobileSideBar from "./components/Modals/LendYourVoiceMobileLinks"
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -55,6 +57,8 @@ export default function RootLayout({ children }) {
             <JoinTournament />
             <PartnerWithUs />
             <PremiumMember />
+            <PremiumThankYouMember />
+            <LendYourVoiceMobileSideBar />
             {children}
         </AllContextProvider>
       </body>

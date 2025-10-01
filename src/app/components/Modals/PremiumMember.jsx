@@ -5,7 +5,7 @@ import Image from "next/image";
 import Button from "../Button";
 
 export default function Modal({ }) {
-    const {premiumMemberModal, togglePremiumMemberModal} = useAllContext();
+    const {premiumMemberModal, togglePremiumMemberModal, togglePremiumThankYouModal} = useAllContext();
     const [errorMessage, setErrorMessage] = useState("")
     const [formDatas, setFormDatas] = useState({
         fullname: "",
@@ -39,8 +39,17 @@ export default function Modal({ }) {
         }
 
         setErrorMessage("")
+        setFormDatas({
+            fullname: "",
+            role: "",
+            email: "",
+            phone_no: "",
+            payment_plan: "",
+            why_join_thribe: "",
+            accept_terms: false
+        })
 
-        return console.log('regestered successfully')
+        return togglePremiumThankYouModal()
 
     }
 
@@ -99,36 +108,85 @@ export default function Modal({ }) {
                     />
                     </div>
                     <div className="flex flex-col md:flex-row gap-y-[16px] md:gap-y-0 md:gap-x-[24px] w-full md:w-[542px]">
-                    <label htmlFor="job" className="">and I am a </label>
+                    <label htmlFor="role" className="">and I am a </label>
                     <div className="relative md:flex md:gap-x-[3px]">
-                        <input id="job" type="text" placeholder="What field are you in? (developer, designer...)"  className="w-[98%] md:w-[384px] placeholder-[#87857F] text-[16px] md:text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none"/> 
-                        <div className="absolute md:relative bottom-[-7px] right-0">.</div>
+                         <Image src="/icons/arrow-bottom-black.png" width={20} height={20} alt="thribe community" className="object-fit absolute bottom-0 right-0" />
+                        <select id="role" 
+                            name="role"
+                            value={formDatas.role}
+                            onChange={onChangeFormDataFunctions}
+                            className={`appearance-none cursor-pointer bg-[#E8F6F4] w-[98%] placeholder-[#87857F] ${formDatas.role == "" ? "text-[#87857f]" : ""} text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none`}
+                         >
+                            <option value="" disabled>What field are you in? (developer, designer...)</option>
+                            <option value="Product Designer" className="hover:bg-[#fff] cursor-pointer">Product Designer</option>
+                            <option value="Product MAanager" className="hover:bg-[#fff] cursor-pointer">Product Manager</option>
+                            <option value="Unit Tester" className="hover:bg-[#fff] cursor-pointer">Unit Tester</option>
+                            <option value="Frontend Developer" className="hover:bg-[#fff] cursor-pointer">Frontend Developer</option>
+                            <option value="Backend Developer" className="hover:bg-[#fff] cursor-pointer">Backend Developer</option>
+                            <option value="Graphic Designer" className="hover:bg-[#fff] cursor-pointer">Graphic Designer</option>
+                        </select>
+                         <div className="absolute md:relative bottom-[-7px] right-0">.</div>
                         </div>
                     </div>
                     <div className="flex flex-col md:flex-row gap-y-[16px] md:gap-y-0 md:gap-x-[24px] w-full">
-                    <label htmlFor="job" className="">My email address is</label>
+                    <label htmlFor="email" className="">My email address is</label>
                     <div className="relative">
-                        <input id="job" type="text" placeholder="Enter your email address?"  className="w-[98%] md:w-[396px] placeholder-[#87857F] text-[16px] md:text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none"/>
+                        <input 
+                        name="email"
+                        value={formDatas.email}
+                        onChange={onChangeFormDataFunctions}
+                        id="email" 
+                        type="email" 
+                        placeholder="Enter your email address?"  
+                        className="w-[98%] md:w-[396px] placeholder-[#87857F] text-[16px] md:text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none"
+                        />
                         <div className="absolute bottom-[-7px] right-0">.</div>
                         </div>
                     </div>
                      <div className="flex flex-col md:flex-row gap-y-[16px] md:gap-y-0 md:gap-x-[24px] w-full">
-                    <label htmlFor="job" className="">My phone number is</label>
+                    <label htmlFor="phone" className="">My phone number is</label>
                     <div className="relative">
-                        <input id="job" type="text" placeholder="Enter your phone number?"  className="w-[98%] md:w-[396px] placeholder-[#87857F] text-[16px] md:text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none"/>
+                        <input 
+                         name="phone_no"
+                        value={formDatas.phone_no}
+                        onChange={onChangeFormDataFunctions}
+                        id="phone" 
+                        type="text" 
+                        placeholder="Enter your phone number?"  
+                        className="w-[98%] md:w-[396px] placeholder-[#87857F] text-[16px] md:text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none"/>
                         <div className="absolute bottom-[-7px] right-0">.</div>
                         </div>
                     </div>
                      <div className="flex flex-col md:flex-row gap-y-[16px] md:gap-y-0 md:gap-x-[24px] w-full">
                     <label htmlFor="job" className="">My Preferred payment plan is</label>
-                    <div className="relative">
-                        <input id="job" type="text" placeholder="Select your preferred plan"  className="w-[98%] md:w-[396px] placeholder-[#87857F] text-[16px] md:text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none"/>
+                    <div className="relative w-full">
+                        <Image src="/icons/arrow-bottom-black.png" width={20} height={20} alt="thribe community" className="object-fit absolute bottom-0 right-0" />
+                        <select
+                        name="payment_plan"
+                        value={formDatas.payment_plan}
+                        onChange={onChangeFormDataFunctions}
+                         id="payment"  
+                         className={`${formDatas.payment_plan == "" ? "text-[#87857f]" : ""} appearance-none cursor-pointer bg-[#E8F6F4] w-[98%] placeholder-[#87857F] text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none`}
+                         >
+                            <option value="" disabled>Select your preferred plan</option>
+                            <option value="monthly" className="cursor-pointer">Monthly Plan</option>
+                            <option value="quarterly" className="cursor-pointer">Quarterly Plan</option>
+                            <option value="yearly" className="cursor-pointer">Yearly Plan</option>  
+                        </select>
                         <div className="absolute bottom-[-7px] right-0">.</div>
                         </div>
                     </div>
                     <div className="flex flex-col md:flex-row gap-y-[16px] md:gap-y-0 md:gap-x-[24px] w-full">
-                    <label htmlFor="job" className="">I will love to join THRIBE because </label>
-                    <div><input id="job" type="text" placeholder="Tell us why you would love to join THR!BE"  className="w-full md:w-[502px] placeholder-[#87857F] text-[16px] md:text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none"/></div>
+                    <label htmlFor="why_join_thribe" className="">I will love to join THRIBE because </label>
+                    <div>
+                    <input
+                    name="why_join_thribe"
+                    value={formDatas.why_join_thribe}
+                    onChange={onChangeFormDataFunctions}
+                    id="why_join_thribe" 
+                    type="text" 
+                    placeholder="Tell us why you would love to join THR!BE"  
+                    className="w-full md:w-[502px] placeholder-[#87857F] text-[16px] md:text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none"/></div>
                     </div>
             </div>
 
