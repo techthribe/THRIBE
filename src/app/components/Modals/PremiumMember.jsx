@@ -17,8 +17,6 @@ export default function Modal({ }) {
         accept_terms: false
     })
 
-    console.log(formDatas)
-
     const numberRegex = /^[0-9]+$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -124,6 +122,7 @@ export default function Modal({ }) {
                             <option value="Frontend Developer" className="hover:bg-[#fff] cursor-pointer">Frontend Developer</option>
                             <option value="Backend Developer" className="hover:bg-[#fff] cursor-pointer">Backend Developer</option>
                             <option value="Graphic Designer" className="hover:bg-[#fff] cursor-pointer">Graphic Designer</option>
+                            <option value="Graphic Designer" className="hover:bg-[#fff] cursor-pointer">Others</option>
                         </select>
                          <div className="absolute md:relative bottom-[-7px] right-0">.</div>
                         </div>
@@ -218,6 +217,7 @@ export default function Modal({ }) {
                             <option value="Frontend Developer" className="hover:bg-[#fff] cursor-pointer">Frontend Developer</option>
                             <option value="Backend Developer" className="hover:bg-[#fff] cursor-pointer">Backend Developer</option>
                             <option value="Graphic Designer" className="hover:bg-[#fff] cursor-pointer">Graphic Designer</option>
+                            <option value="Others" className="hover:bg-[#fff] cursor-pointer">Others</option>
                         </select>
                     </div>
                     <label htmlFor="email" className="">My email address is</label>
@@ -287,7 +287,7 @@ export default function Modal({ }) {
                 <span className="text-secondaryText">I have read and agree to the <span className="text-primaryGreen font-[500]">terms & conditions</span></span>
             </div>
             {/* error message */}
-            <div className="text-red font-[500] p-[10px] inline bg-[ #FF7F7F] text-[#FF0000]">{errorMessage}</div>
+            <div className="text-red font-[500] p-[10px] inline bg-[#FF7F7F] text-[#FF0000]">{errorMessage}</div>
 
             <div className="mt-[48px]">
              <Button type="submit" name="Upgrade to Premium" classname="w-full md:w-[257px] bg-[#107269]"/>
