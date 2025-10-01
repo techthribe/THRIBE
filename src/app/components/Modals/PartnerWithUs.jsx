@@ -4,8 +4,61 @@ import { useAllContext } from "../../context/allcontext";
 import Image from "next/image";
 
 export default function Modal({ }) {
-    const { partnerWithUs, toggleLendYourVoiceMobileSideBar, toggleJoinTournamentModal, toggleLendYourVoiceThribeModal, togglePartnerWithUsModal} = useAllContext();
+    const { partnerWithUs, togglePartnerMobileSideBar, togglePartnerThankYouModal, toggleLendYourVoiceThribeModal, togglePartnerWithUsModal} = useAllContext();
     const [opponent, setOpponent] = useState('play a particular opponent')
+    const [errorMessage, setErrorMessage] = useState("")
+
+     const [formDatas, setFormDatas] = useState({
+        companyName: "",
+        email: "",
+        contactPerson: "",
+        websiteLink: "",
+        kindOfPartnership: "",
+        description: "",
+        scheduleChat: false,
+        keepInLoop: false
+    })
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+     const onSubmitForm = (e) => {
+        e.preventDefault();
+        const {companyName, email, contactPerson, websiteLink, kindOfPartnership, description, scheduleChat, keepInLoop } = formDatas;
+
+        if(!companyName || !email || !contactPerson){
+            return setErrorMessage("please, fill all requierd fields")
+        }
+        if (!emailRegex.test(email)) {
+             return setErrorMessage("Invalid Email")
+        }
+
+        setErrorMessage("")
+        setFormDatas({
+            companyName: "",
+            email: "",
+            contactPerson: "",
+            websiteLink: "",
+            kindOfPartnership: "",
+            description: "",
+            scheduleChat: false,
+            keepInLoop: false
+        })
+
+        return togglePartnerThankYouModal()
+
+    }
+
+     const onChangeFormDataFunctions = (e) => {
+        setErrorMessage("")
+      const { name, type, value, checked } = e.target;
+
+        setFormDatas((prev) => ({
+            ...prev,
+            [name]: type === "checkbox" ? checked :  value
+        }))
+    }
+
+
 
   // prevent background scroll when modal is open
   useEffect(() => {
@@ -35,7 +88,7 @@ export default function Modal({ }) {
         </div>
 
          {/* only show for mobile */}
-                <span className="flex items-center space-x-[12px] my-[20px] w-[90px]" onClick={toggleLendYourVoiceMobileSideBar}>
+                <span className="flex items-center space-x-[12px] my-[20px] w-[90px] block md:hidden" onClick={ togglePartnerMobileSideBar}>
                 <Image src="/icons/arrow-left.png" width={24} height={24} alt="back arrow for tech community" className="cursor-pointer" />
                 <span className="text-[20px]">Back</span>
                 </span>
@@ -43,41 +96,61 @@ export default function Modal({ }) {
         <div className="mt-[36px] flex justify-between items-start">
             <div className="w-[300px] space-y-[40px] font-clash text-secondaryColor hidden md:block">
                 <div className="cursor-pointer" onClick={toggleLendYourVoiceThribeModal}>Lend Your Voice</div>
-                <div className="cursor-pointer" onClick={toggleJoinTournamentModal}>Join The Tournament</div>
+                {/* <div className="cursor-pointer" onClick={toggleJoinTournamentModal}>Join The Tournament</div> */}
                 <div className="font-[600] text-primaryGreen">Partner with us</div>
-                <div className="cursor-pointer">Buy a merch (coming soon)</div>
+                {/* <div className="cursor-pointer">Buy a merch (coming soon)</div> */}
             </div>
 
-            <form className="w-full md:w-[544px] overflow-y-auto h-[100%] leading-[150%] space-y-[16px] pb-[40px] pr-[5px]">
+            <form onSubmit={onSubmitForm} className="w-full md:w-[544px] overflow-y-auto h-[100%] leading-[150%] space-y-[16px] pb-[40px] pr-[5px]">
                 <div className="sapce-y-[4px]">
                     <label>Name of Company / Organization / Individual<span className="text-[#FF0000]">*</span></label>
-                    <input type="text" placeholder="What&#39;s your company name" className="outline-none placeholder-[#98A1B0] w-full h-[62px] rounded-[16px] px-[24px] border border-[#C2C7D0]" />
+                    <input
+                    name="companyName"
+                    value={formDatas.companyName}
+                    onChange={onChangeFormDataFunctions}
+                    type="text" placeholder="What&#39;s your company name" className="outline-none placeholder-[#98A1B0] w-full h-[62px] rounded-[16px] px-[24px] border border-[#C2C7D0]" />
                 </div>
 
                  <div className="sapce-y-[4px]">
                     <label>Email address <span className="text-[#FF0000]">*</span></label>
-                    <input type="email" placeholder="Pease enter your email address" className="outline-none placeholder-[#98A1B0] w-full h-[62px] rounded-[16px] px-[24px] border border-[#C2C7D0]" />
+                    <input
+                     name="email"
+                    value={formDatas.email}
+                    onChange={onChangeFormDataFunctions}
+                    type="email" placeholder="Pease enter your email address" className="outline-none placeholder-[#98A1B0] w-full h-[62px] rounded-[16px] px-[24px] border border-[#C2C7D0]" />
                 </div> 
 
                 <div className="sapce-y-[4px]">
                     <label>Contact person&#39;s name <span className="text-[#FF0000]">*</span></label>
-                    <input type="text" placeholder="Enter name" className="outline-none placeholder-[#98A1B0] w-full h-[62px] rounded-[16px] px-[24px] border border-[#C2C7D0]" />
+                    <input
+                     name="contactPerson"
+                    value={formDatas.contactPerson}
+                    onChange={onChangeFormDataFunctions}
+                    type="text" placeholder="Enter name" className="outline-none placeholder-[#98A1B0] w-full h-[62px] rounded-[16px] px-[24px] border border-[#C2C7D0]" />
                 </div>
 
                 <div className="sapce-y-[4px]">
                     <label>Website or Social Media Link </label>
-                    <input type="text" placeholder="Enter link" className="outline-none placeholder-[#98A1B0] w-full h-[62px] rounded-[16px] px-[24px] border border-[#C2C7D0]" />
+                    <input
+                     name="websiteLink"
+                    value={formDatas.websiteLink}
+                    onChange={onChangeFormDataFunctions}
+                    type="text" placeholder="Enter link" className="outline-none placeholder-[#98A1B0] w-full h-[62px] rounded-[16px] px-[24px] border border-[#C2C7D0]" />
                 </div>
 
                 <div className="sapce-y-[4px]">
                     <label>What kind of partnership are you interested in? <span className="text-[#FF0000]">*</span></label>
                     <div className="relative w-full">
                       <Image src="/icons/arrow-bottom.png" width={24} height={24} alt="close thribe modal" className="absolute top-[19px] right-[24px]"/>
-                        <select className="text-[#98A1B0] outline-none appearance-none placeholder-[#98A1B0] w-full h-[62px] rounded-[16px] px-[24px] border border-[#C2C7D0]">
-                            <option value="" className="text-primaryTextColor text-[18px] sm:text-[20px]">Select an option</option>
-                            <option className="text-primaryTextColor text-[18px] sm:text-[20px]">Option 1</option>
-                            <option className="text-primaryTextColor text-[18px] sm:text-[20px]">Option 2</option>
-                            <option className="text-primaryTextColor text-[18px] sm:text-[20px]">Option 3</option>
+                        <select
+                            name="kindOfPartnership"
+                            value={formDatas.kindOfPartnership}
+                            onChange={onChangeFormDataFunctions}
+                        className={`${formDatas.kindOfPartnership == "" ? "text-[#87857f]" : ""} outline-none appearance-none placeholder-[#98A1B0] w-full h-[62px] rounded-[16px] px-[24px] border border-[#C2C7D0]`}>
+                            <option value="" disabled className="">Select an option</option>
+                            <option value="sponsor" className="">Sponsor</option>
+                            <option value="investor" className="">Investor</option>
+                            <option value="contributor" className="">Contributor</option>
                         </select> 
                     </div>
                       </div> 
@@ -85,24 +158,41 @@ export default function Modal({ }) {
                 
                   <div className="sapce-y-[4px]">
                     <label>Briefly describe how you&#39;d like to partner with THR!BE</label>
-                    <textarea  defaultValue="Enter your message" className="outline-none placeholder-[#98A1B0] w-full h-[132px] rounded-[16px] px-[24px] pt-[16px] h-[367px] border border-[#C2C7D0] text-[#98A1B0]" />
+                    <textarea 
+                     name="description"
+                    value={formDatas.description}
+                    onChange={onChangeFormDataFunctions}
+                    className="outline-none placeholder-[#98A1B0] w-full h-[132px] rounded-[16px] px-[24px] pt-[16px] h-[367px] border border-[#C2C7D0]" />
                 </div>
 
                 <div>
                     <label className="flex items-center space-x-[16px]">
-                    <input type="checkbox" className="form-checkbox h-[24px] w-[24px] text-blue-600 border border-[#B3B9C4] rounded-[4px]" />
+                    <input
+                    name="keepInLoop"
+                    checked={formDatas.keepInLoop}
+                    onChange={onChangeFormDataFunctions}                 
+                    type="checkbox" className="form-checkbox h-[24px] w-[24px] text-blue-600 border border-[#B3B9C4] rounded-[4px]" />
                     <span className="text-secondaryColor">I&#39;d love to schedule a quick chat to explore this further</span>
                     </label>
                 </div>
 
                 <div>
                     <label className="flex items-center space-x-[16px]">
-                    <input type="checkbox" className="form-checkbox h-[24px] w-[24px] text-blue-600 border border-[#B3B9C4] rounded-[4px]" />
+                    <input
+                     name="scheduleChat"
+                    checked={formDatas.scheduleChat}
+                    onChange={onChangeFormDataFunctions}
+                    type="checkbox"  
+                    className="form-checkbox h-[24px] w-[24px] text-blue-600 border border-[#B3B9C4] rounded-[4px]" />
                     <span className="text-secondaryColor">Keep me in the loop about THR!BEI&#39;s future initiatives </span>
                     </label>
                 </div>
+
+                    {/* error message */}
+                    {errorMessage ? <div className="text-red font-[400] p-[10px] inline bg-[#FF7F7F] text-[#FF0000]">{errorMessage}</div> : "" }
+                    
                       
-                     <button className={`flex justify-center items-center gap-x-[10px] bg-primaryColor mt-[20px] cursor-pointer shadow-[4px_4px_0px_0px_#003E39] font-[500] text-[18px] text-[#fff] h-[47px] md:h-[56px] w-full rounded-[100px]`}>
+                     <button type="submit" className={`flex justify-center items-center gap-x-[10px] bg-primaryColor mt-[20px] cursor-pointer shadow-[4px_4px_0px_0px_#003E39] font-[500] text-[18px] text-[#fff] h-[47px] md:h-[56px] w-full rounded-[100px]`}>
                         <span>Proceed</span>
                          <Image src="/icons/arrow-white.png" width={24} height={24} alt="close thribe modal" className=""/>
                     </button>   

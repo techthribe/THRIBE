@@ -10,24 +10,51 @@ export const AllContextProvider = ({children}) => {
      const [partnerWithUs, setPartnerWithUs] = useState(false)
      const [premiumMemberModal, setPremiumMemberModal] = useState(false)
      const [premiumThankYouModal, setPremiumThankYouModal] = useState(false)
+     const [partnerThankYouModal, setPartnerThankYouModal] = useState(false)
      const [lendYourVoiceMobileSideBar, setLendYourVoiceMobileSideBar] = useState(false);
+      const [partnerMobileSideBar, setPartnerMobileSideBar] = useState(false);
 
     const toggleMobileNavbarFunction = () => setToggleNavbar((prev) => !prev)
 
-    
-
     const toggleLendYourVoiceMobileSideBar = () => {
+            setPartnerThankYouModal(false)
              setJoinTournament(false)
             setPartnerWithUs(false)
             setLendYourVoiceThribeModal(false)
             setPremiumMemberModal(false)
             setPremiumThankYouModal(false)
+            setPartnerMobileSideBar(false)
             setLendYourVoiceMobileSideBar((prev) => !prev)
-}
+    }
 
+    const togglePartnerMobileSideBar = () => {
+         setPartnerMobileSideBar(false)
+            setPartnerThankYouModal(false)
+             setJoinTournament(false)
+            setPartnerWithUs(false)
+            setLendYourVoiceThribeModal(false)
+            setPremiumMemberModal(false)
+            setPremiumThankYouModal(false)
+            setLendYourVoiceMobileSideBar(false)
+            setPartnerMobileSideBar((prev) => !prev)
+    }
+
+    const togglePartnerThankYouModal = () => {
+            setPremiumThankYouModal(false)
+             setPartnerMobileSideBar(false)
+            setJoinTournament(false)
+            setPartnerWithUs(false)
+            setLendYourVoiceThribeModal(false)
+            setPremiumMemberModal(false)
+            setPartnerThankYouModal((prev) => !prev)
+            setLendYourVoiceMobileSideBar(false)
+
+    }
 
     const togglePremiumThankYouModal = () => {
              setJoinTournament(false)
+             setPartnerThankYouModal(false)
+            setPartnerMobileSideBar(false)
             setPartnerWithUs(false)
             setLendYourVoiceThribeModal(false)
             setPremiumMemberModal(false)
@@ -38,7 +65,9 @@ export const AllContextProvider = ({children}) => {
 
     const togglePremiumMemberModal = () => {
             setJoinTournament(false)
+             setPartnerMobileSideBar(false)
             setPartnerWithUs(false)
+            setPartnerThankYouModal(false)
             setLendYourVoiceThribeModal(false)
             setPremiumThankYouModal(false)
             setLendYourVoiceMobileSideBar(false)
@@ -47,16 +76,20 @@ export const AllContextProvider = ({children}) => {
 
     const toggleLendYourVoiceThribeModal = () => {
          setJoinTournament(false)
+          setPartnerMobileSideBar(false)
          setPartnerWithUs(false)
          setPremiumMemberModal(false)
           setPremiumThankYouModal(false)
           setLendYourVoiceMobileSideBar(false)
+          setPartnerThankYouModal(false)
         setLendYourVoiceThribeModal((prev) => !prev)
     }
 
     const toggleJoinTournamentModal = () => {
         setLendYourVoiceThribeModal(false)
+         setPartnerMobileSideBar(false)
         setPartnerWithUs(false)
+        setPartnerThankYouModal(false)
          setPremiumMemberModal(false)
           setPremiumThankYouModal(false)
           setLendYourVoiceMobileSideBar(false)
@@ -65,9 +98,11 @@ export const AllContextProvider = ({children}) => {
 
     const togglePartnerWithUsModal = () => {
         setLendYourVoiceThribeModal(false)
+         setPartnerMobileSideBar(false)
          setJoinTournament(false)
           setPremiumMemberModal(false)
            setPremiumThankYouModal(false)
+           setPartnerThankYouModal(false)
            setLendYourVoiceMobileSideBar(false)
         setPartnerWithUs((prev) => !prev)
     }
@@ -87,8 +122,12 @@ export const AllContextProvider = ({children}) => {
                togglePremiumMemberModal,
                premiumThankYouModal,
                togglePremiumThankYouModal,
+                partnerThankYouModal,
+               togglePartnerThankYouModal,
                lendYourVoiceMobileSideBar,
-               toggleLendYourVoiceMobileSideBar
+               toggleLendYourVoiceMobileSideBar,
+               partnerMobileSideBar,
+               togglePartnerMobileSideBar
             }}
         >
             {children}
