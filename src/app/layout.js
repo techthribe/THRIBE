@@ -8,6 +8,7 @@ import PartnerWithUs from "./components/Modals/PartnerWithUs"
 import PremiumMember from "./components/Modals/PremiumMember"
 import PremiumThankYouMember from "./components/Modals/PremiumThankYouModal";
 import PartnerThankYouMessage from "./components/Modals/PartnerThankYouMessage";
+import LendVoiceThankYouMessage from "./components/Modals/LendVoiceThankYouMessage";
 import LendYourVoiceMobileSideBar from "./components/Modals/LendYourVoiceMobileLinks"
 import PartnerMobileSideBar from "./components/Modals/PartnerMobileLinks"
 
@@ -64,6 +65,7 @@ export default function RootLayout({ children }) {
              <PartnerThankYouMessage />
             <LendYourVoiceMobileSideBar />
             <PartnerMobileSideBar />
+            <LendVoiceThankYouMessage />
             {children}
         </AllContextProvider>
       </body>

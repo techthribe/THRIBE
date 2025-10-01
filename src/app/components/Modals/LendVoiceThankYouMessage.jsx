@@ -40,7 +40,7 @@ export default function Modal({ }) {
         </p>
 
         <div className="relative w-[150px] h-[150px] mx-auto my-[36px]">
-         <Image src="/icons/partner_thank_you.gif" fill alt="tech community" className="cursor-pointer object-fill" />
+         <Image src="/icons/lendvoice.gif" fill alt="tech community" className="cursor-pointer object-fill" />
         </div>
 
         <Link href="/" onClick={toggleLendVoiceThankYouModal}>

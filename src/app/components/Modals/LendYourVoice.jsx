@@ -4,7 +4,7 @@ import { useAllContext } from "../../context/allcontext";
 import Image from "next/image";
 
 export default function Modal({ }) {
-    const {lendYourVoiceThribeModal, toggleLendYourVoiceMobileSideBar, toggleJoinTournamentModal, toggleLendYourVoiceThribeModal, togglePartnerWithUsModal} = useAllContext();
+    const {lendYourVoiceThribeModal, togglePartnerThankYouModal, toggleLendYourVoiceMobileSideBar, toggleLendYourVoiceThribeModal, togglePartnerWithUsModal, toggleLendVoiceThankYouModal} = useAllContext();
 
     const [errorMessage, setErrorMessage] = useState("")
     const [formDatas, setFormDatas] = useState({
@@ -17,18 +17,18 @@ export default function Modal({ }) {
         e.preventDefault();
         const {title, story, anonymous} = formDatas;
 
-        if(!title || !story){
-            return setErrorMessage("please, fill all required fields")
-        }
+        // if(!title || !story){
+        //     return setErrorMessage("please, fill all required fields")
+        // }
 
-        setErrorMessage("")
-        setFormDatas({
-             title: "",
-            story: "",
-            anonymous: ""
-        })
+        // setErrorMessage("")
+        // setFormDatas({
+        //      title: "",
+        //     story: "",
+        //     anonymous: ""
+        // })
 
-        return togglePremiumThankYouModal()
+        return togglePartnerThankYouModal;
     }
 
     const onChangeFormDataFunctions = (e) => {
@@ -70,7 +70,7 @@ export default function Modal({ }) {
         </div>
 
         {/* only show for mobile */}
-        <span className="flex items-center space-x-[12px] my-[20px] w-[90px]" onClick={toggleLendYourVoiceMobileSideBar}>
+        <span className="flex items-center space-x-[12px] my-[20px] w-[90px] block md:hidden" onClick={toggleLendYourVoiceMobileSideBar}>
         <Image src="/icons/arrow-left.png" width={24} height={24} alt="back arrow for tech community" className="cursor-pointer" />
         <span className="text-[20px]">Back</span>
         </span>
@@ -78,7 +78,7 @@ export default function Modal({ }) {
         <div className="mt-[36px] flex justify-between items-start">
             <div className="w-[300px] space-y-[40px] font-clash text-secondaryColor hidden md:block">
                 <div className="font-[600] text-primaryGreen">Lend Your Voice</div>
-                <div className="cursor-pointer" onClick={toggleJoinTournamentModal}>Join The Tournament</div>
+                {/* <div className="cursor-pointer" onClick={toggleJoinTournamentModal}>Join The Tournament</div> */}
                 <div className="cursor-pointer" onClick={togglePartnerWithUsModal}>Partner with us</div>
                 {/* <div className="cursor-pointer">Buy a merch (coming soon)</div> */}
             </div>
