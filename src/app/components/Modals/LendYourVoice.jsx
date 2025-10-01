@@ -13,22 +13,23 @@ export default function Modal({ }) {
         anonymous: ""
     })
 
-     const onSubmitForm = (e) => {
+     const submitLendVoiceForm = (e) => {
         e.preventDefault();
+        console.log("what is happening")
         const {title, story, anonymous} = formDatas;
 
-        // if(!title || !story){
-        //     return setErrorMessage("please, fill all required fields")
-        // }
+        if(!title || !story){
+            return setErrorMessage("please, fill all required fields")
+        }
 
-        // setErrorMessage("")
-        // setFormDatas({
-        //      title: "",
-        //     story: "",
-        //     anonymous: ""
-        // })
+        setErrorMessage("")
+        setFormDatas({
+             title: "",
+            story: "",
+            anonymous: ""
+        })
 
-        return togglePartnerThankYouModal;
+        return toggleLendVoiceThankYouModal();
     }
 
     const onChangeFormDataFunctions = (e) => {
@@ -83,7 +84,7 @@ export default function Modal({ }) {
                 {/* <div className="cursor-pointer">Buy a merch (coming soon)</div> */}
             </div>
 
-            <form onSubmit={onSubmitForm} className="w-full md:w-[544px] overflow-y-auto leading-[150%] space-y-[16px] pb-[20px] md:pb-[40px] md:pr-[5px]">
+            <form onSubmit={submitLendVoiceForm} className="w-full md:w-[544px] overflow-y-auto leading-[150%] space-y-[16px] pb-[20px] md:pb-[40px] md:pr-[5px]">
                 <div className="sapce-y-[4px]">
                     <label>Title</label>
                     <input
