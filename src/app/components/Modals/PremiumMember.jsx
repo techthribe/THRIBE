@@ -47,7 +47,15 @@ export default function Modal({ }) {
             accept_terms: false
         })
 
-        return togglePremiumThankYouModal()
+        // return togglePremiumThankYouModal()
+        if (payment_plan === "yearly") {
+            window.open("https://paystack.shop/pay/y99j3e8m6o", "_blank");
+            } else if (payment_plan === "quarterly") {
+            window.open("https://paystack.shop/pay/3tnqs7b-hu", "_blank");
+            } else if (payment_plan === "monthly") {
+            window.open("https://paystack.shop/pay/ag0o72742a", "_blank");
+            }
+
 
     }
 
