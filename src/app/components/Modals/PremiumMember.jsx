@@ -75,11 +75,11 @@ export default function Modal({ }) {
             }
             else{
                  setLoading(false)
-               setErrorMessage("please check your network and try again")
+                setErrorMessage("something went wrong, try again!")
             } 
         }
         catch(err){
-             setErrorMessage("please check your network and try again")
+             setErrorMessage("something went wrong, try again!")
         }
     }
 

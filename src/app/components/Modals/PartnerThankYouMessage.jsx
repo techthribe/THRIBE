@@ -43,7 +43,7 @@ export default function Modal({ }) {
          <Image src="/icons/partner_thank_you.gif" fill alt="tech community" className="cursor-pointer object-fill" />
         </div>
 
-        <Link href="/#joinCommunity" onClick={togglePartnerThankYouModal}>
+        <Link href="/" onClick={togglePartnerThankYouModal}>
         <Button name="Back Home" classname="w-[calc(100%-80px)] bg-[#107269] absolute bottom-[40px]  "/>
         </Link>
       </div>

@@ -2,7 +2,7 @@ import nodemailer from "nodemailer";
 
 export async function POST(req) {
   try {
-     const {fullname, role, email, phone_no, why_join_thribe, accept_terms, payment_plan} = await req.json();
+      const {companyName, email, contactPerson, websiteLink, kindOfPartnership, description, scheduleChat, keepInLoop }  = await req.json();
 
 
     const transporter = nodemailer.createTransport({
@@ -15,27 +15,20 @@ export async function POST(req) {
       },
     });
 
-//     transporter.verify((error, success) => {
-//   if (error) {
-//     console.error("SMTP Error:", error);
-//   } else {
-//     console.log("SMTP Connection successful ✅");
-//   }
-// });
-
     const mailOptions = {
       from: `hello@techthribe.com`,
       to: process.env.ZOHO_USER,
-      subject: `New Message from ${fullname}`,
+      subject: `New Message from ${companyName}`,
       html: `
-        <h3>JOIN PREMIUM COMMUNITY</h3>
-        <p><strong>Name:</strong> ${fullname}</p>
+        <h3>PARTNER WITH THRIBE COMMUNITY</h3>
+        <p><strong>Company Name:</strong> ${companyName}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>role:</strong><br/>${role}</p>
-         <p><strong>Reason to join:</strong><br/>${why_join_thribe}</p>
-          <p><strong>Phone number:</strong><br/>${phone_no}</p>
-           <p><strong>Accept terms:</strong><br/>${accept_terms}</p>
-            <p><strong>Payment plan:</strong><br/>${payment_plan}</p>
+        <p><strong>Contact Person:</strong><br/>${contactPerson}</p>
+         <p><strong>Website Link:</strong><br/>${websiteLink}</p>
+          <p><strong>Kind Of Partnership:</strong><br/>${kindOfPartnership}</p>
+           <p><strong>Description:</strong><br/>${description}</p>
+            <p><strong>Schedule Chat:</strong><br/>${scheduleChat}</p>
+            <p><strong>Keep In Loop:</strong><br/>${keepInLoop}</p>
       `,
     };
 

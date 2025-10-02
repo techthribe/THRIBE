@@ -7,6 +7,7 @@ export default function Modal({ }) {
     const { partnerWithUs, togglePartnerMobileSideBar, togglePartnerThankYouModal, toggleLendYourVoiceThribeModal, togglePartnerWithUsModal} = useAllContext();
     const [opponent, setOpponent] = useState('play a particular opponent')
     const [errorMessage, setErrorMessage] = useState("")
+     const [loading, setLoading] = useState(false)
 
      const [formDatas, setFormDatas] = useState({
         companyName: "",
@@ -21,18 +22,32 @@ export default function Modal({ }) {
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-     const onSubmitForm = (e) => {
+     const onSubmitForm = async(e) => {
+      try{
+        setLoading(true)
         e.preventDefault();
         const {companyName, email, contactPerson, websiteLink, kindOfPartnership, description, scheduleChat, keepInLoop } = formDatas;
 
-        if(!companyName || !email || !contactPerson){
+        if(!companyName || !email || !contactPerson || !kindOfPartnership){
+            setLoading(false)
             return setErrorMessage("please, fill all requierd fields")
         }
         if (!emailRegex.test(email)) {
+            setLoading(false)
              return setErrorMessage("Invalid Email")
         }
 
-        setErrorMessage("")
+         const res = await fetch("/api/partner", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formDatas),
+            });
+
+              const responseData = await res.json();
+           
+            if(responseData.success){
+                 setLoading(false)
+                  setErrorMessage("")
         setFormDatas({
             companyName: "",
             email: "",
@@ -44,8 +59,16 @@ export default function Modal({ }) {
             keepInLoop: false
         })
 
-        return togglePartnerThankYouModal()
-
+        togglePartnerThankYouModal()
+     }
+      else{
+                 setLoading(false)
+               setErrorMessage("something went wrong, try again!")
+        } 
+      }
+      catch(err){
+         setErrorMessage("something went wrong, try again!")
+      }
     }
 
      const onChangeFormDataFunctions = (e) => {
@@ -192,8 +215,8 @@ export default function Modal({ }) {
                     {errorMessage ? <div className="text-red font-[400] p-[10px] inline bg-[#FF7F7F] text-[#FF0000]">{errorMessage}</div> : "" }
                     
                       
-                     <button type="submit" className={`flex justify-center items-center gap-x-[10px] bg-primaryColor mt-[20px] cursor-pointer shadow-[4px_4px_0px_0px_#003E39] font-[500] text-[18px] text-[#fff] h-[47px] md:h-[56px] w-full rounded-[100px]`}>
-                        <span>Proceed</span>
+                     <button disabled={loading} type="submit" className={`flex justify-center items-center gap-x-[10px] bg-primaryColor mt-[20px] cursor-pointer shadow-[4px_4px_0px_0px_#003E39] font-[500] text-[18px] text-[#fff] h-[47px] md:h-[56px] w-full rounded-[100px]`}>
+                        <span>{loading ? "Proceeding..." : "Proceed"}</span>
                          <Image src="/icons/arrow-white.png" width={24} height={24} alt="close thribe modal" className=""/>
                     </button>   
             </form>          
