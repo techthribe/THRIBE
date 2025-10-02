@@ -5,7 +5,7 @@ import Image from "next/image";
 import Button from "./Button";
 
 const JoinCommunity = () => {
-    const {togglePremiumThankYouModal} = useAllContext();
+    const { toggleFreeThankYouModal} = useAllContext();
     const [errorMessage, setErrorMessage] = useState("")
     const [data, setData] = useState({
         fullname: "",
@@ -36,7 +36,7 @@ const JoinCommunity = () => {
           
         })
 
-        return togglePremiumThankYouModal()
+        return  toggleFreeThankYouModal();
     }
 
      const onChangeFormDataFunction = (e) => {
