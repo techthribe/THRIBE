@@ -4,8 +4,6 @@ export async function POST(req) {
   try {
      const {fullname, role, email, reason_to_join} = await req.json();
 
-    console.log(process.env.ZOHO_USER)
-
     const transporter = nodemailer.createTransport({
       host: "smtp.zoho.com",
       port: 465,
