@@ -4,15 +4,10 @@ import Image from "next/image";
 
 const Testimaonial = () => {
   const [currentReview, setCurrentReview] = useState(0)
-  const reviews = [{
-    post: "It's a home for people building with heart. Whether you're coding, designing, strategizing, or just learning, there's a space for you here. It's a home for people building with heart. Whether you're coding, designing, strategizing, or just learning, there's a space for you here.",
-    name: "Thanau Abbas",
-    role: "Product Designer",
-    img:"/img/member1.png"
-  },
+  const reviews = [
   {
     post: "“Joining THR!BE changed my journey. It's more than a tech community - it's a supportive space for growth. I've gained knowledge, confidence, and opportunities through inspiring members, helpful discussions, and valuable connections. THR!BE gives me belonging, motivation and the push to thrive.”",
-    name: "Najeebat Abdul Azeez",
+    name: "Najeebat Abdullateef",
     role: "Product Designer",
     img:"/img/reviewer2.png"
   },
@@ -25,13 +20,22 @@ const Testimaonial = () => {
 ]
 
     const nextReviewFunction = () => {
-      if((reviews.length -1) > currentReview)  
-        return  setCurrentReview((prev) => prev + 1)
+      if((reviews.length -1) > currentReview){
+        setCurrentReview((prev) => prev + 1)
+      } 
+      else{
+         setCurrentReview(0)
+      } 
+         
     }
 
     const PreviousReviewFunction = () => {
-      if(currentReview >= 0)
-        return setCurrentReview((prev) => prev-1)
+      if(currentReview > 0){
+        setCurrentReview((prev) => prev-1)
+      }
+      else{
+        setCurrentReview(reviews.length-1)
+      }  
     }
 
     return(
@@ -81,7 +85,8 @@ const Testimaonial = () => {
           </div>
         </div>
 
-          <div className="block md:hidden  bg-[#fff] w-full flex justify-between">
+          {/* this is for mobile */}
+          <div className="block md:hidden  bg-[#fff] w-full flex justify-center space-x-[70px]">
             <div 
              onClick={PreviousReviewFunction}
             className="w-[40px] h-[40px] rounded-full bg-[#F8F8F8] flex justify-center items-center">

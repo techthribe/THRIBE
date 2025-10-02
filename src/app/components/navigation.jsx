@@ -107,7 +107,7 @@ const NavigationBar = () => {
                     </div>
                  </div>
 
-                 <Link href="#" className={`navLink ${pathname==="/about" ? "text-[#087C72] font-[600]" : ""}`}>Shop</Link>
+                 <Link href="https://paystack.shop/tech-thribe" className={`navLink ${pathname==="/shop" ? "text-[#087C72] font-[600]" : ""}`}>Shop</Link>
              </div>
 
                 <div className="flex w-[30px] md:w-[152px] justify-between items-center ">

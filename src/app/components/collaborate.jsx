@@ -2,6 +2,10 @@
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { useAllContext } from "../context/allcontext";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Collaborate = () => {
   const {toggleLendYourVoiceThribeModal, toggleJoinTournamentModal} = useAllContext()
@@ -12,6 +16,9 @@ const Collaborate = () => {
   const [hoverJerseyContainer, setHoverJerseyContainer] = useState(false)
   const [activeJerseyImage, setActiveJerseyImage] = useState(0)
   const [currentImg, setCurrentImg] = useState(0);
+  const cardRef1 = useRef(null);
+   const cardRef2 = useRef(null);
+  
   const animationImages = ["/img/tote1.png",  
           "/img/tote2.png", 
           "https://res.cloudinary.com/chiaka/image/upload/v1759018554/Property_1_Stickers_Packaging_ffaa1y.png",
@@ -19,6 +26,53 @@ const Collaborate = () => {
           ];
 
   const jerseyImages = ["https://res.cloudinary.com/chiaka/image/upload/v1759018514/shirt_ih6qka.png","https://res.cloudinary.com/chiaka/image/upload/v1759022875/Property_1_Component_128_so16jm.png"]
+
+useEffect(() => {
+    if (window.innerWidth < 800) {
+    if (!cardRef1.current) return;
+
+    const card1 = cardRef1.current;
+
+    const trigger = ScrollTrigger.create({
+      trigger: card1,
+      start: "top 70%",
+      end: "bottom 20%",
+      onEnter: () => setHoverLendVoice(true),
+      onLeave: () => setHoverLendVoice(false),
+      onEnterBack: () => setHoverLendVoice(true),
+      onLeaveBack: () => setHoverLendVoice(false),
+      markers: false, 
+    });
+
+    return () => {
+      trigger.kill();
+    };
+  }
+  }, []);
+
+  // useeffect for rep the brand
+  useEffect(() => {
+    if (window.innerWidth < 800) {
+    if (!cardRef2.current) return;
+
+    const card2 = cardRef2.current;
+
+    const trigger2 = ScrollTrigger.create({
+      trigger: card2,
+      start: "top 70%",
+      end: "bottom 20%",
+      onEnter: () => setHoverJoinTournament(true),
+      onLeave: () => setHoverJoinTournament(false),
+      onEnterBack: () => setHoverJoinTournament(true),
+      onLeaveBack: () => setHoverJoinTournament(false),
+      markers: false, 
+    });
+
+    return () => {
+      trigger2.kill();
+    };
+  }
+  }, []);
 
    useEffect(() => {
     if (hoverJerseyContainer) {
@@ -81,6 +135,7 @@ const Collaborate = () => {
         <div className="mt-[40px] md:mt-[80px] flex flex-wrap lg:flex-nowrap justify-between gap-[40px]">
           {/* Card 1 */}
           <div
+            ref={cardRef1}
             onMouseEnter={() => setHoverLendVoice(true)}
             onMouseLeave={() => setHoverLendVoice(false)}
             onClick={toggleLendYourVoiceThribeModal}
@@ -117,9 +172,12 @@ const Collaborate = () => {
                 </p>
               ) : (
                 <p className="tracking-[2%] leading-[150%] text-[#fff]">
-                  Help Someone learn, grow and THRIVE. Your support unlock access
+                  {/* Help Someone learn, grow and THRIVE. Your support unlock access
                   to tools, events, and life-changing opportunities. Pay it
-                  forward.
+                  forward. */}
+                   Add your perspective, share your story, or spark a
+                  conversation. Every voice helps shape a tech culture that
+                  feels more human.
                 </p>
               )}
 
@@ -155,8 +213,10 @@ const Collaborate = () => {
             </div>
           </div>
 
+
           {/* Card 2 */}
           <div
+             ref={cardRef2}
             onClick={toggleJoinTournamentModal}
             onMouseEnter={() => {
               setHoverJoinTournament(true);
@@ -196,14 +256,16 @@ const Collaborate = () => {
 
             <div className="mt-[16px] sm:mt-[24px] space-y-[13px] sm:space-y-[24px] text-[#0A1A18]">
               <h2 className="leading-[120%] tracking-[3%] font-clash font-[600]">
-                {!hoverJoinTournament
+                {/* {!hoverJoinTournament
                   ? "Join The Tournament"
-                  : "Rep the Brand"}
+                  : "Rep the Brand"} */}
+                  Rep the Brand
               </h2>
               <p className="tracking-[2%] ">
-                {!hoverJoinTournament
+                {/* {!hoverJoinTournament
                   ? "Step off the screen and onto the field. Play, cheer, or rep your team/company- because thriving means balance, fun, and community spirit."
-                  : "Wear the spirit of THRIBE everywhere you go. Grab your merch, rep the tribe, and show the world that thriving is more than work - it's a lifestyle."}
+                  : "Wear the spirit of THRIBE everywhere you go. Grab your merch, rep the tribe, and show the world that thriving is more than work - it's a lifestyle."} */}
+                  Wear the spirit of THRIBE everywhere you go. Grab your merch, rep the tribe, and show the world that thriving is more than work - it's a lifestyle.
               </p>
 
               <div>
@@ -226,7 +288,7 @@ const Collaborate = () => {
                           !hoverJoinTournament
                             ? "opacity-0 delay-500"
                             : "opacity-100 delay-0"
-                        } min-w-[50px] transition-all  duration-500 ease-in-out`}
+                        } min-w-[40px] transition-all  duration-500 ease-in-out`}
                       >
                         Rep the Brand
                       </div>
@@ -273,8 +335,8 @@ const Collaborate = () => {
               </p>
             </div>
 
-            <button className={`cursor-pointer rounded-[100px] w-[164px] sm:w-[190px] h-[47px] sm:h-[56px] ${!hoverJerseyContainer ? "border border-[#F97502] text-[#F97502]" : "border border-[#FFFFFF] text-[#FFFFFF]"}  px-[29px] sm:px-[40px] font-[500] text-[18px]  leading-[150%] tracking-[3%]`}>
-              Coming soon
+            <button className={`cursor-pointer rounded-[100px] w-[174px] sm:w-[190px] h-[47px] sm:h-[56px] ${!hoverJerseyContainer ? "border border-[#F97502] text-[#F97502]" : "border border-[#FFFFFF] text-[#FFFFFF]"}  px-[29px] sm:px-[40px] font-[500] text-[18px]  leading-[150%] tracking-[3%]`}>
+              <span>Coming soon</span>
             </button>
           </div>
 
