@@ -41,7 +41,6 @@ const JoinCommunity = () => {
             });
 
             const responseData = await res.json();
-            console.log(responseData)
             if(responseData.success){
                  setLoading(false)
                   setErrorMessage("")
