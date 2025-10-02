@@ -7,6 +7,7 @@ import JoinTournament from "./components/Modals/JoinTournament"
 import PartnerWithUs from "./components/Modals/PartnerWithUs"
 import PremiumMember from "./components/Modals/PremiumMember"
 import PremiumThankYouMember from "./components/Modals/PremiumThankYouModal";
+import FreeThankYouModal from "./components/Modals/FreeThankYouModal";
 import PartnerThankYouMessage from "./components/Modals/PartnerThankYouMessage";
 import LendVoiceThankYouMessage from "./components/Modals/LendVoiceThankYouMessage";
 import LendYourVoiceMobileSideBar from "./components/Modals/LendYourVoiceMobileLinks"
@@ -66,6 +67,7 @@ export default function RootLayout({ children }) {
             <LendYourVoiceMobileSideBar />
             <PartnerMobileSideBar />
             <LendVoiceThankYouMessage />
+            <FreeThankYouModal />
             {children}
         </AllContextProvider>
       </body>
