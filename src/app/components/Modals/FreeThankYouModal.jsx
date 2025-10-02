@@ -29,7 +29,7 @@ console.log(freeThankYouModal)
       ></div>
 
       {/* modal content */}
-      <div className="border border-[8px] border-b-[#F97502] border-x-0 border-t-0 relative bg-white rounded-lg shadow-lg z-10 w-[375px] md:w-[624px] min-h-[473px] rounded-[16px] p-[40px] overflow-y-auto mt-[40px]">
+      <div className="border border-[8px] border-b-[#F97502] border-x-0 border-t-0 relative bg-white rounded-lg shadow-lg z-10 w-[95%] md:w-[624px] min-h-[473px] rounded-[16px] p-[40px] overflow-y-auto mt-[40px]">
         <div className="flex justify-between items-center">
             <h1 className="text-[20px] sm:text-[32px] leading-[100%] tracking-[1%] text-primaryTextColor font-[600] font-clash">Join THR!BE </h1>
             <Image src="/icons/close-square.png" width={24} height={24} alt="close thribe modal" className="cursor-pointer" onClick={toggleFreeThankYouModal} />
@@ -38,6 +38,10 @@ console.log(freeThankYouModal)
         <p className="leading-[150%] tracking-[1%] mt-[16px]">
         Thank you, We have received your form. Please click on the button below to join the community 
         </p>
+
+         <div className="relative w-full md:w-[402px] h-[157px] mx-auto my-[36px]">
+            <Image src="https://res.cloudinary.com/chiaka/image/upload/v1759416365/free_thank_you_eicdpk.gif" fill alt="tech community" className="cursor-pointer object-fill" />
+        </div>
 
         <Link href="https://chat.whatsapp.com/IYB6OqDKXLOGmF8DTuR2bg" target="_blank" onClick={toggleFreeThankYouModal}>
         <Button name="Join Community" classname="w-[calc(100%-80px)] bg-[#107269] absolute bottom-[40px]  "/>

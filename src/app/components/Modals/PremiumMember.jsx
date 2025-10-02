@@ -7,6 +7,7 @@ import Button from "../Button";
 export default function Modal({ }) {
     const {premiumMemberModal, togglePremiumMemberModal, togglePremiumThankYouModal} = useAllContext();
     const [errorMessage, setErrorMessage] = useState("")
+     const [loading, setLoading] = useState(false)
     const [formDatas, setFormDatas] = useState({
         fullname: "",
         role: "",
@@ -22,41 +23,64 @@ export default function Modal({ }) {
 
 
 
-    const onSubmitForm = (e) => {
+    const onSubmitForm = async (e) => {
+        try{
+            setLoading(true)
         e.preventDefault();
-        const {fullname, role, email, phone_no, why_join_thribe, accept_terms} = formDatas;
+        const {fullname, role, email, phone_no, why_join_thribe, accept_terms,  payment_plan} = formDatas;
 
-        if(!fullname || !role || !email || !phone_no || !why_join_thribe || !accept_terms){
+        if(!fullname || !role || !email || !phone_no || !accept_terms || !payment_plan){
+             setLoading(false)
             return setErrorMessage("please, fill and check all fields")
         }
         if (!emailRegex.test(email)) {
+             setLoading(false)
              return setErrorMessage("Invalid Email")
         }
          if (!numberRegex.test(phone_no)) {
+             setLoading(false)
              return setErrorMessage("Phone number shouuld contain only digits")
         }
 
-        setErrorMessage("")
-        setFormDatas({
-            fullname: "",
-            role: "",
-            email: "",
-            phone_no: "",
-            payment_plan: "",
-            why_join_thribe: "",
-            accept_terms: false
-        })
+         const res = await fetch("/api/join-premium", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formDatas),
+            });
 
-        // return togglePremiumThankYouModal()
-        if (payment_plan === "yearly") {
-            window.open("https://paystack.shop/pay/y99j3e8m6o", "_blank");
-            } else if (payment_plan === "quarterly") {
-            window.open("https://paystack.shop/pay/3tnqs7b-hu", "_blank");
-            } else if (payment_plan === "monthly") {
-            window.open("https://paystack.shop/pay/ag0o72742a", "_blank");
+            const responseData = await res.json();
+           
+            if(responseData.success){
+                 setLoading(false)
+                  setErrorMessage("")
+                    setFormDatas({
+                        fullname: "",
+                        role: "",
+                        email: "",
+                        phone_no: "",
+                        payment_plan: "",
+                        why_join_thribe: "",
+                        accept_terms: false
+                    })
+                    
+             togglePremiumMemberModal()
+             
+            if (payment_plan === "yearly") {
+                window.open("https://paystack.shop/pay/y99j3e8m6o", "_blank");
+                } else if (payment_plan === "quarterly") {
+                window.open("https://paystack.shop/pay/3tnqs7b-hu", "_blank");
+                } else if (payment_plan === "monthly") {
+                window.open("https://paystack.shop/pay/ag0o72742a", "_blank");
             }
-
-
+            }
+            else{
+                 setLoading(false)
+               setErrorMessage("please check your network and try again")
+            } 
+        }
+        catch(err){
+             setErrorMessage("please check your network and try again")
+        }
     }
 
     const onChangeFormDataFunctions = (e) => {
@@ -90,6 +114,8 @@ export default function Modal({ }) {
 
       {/* modal content */}
       <div className="overflow-y-auto tracking-[2%] leading-[150%] relative bg-[#E8F6F4] rounded-lg shadow-lg z-10 w-[95%] lg:w-[1200px] 2xl:w-[1404px] max-h-[90vh] rounded-[16px] py-[40px] xl:py-[120px] px-[16px] xl:px-[90px] mt-[20px]">
+        <div className="flex justify-between item-start">
+        <div>
         <h2 className="text-[16px] tracking-[16%] text-primaryGreen">THR!BE WITH US FOR FREE</h2>
          <h1 className="mt-[16px] flex items-center gap-x-[12px] font-clash font-[600] text-[26px] md:text-[46px] leading-[100%] tracking-[3%] text-primaryTextColor">
             <span>Be a Premium Member</span>
@@ -97,6 +123,11 @@ export default function Modal({ }) {
             <Image src="/img/join.png" fill alt="thribe community" className="object-fit" />
         </div>
         </h1>
+        </div>
+        <div className="relative w-[24px] h-[24px] shrink-0" onClick={togglePremiumMemberModal}>
+         <Image src="/icons/close-square.png" fill alt="close thribe modal" className="cursor-pointer shrink-0" />
+         </div>
+        </div>
 
         <form onSubmit={onSubmitForm} className="mt-[24px] lg:mt-[48px] w-full">
              {/*form for mobile view */}
@@ -285,7 +316,7 @@ export default function Modal({ }) {
                      /></div>
             </div>
 
-            <div className="w-full flex space-x-[16px] mt-[24px] md:mt-[40px]">
+            <div className="w-full flex space-x-[16px] mt-[24px] md:mt-[40px] mb-[10px]">
                 <input
                  name="accept_terms"
                  checked={formDatas.accept_terms}
@@ -296,10 +327,11 @@ export default function Modal({ }) {
                 <span className="text-secondaryText">I have read and agree to the <span className="text-primaryGreen font-[500]">terms & conditions</span></span>
             </div>
             {/* error message */}
-            <div className="text-red font-[500] p-[10px] inline bg-[#FF7F7F] text-[#FF0000]">{errorMessage}</div>
+            {errorMessage ? <div className="text-red font-[500] my-[10px] p-[10px] inline bg-[#FF7F7F] text-[#FF0000]">{errorMessage}</div> : ""}
+            
 
             <div className="mt-[48px]">
-             <Button type="submit" name="Upgrade to Premium" classname="w-full md:w-[257px] bg-[#107269]"/>
+             <Button type="submit" name={loading ? "sending..." : "Upgrade to Premium"} classname="w-full md:w-[257px] bg-[#107269]"/>
              </div>
 
         </form>

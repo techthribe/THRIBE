@@ -7,6 +7,7 @@ import Button from "./Button";
 const JoinCommunity = () => {
     const { toggleFreeThankYouModal} = useAllContext();
     const [errorMessage, setErrorMessage] = useState("")
+    const [loading, setLoading] = useState(false)
     const [data, setData] = useState({
         fullname: "",
         role: "",
@@ -17,26 +18,49 @@ const JoinCommunity = () => {
 
      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-     const onSubmitForm = (e) => {
+     const onSubmitForm = async (e) => {
+        try{
         e.preventDefault();
+        setLoading(true)
         const {fullname, role, email, reason_to_join} = data;
 
         if(!fullname || !role || !email){
+            setLoading(false)
             return setErrorMessage("please, fill all required fields")
         }
         if (!emailRegex.test(email)) {
+            setLoading(false)
              return setErrorMessage("Invalid Email")
         }
-        setErrorMessage("")
-        setData({
-            fullname: "",
-            role: "",
-            email: "",
-            reason_to_join: ""
-          
-        })
+      
 
-        return  toggleFreeThankYouModal();
+         const res = await fetch("/api/join-free", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+            });
+
+            const responseData = await res.json();
+            if(responseData.success){
+                 setLoading(false)
+                  setErrorMessage("")
+                  setData({
+                    fullname: "",
+                    role: "",
+                    email: "",
+                    reason_to_join: ""
+                    })
+                 toggleFreeThankYouModal();
+            }
+            else{
+                 setLoading(false)
+               setErrorMessage("please check your network and try again")
+            }
+        }
+        catch(err){
+            setLoading(false)
+            setErrorMessage("please check your network and try again")
+        }
     }
 
      const onChangeFormDataFunction = (e) => {
@@ -171,7 +195,7 @@ const JoinCommunity = () => {
             {/* error message */}
             {errorMessage ? <div className="text-red font-[500] p-[10px] inline bg-[#FF7F7F] text-[#FF0000]">{errorMessage}</div> : "" }
             <div className="mt-[48px]">
-             <Button name="Submit" classname="w-full md:w-[141px] bg-[#107269]"/>
+             <Button name={loading ? "sending..." : "Submit"} classname="w-full md:w-[141px] bg-[#107269]"/>
              </div>
              </form>
           </div>
