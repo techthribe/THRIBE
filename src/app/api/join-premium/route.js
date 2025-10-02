@@ -28,7 +28,7 @@ export async function POST(req) {
       to: process.env.ZOHO_USER,
       subject: `New Message from ${fullname}`,
       html: `
-        <h3>JOIN COMMUNITY FOR FREE</h3>
+        <h3>JOIN PREMIUM COMMUNITY</h3>
         <p><strong>Name:</strong> ${fullname}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>role:</strong><br/>${role}</p>
