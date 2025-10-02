@@ -349,7 +349,6 @@
 // export default Collaborate;
 
 "use client";
-
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { useAllContext } from "../context/allcontext";
@@ -360,6 +359,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Collaborate = () => {
   const { toggleLendYourVoiceThribeModal, toggleJoinTournamentModal } = useAllContext();
+
   const intervalRef = useRef(null);
   const jerseyIntervalRef = useRef(null);
 
@@ -384,47 +384,73 @@ const Collaborate = () => {
     "https://res.cloudinary.com/chiaka/image/upload/v1759022875/Property_1_Component_128_so16jm.png",
   ];
 
-  const isMobile = typeof window !== "undefined" && window.innerWidth < 800;
-
-  /** Helper to attach GSAP scroll triggers */
-  const createScrollTrigger = (element, onEnter, onLeave) => {
-    if (!element) return;
-    const trigger = ScrollTrigger.create({
-      trigger: element,
-      start: "center center",
-      end: "bottom bottom",
-      onEnter,
-      onEnterBack: onEnter,
-      onLeave,
-      onLeaveBack: onLeave,
-      markers: false,
-    });
-    return trigger;
-  };
-
-  // ✅ Card 1 scroll trigger
+  // ✅ ScrollTrigger for Card 1
   useEffect(() => {
-    if (!isMobile || !cardRef1.current) return;
-    const trigger = createScrollTrigger(
-      cardRef1.current,
-      () => setHoverLendVoice(true),
-      () => setHoverLendVoice(false)
-    );
-    return () => trigger?.kill();
-  }, [isMobile]);
+    if (!cardRef1.current) return;
 
-  // ✅ Card 2 scroll trigger
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 800;
+
+      ScrollTrigger.getById("card1Trigger")?.kill();
+
+      if (isMobile) {
+        ScrollTrigger.create({
+          id: "card1Trigger",
+          trigger: cardRef1.current,
+          start: "center center",   // Start when middle of element hits middle of viewport
+          end: "bottom bottom",     // End when bottom hits bottom of viewport
+          onEnter: () => setHoverLendVoice(true),
+          onLeave: () => setHoverLendVoice(false),
+          onEnterBack: () => setHoverLendVoice(true),
+          onLeaveBack: () => setHoverLendVoice(false),
+          markers: false,
+        });
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      ScrollTrigger.getById("card1Trigger")?.kill();
+    };
+  }, []);
+
+  // ✅ ScrollTrigger for Card 2
   useEffect(() => {
-    if (!isMobile || !cardRef2.current) return;
-    const trigger = createScrollTrigger(
-      cardRef2.current,
-      () => setHoverJoinTournament(true),
-      () => setHoverJoinTournament(false)
-    );
-    return () => trigger?.kill();
-  }, [isMobile]);
+    if (!cardRef2.current) return;
 
-  // ✅ Jersey image rotation
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 800;
+
+      ScrollTrigger.getById("card2Trigger")?.kill();
+
+      if (isMobile) {
+        ScrollTrigger.create({
+          id: "card2Trigger",
+          trigger: cardRef2.current,
+          start: "center center",
+          end: "bottom bottom",
+          onEnter: () => setHoverJoinTournament(true),
+          onLeave: () => setHoverJoinTournament(false),
+          onEnterBack: () => setHoverJoinTournament(true),
+          onLeaveBack: () => setHoverJoinTournament(false),
+          markers: false,
+        });
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      ScrollTrigger.getById("card2Trigger")?.kill();
+    };
+  }, []);
+
+  // ✅ Jersey hover animation
   useEffect(() => {
     if (hoverJerseyContainer) {
       jerseyIntervalRef.current = setInterval(() => {
@@ -435,10 +461,11 @@ const Collaborate = () => {
       jerseyIntervalRef.current = null;
       setActiveJerseyImage(0);
     }
+
     return () => clearInterval(jerseyIntervalRef.current);
   }, [hoverJerseyContainer]);
 
-  // ✅ Tote bag animation images
+  // ✅ Interval for tote bag animation
   const startInterval = () => {
     if (intervalRef.current) return;
     intervalRef.current = setInterval(() => {
@@ -453,20 +480,18 @@ const Collaborate = () => {
   };
 
   useEffect(() => {
-    return () => {
-      clearInterval(intervalRef.current);
-      clearInterval(jerseyIntervalRef.current);
-    };
+    return () => clearInterval(intervalRef.current);
   }, []);
 
   return (
     <section className="py-[40px] md:py-[120px] w-full">
       <div className="max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0">
+        {/* Heading */}
         <h1 className="text-[16px] tracking-[16%] text-[#354764] uppercase">
           Support, Partner, Collaborate
         </h1>
 
-        <h3 className="font-clash font-[600] my-[16px] text-[#0A1A18] text-[26px] md:text-[46px] leading-[100%] tracking-[3%] flex flex-row flex-wrap md:items-center gap-y-[11px] md:gap-y-0 gap-x-[5px]">
+        <h3 className="font-clash font-[600] my-[16px] text-[#0A1A18] text-[26px] md:text-[46px] leading-[100%] tracking-[3%] flex text-left flex-row flex-wrap md:items-center gap-y-[11px] md:gap-y-0 gap-x-[5px]">
           <span>Let&#39;s Build Something</span>
           <div className="flex gap-x-[12px]">
             <span>Bigger</span>
@@ -486,8 +511,9 @@ const Collaborate = () => {
           partnerships, and startup support.
         </h3>
 
+        {/* Cards */}
         <div className="mt-[40px] md:mt-[80px] flex flex-wrap lg:flex-nowrap justify-between gap-[40px]">
-          {/* ✅ Card 1 */}
+          {/* Card 1 */}
           <div
             ref={cardRef1}
             onMouseEnter={() => setHoverLendVoice(true)}
@@ -512,52 +538,39 @@ const Collaborate = () => {
               />
             </div>
 
-            <div className="mt-[16px] sm:mt-[24px] space-y-[13px] sm:space-y-[24px]">
+            <div className="mt-[16px] sm:mt-[24px] space-y-[13px] sm:space-y-[24px] text-[#0A1A18]">
               <h2
                 className={`font-clash leading-[120%] tracking-[3%] font-[600] ${
-                  hoverLendVoice ? "text-[#fff]" : "text-[#0A1A18]"
+                  hoverLendVoice ? "text-[#fff]" : ""
                 }`}
               >
                 Lend Your Voice
               </h2>
-              <p
-                className={`tracking-[2%] leading-[150%] ${
-                  hoverLendVoice ? "text-[#fff]" : "text-[#0A1A18]"
-                }`}
-              >
+              <p className={`tracking-[2%] leading-[150%] ${hoverLendVoice ? "text-[#fff]" : ""}`}>
                 Add your perspective, share your story, or spark a conversation.
                 Every voice helps shape a tech culture that feels more human.
               </p>
 
               <button
                 className={`${
-                  !hoverLendVoice
-                    ? "bg-[#107269] w-[104px] text-[#fff]"
-                    : "w-[284px] bg-[#fff] text-primaryGreen"
-                } transition-all duration-500 ease-in-out shadow-[4px_4px_0px_0px_#003E39] flex justify-center items-center font-[500] text-[18px] h-[44px] sm:h-[56px] rounded-[100px]`}
+                  !hoverLendVoice ? "bg-[#107269] w-[104px] text-[#fff]" : "w-[284px] bg-[#fff]"
+                } transition-all duration-500 ease-in-out shadow-[4px_4px_0px_0px_#003E39] flex justify-center items-center cursor-pointer font-[500] text-[18px] h-[44px] sm:h-[56px] rounded-[100px]`}
               >
                 {!hoverLendVoice ? (
-                  <Image
-                    src="/icons/arrow-white.png"
-                    width={24}
-                    height={24}
-                    alt="arrow"
-                  />
+                  <Image src="/icons/arrow-white.png" width={24} height={24} alt="arrow" />
                 ) : (
-                  <div className="flex justify-center items-center space-x-[14px]">
-                    <span className="min-w-[180px] transition-all duration-500">
+                  <div className="flex justify-center items-center space-x-[14px] text-primaryGreen">
+                    <div className="min-w-[180px] transition-all duration-500 ease-in-out">
                       Start the Conversation
-                    </span>
-                    <span className="material-symbols-outlined text-[24px]">
-                      arrow_forward
-                    </span>
+                    </div>
+                    <span className="material-symbols-outlined text-[24px]">Arrow_forward</span>
                   </div>
                 )}
               </button>
             </div>
           </div>
 
-          {/* ✅ Card 2 */}
+          {/* Card 2 */}
           <div
             ref={cardRef2}
             onClick={toggleJoinTournamentModal}
@@ -572,7 +585,7 @@ const Collaborate = () => {
             className={`${
               !hoverJoinTournament
                 ? "bg-[#FFF1D0]"
-                : "shadow-[7px_7px_0px_0px_#F97502] bg-[#FFE198]"
+                : "shadow-[7px_7px_0px_0px_#F97502] bg-[#FFE198] text-[#fff]"
             } cursor-pointer rounded-[16px] sm:rounded-[40px] border border-[#E8CD8A] p-[24px] sm:p-[40px] min-h-full sm:min-h-[653px] w-full sm:w-[600px] mx-auto`}
           >
             <div
@@ -582,44 +595,34 @@ const Collaborate = () => {
             >
               <Image
                 src={
-                  !hoverJoinTournament
-                    ? "/img/build3.png"
-                    : animationImages[currentImg]
+                  !hoverJoinTournament ? "/img/build3.png" : animationImages[currentImg]
                 }
                 fill
-                alt="thribe community"
+                alt="build with thribe community"
                 className="transition-all duration-1000 ease-in-out object-center rounded-[20px]"
               />
             </div>
 
             <div className="mt-[16px] sm:mt-[24px] space-y-[13px] sm:space-y-[24px] text-[#0A1A18]">
-              <h2 className="font-clash font-[600] leading-[120%] tracking-[3%]">
-                Rep the Brand
-              </h2>
-              <p className="tracking-[2%] leading-[150%]">
-                Wear the spirit of THRIBE everywhere you go. Grab your merch,
-                rep the tribe, and show the world that thriving is more than
-                work - it's a lifestyle.
+              <h2 className="leading-[120%] tracking-[3%] font-clash font-[600]">Rep the Brand</h2>
+              <p className="tracking-[2%]">
+                Wear the spirit of THRIBE everywhere you go. Grab your merch, rep the tribe, and
+                show the world that thriving is more than work - it's a lifestyle.
               </p>
 
               <button
                 className={`${
                   !hoverJoinTournament ? "w-[104px]" : "w-[284px]"
-                } transition-all duration-500 ease-in-out text-[#fff] shadow-[4px_4px_0px_0px_#003E39] bg-[#107269] flex justify-center items-center font-[500] text-[18px] h-[44px] sm:h-[56px] rounded-[100px]`}
+                } transition-all duration-500 ease-in-out text-[#fff] shadow-[4px_4px_0px_0px_#003E39] bg-[#107269] flex justify-center items-center cursor-pointer font-[500] text-[18px] h-[44px] sm:h-[56px] rounded-[100px]`}
               >
                 {!hoverJoinTournament ? (
-                  <Image
-                    src="/icons/arrow-white.png"
-                    width={24}
-                    height={24}
-                    alt="arrow"
-                  />
+                  <Image src="/icons/arrow-white.png" width={24} height={24} alt="arrow" />
                 ) : (
                   <div className="flex justify-center items-center space-x-[14px]">
-                    <span className="min-w-[40px]">Rep the Brand</span>
-                    <span className="material-symbols-outlined text-[24px]">
-                      arrow_forward
-                    </span>
+                    <div className="min-w-[40px] transition-all duration-500 ease-in-out">
+                      Rep the Brand
+                    </div>
+                    <span className="material-symbols-outlined text-[24px]">Arrow_forward</span>
                   </div>
                 )}
               </button>
@@ -627,52 +630,54 @@ const Collaborate = () => {
           </div>
         </div>
 
-        {/* ✅ Coming Soon */}
+        {/* Coming Soon Section */}
         <div
           onMouseEnter={() => setHoverJerseyContainer(true)}
           onMouseLeave={() => setHoverJerseyContainer(false)}
-          className={`flex flex-col md:flex-row items-center justify-between gap-[24px] mt-[48px] rounded-[40px] p-[24px] sm:p-[40px] w-full transition-colors ${
+          className={`flex flex-col md:flex-row items-center justify-between gap-[24px] mt-[48px] ${
             !hoverJerseyContainer
               ? "border border-[#FCC08B] bg-[#FEF1E6] text-primaryTextColor"
               : "text-[#EBEDF0] border border-t-0 border-l-0 border-b-[6px] border-r-[6px] border-[#F97502] bg-[#693101]"
-          }`}
+          } rounded-[40px] p-[24px] sm:p-[40px] w-full`}
         >
+          {/* Images */}
           <div className="relative w-full sm:w-[520px] h-[213px] sm:h-[373px] rounded-[20px] overflow-hidden">
-            {!hoverJerseyContainer
-              ? (
-                <Image
-                  src="https://res.cloudinary.com/chiaka/image/upload/v1758798676/tournament_sdfcge.png"
-                  fill
-                  alt="tournament"
-                  className="object-cover"
+            {!hoverJerseyContainer ? (
+              <Image
+                src="https://res.cloudinary.com/chiaka/image/upload/v1758798676/tournament_sdfcge.png"
+                fill
+                alt="tech community in Nigeria"
+                className="object-cover"
+              />
+            ) : (
+              jerseyImages.map((src, i) => (
+                <div
+                  key={i}
+                  className={`absolute inset-0 bg-center bg-cover transition-opacity duration-1000 ease-in-out rounded-[20px] ${
+                    activeJerseyImage === i ? "opacity-100" : "opacity-0"
+                  }`}
+                  style={{ backgroundImage: `url(${src})` }}
                 />
-              ) : (
-                jerseyImages.map((src, i) => (
-                  <div
-                    key={i}
-                    className={`absolute inset-0 bg-center bg-cover transition-opacity duration-1000 ease-in-out rounded-[20px] ${
-                      activeJerseyImage === i ? "opacity-100" : "opacity-0"
-                    }`}
-                    style={{ backgroundImage: `url(${src})` }}
-                  />
-                ))
-              )}
+              ))
+            )}
           </div>
 
+          {/* Text */}
           <div className="w-full md:w-[620px] space-y-[14px] sm:space-y-[24px]">
             <h1 className="font-[600] font-clash leading-[120%] tracking-[3%]">
               Join the Tournament
             </h1>
-            <p>
-              Step off the screen and onto the field. Play, cheer, or rep your
-              team/company because thriving means balance, fun, and community
-              spirit.
-            </p>
-            <p className="hidden md:block">
-              This isn&#39;t just a game, it&#39;s where techies swap keyboards
-              for jerseys, competition meets collaboration, and friendships are
-              built beyond the screen.
-            </p>
+            <div>
+              Step off the screen and onto the field. Play, cheer, or rep your team/company
+              because thriving means balance, fun, and community spirit.
+              <p className="hidden md:block">
+                This isn&#39;t just a game, it&#39;s where techies swap keyboards for jerseys,
+                competition meets collaboration, and friendships are built beyond the screen.
+                Whether you&#39;re scoring goals, cheering from the sidelines, or rocking your
+                team colors, you&#39;re part of something bigger. Get ready to connect, sweat,
+                laugh, and thrive together.
+              </p>
+            </div>
 
             <button
               className={`cursor-pointer rounded-[100px] w-[174px] sm:w-[190px] h-[47px] sm:h-[56px] ${
@@ -681,7 +686,7 @@ const Collaborate = () => {
                   : "border border-[#FFFFFF] text-[#FFFFFF]"
               } px-[29px] sm:px-[40px] font-[500] text-[18px] leading-[150%] tracking-[3%]`}
             >
-              Coming soon
+              <span>Coming soon</span>
             </button>
           </div>
         </div>
@@ -691,5 +696,6 @@ const Collaborate = () => {
 };
 
 export default Collaborate;
+
 
 
