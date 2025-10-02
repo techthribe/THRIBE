@@ -42,7 +42,7 @@ export async function POST(req) {
       { status: 200 }
     );
   } catch (error) {
-    console.error("Zoho Email Error:", error);
+    // console.error("Zoho Email Error:", error);
     return new Response(
       JSON.stringify({ success: false, error: "Failed to send email" }),
       { status: 500 }
