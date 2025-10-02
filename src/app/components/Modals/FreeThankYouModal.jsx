@@ -40,7 +40,7 @@ console.log(freeThankYouModal)
         </p>
 
          <div className="relative w-full md:w-[402px] h-[157px] mx-auto my-[36px]">
-            <Image src="/icons/free_thank_you.gif" fill alt="tech community" className="cursor-pointer object-fill" />
+            <Image src="https://res.cloudinary.com/chiaka/image/upload/v1759416365/free_thank_you_eicdpk.gif" fill alt="tech community" className="cursor-pointer object-fill" />
         </div>
 
         <Link href="https://chat.whatsapp.com/IYB6OqDKXLOGmF8DTuR2bg" target="_blank" onClick={toggleFreeThankYouModal}>
