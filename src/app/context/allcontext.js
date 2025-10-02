@@ -10,7 +10,7 @@ export const AllContextProvider = ({children}) => {
      const [partnerWithUs, setPartnerWithUs] = useState(false)
      const [premiumMemberModal, setPremiumMemberModal] = useState(false)
      const [premiumThankYouModal, setPremiumThankYouModal] = useState(false)
-     const [freeThankYouModal, setFreeThankYouModal] = useState(true)
+     const [freeThankYouModal, setFreeThankYouModal] = useState(false)
      const [partnerThankYouModal, setPartnerThankYouModal] = useState(false)
       const [lendVoiceThankYouModal, setLendVoiceThankYouModal] = useState(false)
      const [lendYourVoiceMobileSideBar, setLendYourVoiceMobileSideBar] = useState(false);
