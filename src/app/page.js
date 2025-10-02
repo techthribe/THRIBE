@@ -97,7 +97,7 @@ export default function Home() {
    <div className="overflow-x-hidden">
     <NavigationBar />
     <MobileNav />
-    <section className="text-[#354764] tracking-[1%] leading-[150%] max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 pt-[80px] md:pt-[105px] text-center">
+    <section className="text-[#354764] tracking-[1%] leading-[150%] max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 pt-[20px] md:pt-[105px] text-center">
       <div className="space-y-[16px] tracking-[1%] ">
       <h2 className="text-[16px] md:text-[18px] font-[400] ">Belong<span className="text-[#F97502]">.</span> Share<span className="text-[#F97502]">.</span> Thrive!</h2>
       
@@ -368,9 +368,32 @@ export default function Home() {
             {/* for mobile view */}
               <ul className="mt-[16px] flex justify-between text-[16px] leading-[150%] tracking-[1%] text-secondaryColor block md:hidden">
                 <li onClick={() => setSelectedPrice("monthly")} className={`px-[8px] py-[4px] ${selectedPrice === 'monthly' ? 'text-primaryGreen font-[600] border-[2px] border-b-primaryGreen border-x-0 border-t-0' : ''} `}>Monthly</li>
-                <li onClick={() => setSelectedPrice("quaterly")} className={`px-[8px] py-[4px] ${selectedPrice === 'quaterly' ? 'text-primaryGreen font-[600] border-[2px] border-b-primaryGreen border-x-0 border-t-0' : ''} `}>Quarterly (-15%)</li>
-                <li onClick={() => setSelectedPrice("yearly")} className={`px-[8px] py-[4px] ${selectedPrice === 'yearly' ? 'text-primaryGreen font-[600] border-[2px] border-b-primaryGreen border-x-0 border-t-0' : ''} `}>Yearly (-20%)</li>
+                <li onClick={() => setSelectedPrice("quaterly")} className={`px-[8px] py-[4px] ${selectedPrice === 'quaterly' ? 'text-primaryGreen font-[600] border-[2px] border-b-primaryGreen border-x-0 border-t-0' : ''} `}>Quarterly (-5%)</li>
+                <li onClick={() => setSelectedPrice("yearly")} className={`px-[8px] py-[4px] ${selectedPrice === 'yearly' ? 'text-primaryGreen font-[600] border-[2px] border-b-primaryGreen border-x-0 border-t-0' : ''} `}>Yearly (-15%)</li>
               </ul>
+          </div>
+
+           <div className="relative bg-[#E8F6F4] p-[24px] sm:p-[60px] rounded-[20px] md:rounded-[40px] w-full md:w-[480px] min-h-[485px] sm:min-h-[650px]">
+            <div className="space-y-[24px] md:space-y-[40px]">
+              <h2 className="font-[600] leading-[120%] tracking-[3%] text-[#0A1A18]">Premium Membership</h2>
+              <h3 className="text-[26px] sm:text-[32px] font-clash font-[600] text-[#107269] leading-[100%] tracking-[3%]">
+                {Object.keys(prices).includes(selectedPrice) && prices[selectedPrice]}
+                </h3>
+              <h4 className="leading-[100%] tracking-[2%] text-secondaryColor">The premium  plan includes:</h4>
+
+              <ul className="space-y-[16px] md:mt-[24px]">
+                <PricingList title="Everything in free plan" />
+                <PricingList title="Monthly Masterclasses" />
+                <PricingList title="Discounts on external paid events" />
+                <PricingList title="Legal employment contract reviews and advise." />
+                <PricingList title="Yearly merch & rewards" />
+              </ul>
+            </div>
+
+            {/* <div className="absolute bottom-[24px] sm:bottom-[60px] left-[24px] sm:left-[60px] w-[calc(100%-48px)] sm:w-[calc(100%-120px)]"> */}
+             <div className="mt-[40px] w-full" onClick={togglePremiumMemberModal}>
+               <Button  name="Be a Premium Member" classname="bg-primaryColor w-full shadow-[4px_4px_0px_0px_#003E39]" />
+            </div>
           </div>
 
           <div className="relative bg-[#FEF1E6] p-[24px] sm:p-[60px] rounded-[20px] md:rounded-[40px] w-full md:w-[480px] min-h-[485px] sm:min-h-[650px]">
@@ -395,28 +418,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="relative bg-[#E8F6F4] p-[24px] sm:p-[60px] rounded-[20px] md:rounded-[40px] w-full md:w-[480px] min-h-[485px] sm:min-h-[650px]">
-            <div className="space-y-[24px] md:space-y-[40px]">
-              <h2 className="font-[600] leading-[120%] tracking-[3%] text-[#0A1A18]">Premium Membership</h2>
-              <h3 className="text-[26px] sm:text-[32px] font-clash font-[600] text-[#107269] leading-[100%] tracking-[3%]">
-                {Object.keys(prices).includes(selectedPrice) && prices[selectedPrice]}
-                </h3>
-              <h4 className="leading-[100%] tracking-[2%] text-secondaryColor">The premium  plan includes:</h4>
-
-              <ul className="space-y-[16px] md:mt-[24px]">
-                <PricingList title="Everything in free plan" />
-                <PricingList title="Monthly Masterclasses" />
-                <PricingList title="Discounts on external paid events" />
-                <PricingList title="Legal employment contract reviews and advise." />
-                <PricingList title="Yearly merch & rewards" />
-              </ul>
-            </div>
-
-            {/* <div className="absolute bottom-[24px] sm:bottom-[60px] left-[24px] sm:left-[60px] w-[calc(100%-48px)] sm:w-[calc(100%-120px)]"> */}
-             <div className="mt-[40px] w-full" onClick={togglePremiumMemberModal}>
-               <Button  name="Be a Premium Member" classname="bg-primaryColor w-full shadow-[4px_4px_0px_0px_#003E39]" />
-            </div>
-          </div>
+         
 
         </div>
       </div> 
