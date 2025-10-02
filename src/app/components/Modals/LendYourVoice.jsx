@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Modal({ }) {
     const {lendYourVoiceThribeModal, togglePartnerThankYouModal, toggleLendYourVoiceMobileSideBar, toggleLendYourVoiceThribeModal, togglePartnerWithUsModal, toggleLendVoiceThankYouModal} = useAllContext();
-
+    const [loading, setLoading] = useState(false)
     const [errorMessage, setErrorMessage] = useState("")
     const [formDatas, setFormDatas] = useState({
         title: "",
@@ -13,24 +13,48 @@ export default function Modal({ }) {
         anonymous: ""
     })
 
-     const submitLendVoiceForm = (e) => {
+     const submitLendVoiceForm = async (e) => {
+      try{
+        setLoading(true)
         e.preventDefault();
         console.log("what is happening")
         const {title, story, anonymous} = formDatas;
 
         if(!title || !story){
+          setLoading(false)
             return setErrorMessage("please, fill all required fields")
         }
 
-        setErrorMessage("")
-        setFormDatas({
-             title: "",
-            story: "",
-            anonymous: ""
-        })
+      const res = await fetch("/api/lendVoice", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formDatas),
+        });
 
-        return toggleLendVoiceThankYouModal();
+        const responseData = await res.json();
+        
+        if(responseData.success){
+              setLoading(false)
+              setErrorMessage("")
+              setFormDatas({
+                  title: "",
+                  story: "",
+                  anonymous: ""
+              })
+          toggleLendVoiceThankYouModal();
+        }
+         else{
+              setLoading(false)
+            setErrorMessage("something went wrong, try again!")
+        } 
+      }
+       catch(err){
+        {
+              setLoading(false)
+             setErrorMessage("something went wrong, try again!")
+        }
     }
+  }
 
     const onChangeFormDataFunctions = (e) => {
         setErrorMessage("")
@@ -116,8 +140,8 @@ export default function Modal({ }) {
                     {/* error message */}
                     {errorMessage ? <div className="mt-[20px] text-red font-[500] p-[10px] inline bg-[#FF7F7F] text-[#FF0000]">{errorMessage}</div> : ""}
                 
-                    <button type="submit" className={`flex justify-center items-center gap-x-[10px] bg-primaryColor mt-[20px] cursor-pointer shadow-[4px_4px_0px_0px_#003E39] font-[500] text-[18px] text-[#fff] h-[47px] md:h-[56px] w-[98%] sm:w-full rounded-[100px]`}>
-                        <span>Proceed</span>
+                    <button disabled={loading} type="submit" className={`flex justify-center items-center gap-x-[10px] bg-primaryColor mt-[20px] cursor-pointer shadow-[4px_4px_0px_0px_#003E39] font-[500] text-[18px] text-[#fff] h-[47px] md:h-[56px] w-[98%] sm:w-full rounded-[100px]`}>
+                        <span>{loading ? "Proceeding..." : "Proceed"}</span>
                           <Image src="/icons/arrow-white.png" width={24} height={24} alt="close thribe modal" className=""/>
                     </button>
             </form>
