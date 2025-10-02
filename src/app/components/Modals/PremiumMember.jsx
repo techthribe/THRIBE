@@ -79,6 +79,7 @@ export default function Modal({ }) {
             } 
         }
         catch(err){
+            setLoading(false)
              setErrorMessage("something went wrong, try again!")
         }
     }

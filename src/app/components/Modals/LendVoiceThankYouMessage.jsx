@@ -29,14 +29,14 @@ export default function Modal({ }) {
       ></div>
 
       {/* modal content */}
-      <div className="border border-[8px] border-b-[#F97502] border-x-0 border-t-0 relative bg-white rounded-lg shadow-lg z-10 w-[375px] md:w-[624px] min-h-[473px] rounded-[16px] p-[40px] overflow-y-auto mt-[40px]">
+      <div className="border border-[8px] border-b-[#F97502] border-x-0 border-t-0 relative bg-white rounded-lg shadow-lg z-10 w-[96%] md:w-[624px] min-h-[473px] rounded-[16px] p-[40px] overflow-y-auto mt-[40px]">
         <div className="flex justify-between items-center">
             <h1 className="text-[20px] sm:text-[32px] leading-[100%] tracking-[1%] text-primaryTextColor font-[600] font-clash">Thank You!</h1>
             <Image src="/icons/close-square.png" width={24} height={24} alt="close thribe modal" className="cursor-pointer" onClick={toggleLendVoiceThankYouModal} />
         </div>
 
         <p className="leading-[150%] tracking-[1%] mt-[16px]">
-        We have received your message and we will get back to you soon.
+        We have received your story. Thanks for sharing with us.
         </p>
 
         <div className="relative w-[150px] h-[150px] mx-auto my-[36px]">
