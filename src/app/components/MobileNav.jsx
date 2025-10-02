@@ -87,7 +87,7 @@ const MobileNavigationBar = () => {
                 </div>
 
 
-                <li> <Link href="#" className={pathname==="/blog" ? "text-[#087C72]" : ""}>Shop</Link></li>
+                <li> <Link href="https://paystack.shop/tech-thribe" className={pathname==="/shop" ? "text-[#087C72]" : ""}>Shop</Link></li>
                 <Button name="Join Us" classname="w-[141px] h-[56px] bg-[#107269]"/>
             </ul>
     

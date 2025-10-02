@@ -335,8 +335,8 @@ useEffect(() => {
               </p>
             </div>
 
-            <button className={`cursor-pointer rounded-[100px] w-[164px] sm:w-[190px] h-[47px] sm:h-[56px] ${!hoverJerseyContainer ? "border border-[#F97502] text-[#F97502]" : "border border-[#FFFFFF] text-[#FFFFFF]"}  px-[29px] sm:px-[40px] font-[500] text-[18px]  leading-[150%] tracking-[3%]`}>
-              Coming soon
+            <button className={`cursor-pointer rounded-[100px] w-[174px] sm:w-[190px] h-[47px] sm:h-[56px] ${!hoverJerseyContainer ? "border border-[#F97502] text-[#F97502]" : "border border-[#FFFFFF] text-[#FFFFFF]"}  px-[29px] sm:px-[40px] font-[500] text-[18px]  leading-[150%] tracking-[3%]`}>
+              <span>Coming soon</span>
             </button>
           </div>
 

@@ -86,7 +86,7 @@ const Testimaonial = () => {
         </div>
 
           {/* this is for mobile */}
-          <div className="block md:hidden  bg-[#fff] w-full flex justify-center space-x-[40px]">
+          <div className="block md:hidden  bg-[#fff] w-full flex justify-center space-x-[70px]">
             <div 
              onClick={PreviousReviewFunction}
             className="w-[40px] h-[40px] rounded-full bg-[#F8F8F8] flex justify-center items-center">
