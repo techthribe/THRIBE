@@ -26,9 +26,9 @@ export async function POST(req) {
     const mailOptions = {
       from: `hello@techthribe.com`,
       to: process.env.ZOHO_USER,
-      subject: `New Message from ${fullname}`,
+      subject: `New Message from ${companyName}`,
       html: `
-        <h3>JOIN PREMIUM COMMUNITY</h3>
+        <h3>PARTNER WITH THRIBE COMMUNITY</h3>
         <p><strong>Name:</strong> ${fullname}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>role:</strong><br/>${role}</p>
