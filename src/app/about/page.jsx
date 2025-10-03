@@ -10,9 +10,11 @@ import JoinCommunity from "../components/joinCommunity";
 import Footer from "../components/Footer";
 import gsap from "gsap";
 import Link from "next/link";
+import { useAllContext } from "../context/allcontext";
 
 
 const About = () => {
+    const {togglePartnerWithUsModal} = useAllContext();
     const contentRef = useRef(null);
     const tweenRef = useRef(null);
 
@@ -134,29 +136,41 @@ const About = () => {
                 <Image src="/img/relationship.png" width={56} height={56} alt="thribe community" className="object-fit shrink-0" />
                 </h2>
 
-                <button className="cursor-pointer flex space-x-[24px] w-[260px] h-[56px] rounded-[100px] border border-[#107269] text-[#107269] items-center justify-center">
+                <button onClick={togglePartnerWithUsModal} className="cursor-pointer flex space-x-[24px] w-[260px] h-[56px] rounded-[100px] border border-[#107269] text-[#107269] items-center justify-center">
                     <span>Partner with Us</span>
                     <Image src="/icons/line-arrow-right.png" width={24} height={24} alt="tech community in Nigeria" className="object-fit shrink-0" />
                 </button>
                 </div>
                 
-                <div className="flex justify-between w-[3725px] overflow-x-hidden" ref={contentRef} >
+                    <div className="flex items-end justify-between w-[3725px] overflow-x-hidden" ref={contentRef} >
                     <Image src="/img/partner3.png" width={207} height={47} alt="tech community in Nigeria" className="object-fit shrink-0" /> 
-                    <Image src="/img/partner5.png" width={205} height={47} alt="tech community in Nigeria" className="object-fit shrink-0" /> 
+                    <div className="relative w-[162px] h-[37px] object-fit shrink-0">
+                    <Image src="/img/partner5.png" fill alt="tech community in Nigeria" className="object-fit" /> 
+                    </div>
                     <Image src="/img/partner2.png" width={74} height={46} alt="tech community in Nigeria" className="object-fit shrink-0" /> 
                     <Image src="/img/partner4.png" width={151} height={48} alt="tech community in Nigeria" className="object-fit shrink-0" />
+                     <Image src="/img/partner6.png" width={133} height={48} alt="tech community in Nigeria" className="object-fit shrink-0" />
                     <Image src="/img/partner3.png" width={207} height={47} alt="tech community in Nigeria" className="object-fit shrink-0" /> 
-                     <Image src="/img/partner5.png" width={205} height={47} alt="tech community in Nigeria" className="object-fit shrink-0" /> 
+                    <div className="relative w-[162px] h-[37px] object-fit shrink-0">
+                    <Image src="/img/partner5.png" fill alt="tech community in Nigeria" className="object-fit" /> 
+                    </div> 
                     <Image src="/img/partner2.png" width={74} height={46} alt="tech community in Nigeria" className="object-fit shrink-0" /> 
                     <Image src="/img/partner4.png" width={151} height={48} alt="tech community in Nigeria" className="object-fit shrink-0" />
                      <Image src="/img/partner3.png" width={207} height={47} alt="tech community in Nigeria" className="object-fit shrink-0" /> 
-                     <Image src="/img/partner5.png" width={205} height={47} alt="tech community in Nigeria" className="object-fit shrink-0" /> 
+                      <Image src="/img/partner6.png" width={133} height={48} alt="tech community in Nigeria" className="object-fit shrink-0" />
+                    <div className="relative w-[162px] h-[37px] object-fit shrink-0">
+                    <Image src="/img/partner5.png" fill alt="tech community in Nigeria" className="object-fit" /> 
+                    </div>
                     <Image src="/img/partner2.png" width={74} height={46} alt="tech community in Nigeria" className="object-fit shrink-0" /> 
                     <Image src="/img/partner4.png" width={151} height={48} alt="tech community in Nigeria" className="object-fit shrink-0" />
                     <Image src="/img/partner3.png" width={207} height={47} alt="tech community in Nigeria" className="object-fit shrink-0" /> 
-                     <Image src="/img/partner5.png" width={205} height={47} alt="tech community in Nigeria" className="object-fit shrink-0" /> 
+                    <div className="relative w-[162px] h-[37px] object-fit shrink-0">
+                    <Image src="/img/partner5.png" fill alt="tech community in Nigeria" className="object-fit" /> 
+                    </div>
+                      <Image src="/img/partner6.png" width={133} height={48} alt="tech community in Nigeria" className="object-fit shrink-0" />
                     <Image src="/img/partner2.png" width={74} height={46} alt="tech community in Nigeria" className="object-fit shrink-0" /> 
                     <Image src="/img/partner4.png" width={151} height={48} alt="tech community in Nigeria" className="object-fit shrink-0" />
+
 
                 </div>
             </section>
