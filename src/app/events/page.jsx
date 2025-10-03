@@ -45,13 +45,13 @@ const Events = () => {
                 <Event_banner
                 img="/img/event-banner1.png"
                 type="Webinar"
-                description="Ever wondered why some products just click and others frustrate you? The secret is simple: they were (or weren&#39;t) made for humans."
+                description="From freelancers to founders, salaries to side gigs - tax changes in 2025 will affect us all. Let&#39;s break it down so you know what&#39;s changing, what&#39;s at stake, and how to prepare."
                 background="bg-[#E8F6F4]" 
                 btnClassname="bg-[#107269]" 
                  btnText="Attend Event"
-                name="Khadijah Kuku" 
-                role="UX Designer" 
-                date="Sept 19" 
+                name="Yunus Omotosho" 
+                role="Tax Consultant" 
+                date="Oct 5" 
                 time="2025 | 5pm WAT" 
                 venue="Google meet"
                 />
