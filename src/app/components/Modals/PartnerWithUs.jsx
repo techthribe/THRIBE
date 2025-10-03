@@ -4,9 +4,9 @@ import { useAllContext } from "../../context/allcontext";
 import Image from "next/image";
 
 export default function Modal({ }) {
-    const { partnerWithUs, togglePartnerMobileSideBar, togglePartnerThankYouModal, toggleLendYourVoiceThribeModal, togglePartnerWithUsModal} = useAllContext();
-    const [opponent, setOpponent] = useState('play a particular opponent')
-    const [errorMessage, setErrorMessage] = useState("")
+  const { partnerWithUs, togglePartnerMobileSideBar, togglePartnerThankYouModal, toggleLendYourVoiceThribeModal, togglePartnerWithUsModal} = useAllContext();
+  const [opponent, setOpponent] = useState('play a particular opponent')
+  const [errorMessage, setErrorMessage] = useState("")
      const [loading, setLoading] = useState(false)
 
      const [formDatas, setFormDatas] = useState({
