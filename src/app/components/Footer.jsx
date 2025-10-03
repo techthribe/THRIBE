@@ -162,8 +162,11 @@ const Footer = () => {
             <div className="flex w-full">
                 <div 
                     onClick={scrollToTop}
-                    className="cursor-pointer w-[76px] h-[76px] rounded-full bg-[#fff] shadow-[0px_4px_40px_0px_#00000014] ml-auto flex items-center justify-center">
-                      <Image src="/icons/arrow-up.png" width={32} height={32} alt="thribe community banner" className="obejct-cover" />
+                    className="group cursor-pointer w-[76px] h-[76px] rounded-full bg-[#fff] hover:bg-[#107269] shadow-[0px_4px_40px_0px_#00000014] ml-auto flex items-center justify-center">
+                      {/* <Image src="/icons/arrow-up.png" width={32} height={32} alt="thribe community banner" className="obejct-cover" /> */}
+                      <span className="material-symbols-outlined text-[32px] text-[#107269] group-hover:text-[#fff]">
+                        arrow_upward_alt
+                        </span>
                 </div>
 
             </div>
