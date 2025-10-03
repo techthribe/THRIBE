@@ -168,14 +168,14 @@ export default function Home() {
       {/* image collage for desktop view ends here */}
     </section>
 
-    <div ref={mobileContentRef} className=" w-[1800px] overflow-hidden flex md:hidden ">
+    <div ref={mobileContentRef} className=" w-[2250px] overflow-hidden flex md:hidden ">
       <div className="slide relative w-[750px] h-[62px] mt-[40px]">
         <Image src="/img/carousel_gif_mobile.gif" fill alt="thribe community" className="" unoptimized />
       </div>
       <div className="slide relative w-[750px] h-[62px] mt-[40px]">
         <Image src="/img/carousel_gif_mobile.gif" fill alt="thribe community" className="" unoptimized />
       </div>
-      <div className="slide relative w-[7500px] h-[62px] mt-[40px]">
+      <div className="slide relative w-[750px] h-[62px] mt-[40px]">
         <Image src="/img/carousel_gif_mobile.gif" fill alt="thribe community" className="" unoptimized />
       </div>
     </div>
