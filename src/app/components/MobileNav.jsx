@@ -42,7 +42,7 @@ const MobileNavigationBar = () => {
 
         </nav>
 
-            <ul className="text-[16px] text-[#354764] tracking-[2%] space-y-[40px] py-[40px] w-full ">
+            <ul className="text-[15px] text-[#354764] tracking-[2%] space-y-[40px] py-[40px] w-full ">
                 <li><Link onClick={toggleMobileNavbarFunction} href="/" className={pathname==="/" ? "text-[#087C72] font-[600]" : ""}>Home</Link></li>
                 <li> <Link onClick={toggleMobileNavbarFunction} href="/about" className={pathname==="/about" ? "text-[#087C72] font-[600]" : ""}>About</Link></li>
 
@@ -88,7 +88,9 @@ const MobileNavigationBar = () => {
 
 
                 <li> <Link href="https://paystack.shop/tech-thribe" className={pathname==="/shop" ? "text-[#087C72]" : ""}>Shop</Link></li>
+                <Link href="/#price" onClick={toggleMobileNavbarFunction}>
                 <Button name="Join Us" classname="w-[141px] h-[56px] bg-[#107269]"/>
+                </Link>
             </ul>
     
         <div className="absolute bg-[#E36A02] w-full h-[6px] bottom-0 left-0"></div> 
