@@ -271,10 +271,7 @@ export default function Home() {
   <div className="relative w-[343px] md:w-[711px] h-[173px] md:h-[360px] rounded-[16px] overflow-hidden">
     <video
       className="absolute inset-0 w-full h-full object-cover"
-      autoPlay 
-      muted 
-      loop 
-      playsInline
+      controls
     >
      
       <source src=" https://res.cloudinary.com/chiaka/video/upload/f_auto,q_auto/v1759511250/0929_wiyzum.mov" type="video/mp4" />
