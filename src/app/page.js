@@ -250,7 +250,7 @@ export default function Home() {
           <h1 className="font-clash text-[26px] md:text-[46px] leading-[100%] font-[600] tracking-[3%]">Why <span className="text-[#E36A02]">THR!BE</span> Exists</h1>
         </div>
 
-        <div className="flex flex-col md:flex-row mt-[24px] md:mt-[48px] justify-between md:gap-x-[24px] gap-y-[24px] md:gap-y-0 items-center">
+        {/* <div className="flex flex-col md:flex-row mt-[24px] md:mt-[48px] justify-between md:gap-x-[24px] gap-y-[24px] md:gap-y-0 items-center">
          <div className="relative w-[343px] md:w-[711px] h-[173px] md:h-[360px]">
           <Image src="/img/vid.png" fill alt="thribe community" className="object-center" />
         </div>
@@ -264,7 +264,40 @@ export default function Home() {
           <Button name="Join THR!BE" classname="bg-[#B15301] w-[144px] md:w-[184px] h-[47px] md:h-[56px] shadow-[4px_4px_0px_0px_#693101] hover:shadow-[4px_4px_0px_0px_#FBA355]" />
           </Link>
         </div>
-        </div>
+        </div> */}
+
+        <div className="flex flex-col md:flex-row mt-[24px] md:mt-[48px] justify-between md:gap-x-[24px] gap-y-[24px] md:gap-y-0 items-center">
+  {/* Video Section */}
+  <div className="relative w-[343px] md:w-[711px] h-[173px] md:h-[360px] rounded-[16px] overflow-hidden">
+    <video
+      className="absolute inset-0 w-full h-full object-cover"
+      autoPlay 
+      muted 
+      loop 
+      playsInline
+    >
+     
+      <source src=" https://res.cloudinary.com/chiaka/video/upload/f_auto,q_auto/v1759511250/0929_wiyzum.mov" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  {/* Text Section */}
+  <div className="w-full md:w-[513px] leading-[150%] tracking-[2%] text-[#52514D]">
+    <p className="mb-[24px]">
+      Working in tech can feel cold, competitive, and isolating — we&#39;re here to change that. THR!BE was built for humans first, 
+      not hustle culture. Tech isn&#39;t just about work — it&#39;s about people. At THR!BE, you&#39;ll find a tribe that gets it. 
+      We mix learning with laughter, growth with community, and celebration with impact. We laugh, play, grow, and thrive — together.
+    </p>
+    <Link href="/#price">
+      <Button
+        name="Join THR!BE"
+        classname="bg-[#B15301] w-[144px] md:w-[184px] h-[47px] md:h-[56px] shadow-[4px_4px_0px_0px_#693101] hover:shadow-[4px_4px_0px_0px_#FBA355]"
+      />
+    </Link>
+  </div>
+</div>
+
       </div>
     </section>
 

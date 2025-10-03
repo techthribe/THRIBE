@@ -488,13 +488,13 @@ const Collaborate = () => {
       <div className="max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0">
         {/* Heading */}
         <h1 className="text-[16px] tracking-[16%] text-[#354764] uppercase">
-          Support, Partner, Collaborate
+          SUPPORT, PARTNER, COLLABORATE
         </h1>
 
         <h3 className="font-clash font-[600] my-[16px] text-[#0A1A18] text-[26px] md:text-[46px] leading-[100%] tracking-[3%] flex text-left flex-row flex-wrap md:items-center gap-y-[11px] md:gap-y-0 gap-x-[5px]">
           <span>Let&#39;s Build Something</span>
           <div className="flex gap-x-[12px]">
-            <span>Bigger</span>
+            <span>Together</span>
             <div className="relative w-[32px] md:w-[46px] h-[32px] md:h-[46px] rounded-full shrink-0">
               <Image
                 src="/img/build.png"
@@ -507,8 +507,7 @@ const Collaborate = () => {
         </h3>
 
         <h3 className="tracking-[2%] text-secondaryColor mt-[8px]">
-          Partner With Us: We&#39;re open to brand collaboration, speaker
-          partnerships, and startup support.
+         Every voice adds to the culture we&#39;re shaping. Lend Your Voice and rep the brand
         </h3>
 
         {/* Cards */}
