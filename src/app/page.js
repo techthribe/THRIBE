@@ -25,7 +25,7 @@ export default function Home() {
    const mobileContentRef = useRef(null);
     const tweenRef = useRef(null);
 
-    const prices = {monthly: "N10,000/Month", quaterly: "N25,500/Quater", yearly: "N96,000/Year"}
+    const prices = {monthly: "N10,000/Month", quaterly: "N28,500/Quater", yearly: "N102,000/Year"}
     const [selectedPrice, setSelectedPrice] = useState('yearly')
 
 
@@ -280,7 +280,7 @@ export default function Home() {
             </div>
           
           </h2>
-          <h3 className="tracking-[2%]">There&#39;s never a dull moment in here. We keep it real. We keep it moving. We learn. We laugh. We launch. Repeat.</h3>
+          <h3 className="tracking-[2%]">There&#39;s never a dull moment in here. We keep it real. We keep it moving. We learn. We laugh. We have fun. </h3>
         </div>
 
         <div className="mt-[40] md:mt-[80px] flex flex-row flex-wrap px-0 md:px-[30px] justify-between gap-y-[40px] md:gap-y-[120px]">

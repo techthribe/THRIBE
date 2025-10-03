@@ -9,7 +9,7 @@ export default function Modal({ }) {
     const [errorMessage, setErrorMessage] = useState("")
     const [formDatas, setFormDatas] = useState({
         title: "",
-        story: "",
+        story: "Type or paste your story here",
         anonymous: ""
     })
 
@@ -115,7 +115,7 @@ export default function Modal({ }) {
                      name="title"
                     value={formDatas.title}
                     onChange={onChangeFormDataFunctions}
-                    type="text" placeholder="What&#39;s your name" className="outline-none placeholder-[#98A1B0] w-full h-[62px] rounded-[16px] px-[24px] border border-[#C2C7D0] text-[#98A1B0]" />
+                    type="text" placeholder="What&#39;s the title of your story?" className="outline-none placeholder-[#98A1B0] w-full h-[62px] rounded-[16px] px-[24px] border border-[#C2C7D0] text-[#98A1B0]" />
                 </div>
                 <div className="sapce-y-[4px]">
                     <label>Tell your story?<span className="text-[#FF0000]">*</span></label>

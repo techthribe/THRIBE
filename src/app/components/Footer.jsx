@@ -110,7 +110,7 @@ const Footer = () => {
                     <div className="mt-[38px] text-[#354764] tracking-[2%] flex flex-col gap-y-[18px]">
                         
                         <span>
-                        <Link href="#" className="navLinkFooter md:p-[10px] cursor-pointer">Shop</Link>
+                        <Link href="https://paystack.shop/tech-thribe" className="navLinkFooter md:p-[10px] cursor-pointer">Shop</Link>
                          </span>
                         <span className="md:p-[10px] cursor-pointer" onClick={toggleLendYourVoiceThribeModal} >
                         Lend Your Voice

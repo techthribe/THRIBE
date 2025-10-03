@@ -354,6 +354,7 @@ import Image from "next/image";
 import { useAllContext } from "../context/allcontext";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -374,7 +375,6 @@ const Collaborate = () => {
 
   const animationImages = [
     "/img/tote1.png",
-    "/img/tote2.png",
     "https://res.cloudinary.com/chiaka/image/upload/v1759018554/Property_1_Stickers_Packaging_ffaa1y.png",
     "https://res.cloudinary.com/chiaka/image/upload/v1759018553/Property_1_Component_64_yq1t1a.png",
   ];
@@ -571,9 +571,9 @@ const Collaborate = () => {
           </div>
 
           {/* Card 2 */}
+          <Link href="https://paystack.shop/tech-thribe">
           <div
             ref={cardRef2}
-            onClick={toggleJoinTournamentModal}
             onMouseEnter={() => {
               setHoverJoinTournament(true);
               startInterval();
@@ -628,6 +628,7 @@ const Collaborate = () => {
               </button>
             </div>
           </div>
+          </Link>
         </div>
 
         {/* Coming Soon Section */}
