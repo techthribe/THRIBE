@@ -10,14 +10,15 @@ const TeamCard = ({classname, classnameHover, hoverText, name, nickname, role, i
 
     return(
         <div
-        onMouseEnter={() => setHoverCard((prev) => !prev)} 
-        onMouseLeave={() => setHoverCard((prev) => !prev)}
-        className="w-full md:w-[48%] lg:w-[30%] xl:w-[280px] h-[420px]"
+        onMouseEnter={() => setHoverCard(true)} 
+        onMouseLeave={() => setHoverCard(false)}
+        onClick={() => setHoverCard((prev) => !prev)} 
+        className="w-full md:w-[48%] lg:w-[30%] xl:w-[280px] h-[354px] sm:h-[420px]"
         >
             
         <div
             className={`${hoverCard ? "hidden" : "block" } ${classname} text-center text-[#0A1A18] rounded-[20px] p-[40px] space-y-[24px] `}>
-            <div className="relative w-[200px] mx-auto h-[200px] rounded-full">
+            <div className="relative w-[140px] sm:w-[200px] mx-auto h-[140px] sm:h-[200px] rounded-full">
             <Image src={img} fill  alt="thribe community team" className="object-fit rounded-full" /> 
             </div>
             <div className="">
@@ -25,13 +26,13 @@ const TeamCard = ({classname, classnameHover, hoverText, name, nickname, role, i
                 <h5 className="tracking-[1%] leading-[150%]">{nickname}</h5>
             </div>
 
-            <h5 className="font-[500]">{role}</h5>
+            <h5 className="font-[400] sm:font-[500]">{role}</h5>
 
         </div>
 
         <div
-            className={`${hoverCard ? "block" : "hidden" } ${classnameHover} text-left text-[#fff] rounded-[20px] h-[420px] p-[40px] space-y-[24px] `}>
-            <div className="relative w-[50px] h-[50px] rounded-full">
+            className={`${hoverCard ? "block" : "hidden" } ${classnameHover} text-left text-[#fff] rounded-[20px] h-full p-[40px] space-y-[24px] `}>
+            <div className="relative w-[80px] sm:w-[50px] h-[80px] sm:h-[50px] rounded-full">
             <Image src={img} fill  alt="thribe community team" className="object-fit rounded-full" /> 
             </div>
 

@@ -256,8 +256,6 @@ export default function Home() {
   <div className="relative w-[343px] md:w-[711px] h-[173px] md:h-[360px] rounded-[16px] overflow-hidden">
     <video
       className="absolute inset-0 w-full h-full object-cover"
-      autoPlay
-      muted
       controls
     >
      
@@ -267,7 +265,7 @@ export default function Home() {
   </div>
 
   {/* Text Section */}
-  <div className="w-full md:w-[513px] leading-[150%] tracking-[2%] text-[#52514D]">
+  <div className="w-full md:w-[513px] leading-[150%] tracking-[2%] text-[#354764]">
     <p className="mb-[24px]">
       Working in tech can feel cold, competitive, and isolating — we&#39;re here to change that. THR!BE was built for humans first, 
       not hustle culture. Tech isn&#39;t just about work — it&#39;s about people. At THR!BE, you&#39;ll find a tribe that gets it. 
