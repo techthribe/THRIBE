@@ -247,7 +247,7 @@ const About = () => {
                         </div>
                         </h2>
                         {/* for web view */}
-                        <div className="mt-[45px] hidden md:block">
+                        <div className="mt-[45px] hidden md:block ">
                             <Link href="/#price">
                             <button className="cursor-pointer w-[192px] h-[47px] border border-[#FFE198] text-[#FFE198] rounded-[100px] flex items-center gap-x-[24px] justify-center">
                                 <span>Join THR!BE</span>
@@ -276,7 +276,7 @@ const About = () => {
                         </div>
                         {/* button for mobile view */}
                         <div className="block md:hidden pt-[16px]">
-                            <button className="w-[192px] h-[47px] border border-[#FFE198] text-[#FFE198] rounded-[100px] flex items-center gap-x-[24px] py-[10px] justify-center">
+                            <button className="w-full md:w-[192px] h-[47px] border border-[#FFE198] text-[#FFE198] rounded-[100px] flex items-center gap-x-[24px] py-[10px] justify-center">
                                 <span>Join THR!BE</span>
                                 <Image src="/icons/arrow-right.png" width={24} height={24} alt="thribe community" className="object-center rounded-full" />
                             </button>

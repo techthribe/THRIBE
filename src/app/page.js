@@ -127,9 +127,9 @@ export default function Home() {
           create safe spaces, and even kick ball together.
          </div>
 
-    <div className="mt-[32px] flex justify-center">
-      <Link href="#price">
-     <button className={`flex items-center space-x-[5px] justify-center bg-[#107269] w-[244px] md:w-[284px] h-[47px] md:h-[56px] cursor-pointer shadow-[4px_4px_0px_0px_#003E39] hover:shadow-[4px_4px_0px_0px_#64C0B7] font-[500] text-[18px] text-[#fff] rounded-[100px]`}>
+    <div className="mt-[32px] flex justify-center w-full">
+      <Link href="#price" className="w-full sm:w-[244px] md:w-[284px]">
+     <button className={`flex items-center space-x-[5px] justify-center bg-[#107269] w-full sm:w-[244px] md:w-[284px] h-[47px] md:h-[56px] cursor-pointer shadow-[4px_4px_0px_0px_#003E39] hover:shadow-[4px_4px_0px_0px_#64C0B7] font-[500] text-[18px] text-[#fff] rounded-[100px]`}>
         <span>Join The Community</span>
         <Image src="/img/arrow-right.png" width={24} height={24} alt="thribe community" className="" />
      </button>
@@ -211,8 +211,8 @@ export default function Home() {
 
         <p className="mt-[24px]">This is your THR!BE - The tribe that thrives.</p>
         </div>
-        <Link href="/#price">
-        <Button name="Join The Tribe Now" classname="w-[196px] md:w-[236px] h-[47px] md:h-[56px] bg-primaryColor" />
+        <Link href="/#price" className="w-full md:w-[236px]">
+        <Button name="Join The Tribe Now" classname="w-full sm:w-[196px] md:w-[236px] h-[47px] md:h-[56px] bg-primaryColor" />
         </Link>
       </div>
 
@@ -256,6 +256,7 @@ export default function Home() {
   <div className="relative w-[343px] md:w-[711px] h-[173px] md:h-[360px] rounded-[16px] overflow-hidden">
     <video
       className="absolute inset-0 w-full h-full object-cover"
+      muted
       controls
     >
      
@@ -274,7 +275,7 @@ export default function Home() {
     <Link href="/#price">
       <Button
         name="Join THR!BE"
-        classname="bg-[#B15301] w-[144px] md:w-[184px] h-[47px] md:h-[56px] shadow-[4px_4px_0px_0px_#693101] hover:shadow-[4px_4px_0px_0px_#FBA355]"
+        classname="bg-[#B15301] w-full md:w-[184px] h-[47px] md:h-[56px] shadow-[4px_4px_0px_0px_#693101] hover:shadow-[4px_4px_0px_0px_#FBA355]"
       />
     </Link>
   </div>
