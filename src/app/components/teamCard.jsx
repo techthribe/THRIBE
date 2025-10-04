@@ -1,18 +1,31 @@
 "use client"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
 
 const TeamCard = ({classname, classnameHover, hoverText, name, nickname, role, img}) => {
         const [hoverCard, setHoverCard] = useState(false)
 
-        console.log(hoverCard)
+          const [isMobile, setIsMobile] = useState(false);
+
+            useEffect(() => {
+                // detect touch devices
+                setIsMobile(window.innerWidth < 768 || "ontouchstart" in window);
+            }, []);
+
+            const handleClick = () => {
+                if (isMobile) {
+                setHoverCard((prev) => !prev);
+                }
+            };
+
+            
 
     return(
         <div
-        onMouseEnter={() => setHoverCard(true)} 
-        onMouseLeave={() => setHoverCard(false)}
-        onClick={() => setHoverCard((prev) => !prev)} 
+            onMouseEnter={!isMobile ? () => setHoverCard(true) : undefined}
+            onMouseLeave={!isMobile ? () => setHoverCard(false) : undefined}
+            onClick={handleClick}
         className="w-full md:w-[48%] lg:w-[30%] xl:w-[280px] h-[354px] sm:h-[420px]"
         >
             
