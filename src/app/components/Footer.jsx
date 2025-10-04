@@ -30,9 +30,13 @@ const Footer = () => {
                     </Link>
                     <div className="mt-[40px] md:mt-[150px] ">
                         <p>
-                            <a href="mailto:hello@techthribe.com" className="">
+                            {/* <a href="mailto:hello@techthribe.com" className="">
+                            hello@techthribe.com
+                            </a> */}
+                             <a href="https://create.netlify.com/team/68d949b326e7d200c38e0592" className="">
                             hello@techthribe.com
                             </a>
+                        
                         </p>
                         <div className="flex gap-x-[14px] mt-[24px]">
                             <Link href="https://www.tiktok.com/@tech_thribe?_t=ZN-902wl3rVUO3&_r=1" target="_blank">

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Event_banner from "../components/Event_banner"
 import JoinCommunity from "../components/joinCommunity";
 import Footer from "../components/Footer";
+import Link from "next/link";
 
 const Events = () => {
     return(
@@ -21,17 +22,19 @@ const Events = () => {
                 </p>
 
                 <div className="mt-[40px]">
+                    <Link href="#events">
                    <button className={`flex gap-x-[24px] items-center justify-center w-[292px] bg-[#107269] cursor-pointer shadow-[4px_4px_0px_0px_#003E39] font-[500] text-[18px] text-[#fff] h-[56px] rounded-[100px]`}>
                     <span>See What&#39;s Comming</span>
                     <Image src="/icons/arrow-white.png" width={24} height={24} alt="thribe community" className="object-center" />
                   </button> 
+                  </Link>
                 </div>
             </div>
             </section>
             <div className="w-full h-[12px] relative">
                 <Image src="/img/legal-nav.png" fill alt="navigation" />
             </div> 
-            <main className="w-full bg-[#0A1A18]">
+            <main className="w-full bg-[#0A1A18]" id="events">
             <section className="max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 py-[40px] md:py-[120px] tracking-[1%]">
                <h3 className="text-[16px] leading-[150%] tracking-[16%] text-[#C2C7D0]">NEW!</h3>
                 <h2 className="mt-[16px] flex items-center gap-x-[12px] font-clash font-[600] text-[26px] md:text-[48px] leading-[100%] md:leading-[120%] tracking-[1%] text-[#fff]">
@@ -45,13 +48,13 @@ const Events = () => {
                 <Event_banner
                 img="/img/event-banner1.png"
                 type="Webinar"
-                description="Ever wondered why some products just click and others frustrate you? The secret is simple: they were (or weren&#39;t) made for humans."
+                description="From freelancers to founders, salaries to side gigs - tax changes in 2025 will affect us all. Let&#39;s break it down so you know what&#39;s changing, what&#39;s at stake, and how to prepare."
                 background="bg-[#E8F6F4]" 
                 btnClassname="bg-[#107269]" 
                  btnText="Attend Event"
-                name="Khadijah Kuku" 
-                role="UX Designer" 
-                date="Sept 19" 
+                name="Yunus Omotosho" 
+                role="Tax Consultant" 
+                date="Oct 5" 
                 time="2025 | 5pm WAT" 
                 venue="Google meet"
                 />
@@ -66,6 +69,20 @@ const Events = () => {
                     </div>
                     </h2>
                     <div className="mt-[48px] space-y-[40px]">
+                     <Event_banner
+                    img="/img/event-banner8.png"
+                    type="Webinar"
+                    description="Ever wondered why some products just click and others frustrate you? The secret is simple: they were (or weren&#39;t) made for humans."
+                    background="bg-[#F5F6F7]" 
+                    btnClassname="bg-[#8AA6A3] shadow-[4px_4px_0px_0px_#64C0B7]" 
+                    btnText="View Event"
+                    name="Emiola Omotolani" 
+                    role="UX Designer" 
+                    date="Sept 19" 
+                    time="2025 | 6pm WAT" 
+                    venue="Google meet"
+                    />
+
                     <Event_banner
                     img="/img/event-banner3.png"
                     type="Webinar"
