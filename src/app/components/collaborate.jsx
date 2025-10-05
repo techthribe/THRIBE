@@ -260,7 +260,7 @@ const Collaborate = () => {
             >
               <Image
                 src={
-                  !hoverJoinTournament ? "/img/build3.png" : animationImages[currentImg]
+                  !hoverJoinTournament ? "https://res.cloudinary.com/chiaka/image/upload/v1759653376/Gemini_Generated_Image_8ulrf68ulrf68ulr_2_1_wdqzug.png" : animationImages[currentImg]
                 }
                 fill
                 alt="build with thribe community"

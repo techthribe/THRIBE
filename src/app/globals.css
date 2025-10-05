@@ -58,3 +58,7 @@ body {
 .navLinkFooter:hover{
   border-bottom: 1px solid #000;
 }
+
+.fade-section {
+  opacity: 0;
+}

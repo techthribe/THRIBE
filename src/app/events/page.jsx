@@ -24,7 +24,7 @@ const Events = () => {
                 <div className="mt-[40px]">
                     <Link href="#events">
                    <button className={`flex gap-x-[24px] items-center justify-center w-[292px] bg-[#107269] cursor-pointer shadow-[4px_4px_0px_0px_#003E39] font-[500] text-[18px] text-[#fff] h-[56px] rounded-[100px]`}>
-                    <span>See What&#39;s Comming</span>
+                    <span>See What&#39;s Coming</span>
                     <Image src="/icons/arrow-white.png" width={24} height={24} alt="thribe community" className="object-center" />
                   </button> 
                   </Link>
@@ -52,6 +52,7 @@ const Events = () => {
                 background="bg-[#E8F6F4]" 
                 btnClassname="bg-[#107269]" 
                  btnText="Attend Event"
+                 btnLink="https://luma.com/erdi3s5w"
                 name="Yunus Omotosho" 
                 role="Tax Consultant" 
                 date="Oct 5" 
@@ -76,6 +77,7 @@ const Events = () => {
                     background="bg-[#F5F6F7]" 
                     btnClassname="bg-[#8AA6A3] shadow-[4px_4px_0px_0px_#64C0B7]" 
                     btnText="View Event"
+                    btnLink="#"
                     name="Emiola Omotolani" 
                     role="UX Designer" 
                     date="Sept 19" 
@@ -84,12 +86,13 @@ const Events = () => {
                     />
 
                     <Event_banner
-                    img="/img/event-banner3.png"
+                    img="https://res.cloudinary.com/chiaka/image/upload/v1759654216/frame3_gl2xtm.png"
                     type="Webinar"
                     description="We all know the grind: long hours in a chair, eyes glued to a screen. It's a rite of passage for techies, but it comes with a real physical toll - the dreaded stiff neck."
                     background="bg-[#F5F6F7]" 
                     btnClassname="bg-[#8AA6A3] shadow-[4px_4px_0px_0px_#64C0B7]" 
                     btnText="View Event"
+                    btnLink="#"
                     name="Dr. Ebenezer G." 
                     role="Medical Doctor" 
                     date="August 23" 
@@ -97,26 +100,28 @@ const Events = () => {
                     venue="Google meet"
                     />
                      <Event_banner
-                    img="/img/event-banner7.png"
+                    img="https://res.cloudinary.com/chiaka/image/upload/v1759654216/frame1_gj7qsh.png"
                     type="Webinar"
                     description="Tech isn&#39;t lawless. Know your rights - on leave, remote work, termination, and more. It&#39;s legal survival. From Offer Letters to NDAs - Don't Just Sign It. Understand It."
                     background="bg-[#F5F6F7]" 
                     btnClassname="bg-[#8AA6A3] shadow-[4px_4px_0px_0px_#64C0B7]" 
                     btnText="View Event"
+                    btnLink="#"
                     name="Abayomi Olushesan" 
                     role="Tech Lawyer" 
                     date="August 12" 
                     time="2025 | 6pm WAT" 
-                    venue="Google meet"
+                    venue="TikTok Live"
                     />
 
                     <Event_banner
-                    img="/img/event-banner6.png"
+                    img="https://res.cloudinary.com/chiaka/image/upload/v1759654216/frame2_hpj619.png"
                     type="Webinar"
-                    description="Struggling with what to charge? Let&#39;s talk about pricing your skills confidently, You&#39;re not what you post. You&#39;re what they find."
+                    description="Your digital footprint speaks louder than your captions. Protect it, shape it, and let it work for you - not against you."
                     background="bg-[#F5F6F7]" 
                     btnClassname="bg-[#8AA6A3] shadow-[4px_4px_0px_0px_#64C0B7]" 
                     btnText="View Event"
+                    btnLink="#"
                     name="K.S.A" 
                     role="Tech Consultant" 
                     date="August 5" 
@@ -131,6 +136,7 @@ const Events = () => {
                     background="bg-[#F5F6F7]" 
                     btnClassname="bg-[#8AA6A3] shadow-[4px_4px_0px_0px_#64C0B7]" 
                     btnText="View Event"
+                    btnLink="#"
                     name="Desmond Ajimuda" 
                     role="Senior Product Designer" 
                     date="July 12" 
@@ -145,6 +151,7 @@ const Events = () => {
                     background="bg-[#F5F6F7]" 
                     btnClassname="bg-[#8AA6A3] shadow-[4px_4px_0px_0px_#64C0B7]" 
                     btnText="View Event"
+                    btnLink="#"
                     name="Desmond Ajimuda" 
                     role="Senior Product Designer" 
                     date="July 8" 

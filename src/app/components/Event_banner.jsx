@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Button from "./Button";
+import Link from "next/link";
 
-const EventBanner = ({img, type, description, background, btnClassname, name, role, date, time, btnText, venue}) => {
+const EventBanner = ({img, type, description, background, btnClassname, name, role, date, time, btnText, btnLink, venue,}) => {
     return(
          <div className=" text-[18px] md:text-[20px] leading-[150%] tracking-[1%]">
                     <div className={`p-[16px] md:p-[40px] w-full rounded-[40px] ${background} flex flex-col md:flex-row justify-between gap-x-[20px] xl:gap-x-[40px] items-center`}>
@@ -29,7 +30,9 @@ const EventBanner = ({img, type, description, background, btnClassname, name, ro
                         </div>
 
                         <div className="w-full md:w-[190px]">
+                        <Link href={btnLink}>
                         <Button name={btnText} classname={`${btnClassname} w-full md:w-[190px]`}/>
+                        </Link>
                         </div>
                     </div>
 
