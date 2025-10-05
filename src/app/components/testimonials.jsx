@@ -53,7 +53,7 @@ const Testimonial = () => {
 
   return (
     <section className="pt-[40px] md:pt-[120px] pb-[40px] md:pb-[74px]">
-      <div className="max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0">
+      <div className="scroll-fade opacity-0 max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0">
         <h1 className="text-[#087C72] text-[16px] leading-[150%] tracking-[16%]">
           TESTIMONIALS
         </h1>

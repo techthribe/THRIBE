@@ -75,7 +75,7 @@ const JoinCommunity = () => {
 
     return (
         <section className="bg-[#FFF6DF] py-[40px] md:py-[120px]" id="joinCommunity">
-          <div className="max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0">
+          <div className="scroll-fade opacity-0 max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0">
            <h1 className="text-[16px] leading-[150%] tracking-[16%] text-[#107269]">THR!BE WITH US FOR FREE</h1>
                 <h3 className="font-clash font-[600] my-[16px] text-[#0A1A18] text-[26px] md:text-[48px] leading-[100%] tracking-[3%] flex items-center gap-x-[12px]">
                 <span>Join the Community</span>
@@ -102,7 +102,7 @@ const JoinCommunity = () => {
                         name="role"
                         value={data.role}
                         onChange={onChangeFormDataFunction}
-                        className={`appearance-none cursor-pointer bg-[#FFF6DF] w-[98%] placeholder-[#87857F] ${data.role == "" ? "text-[#87857f]" : ""} text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none`}
+                        className={`appearance-none cursor-pointer bg-[#FFF6DF] w-[98%] placeholder-[#87857F] ${data.role == "" ? "text-[#87857f]" : ""} text-[16px] md:text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none`}
                         >
                         <option value="" disabled>What field are you in? (developer, designer...)</option>
                         <option value="Product Designer" className="hover:bg-[#fff] cursor-pointer">Product Designer</option>
@@ -131,10 +131,13 @@ const JoinCommunity = () => {
                     <label htmlFor="reason" className="">I will love to join THRIBE because </label>
                     <div>
                     <input
-                     name=" reason_to_join"
+                    name="reason_to_join"
                     value={data.reason_to_join}
                     onChange={onChangeFormDataFunction}
-                    id="reason" type="text" placeholder="Tell us why you would love to join THR!BE"  className="w-full md:w-[502px] placeholder-[#87857F] text-[16px] md:text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none"/></div>
+                    id="reason" 
+                    type="text" 
+                    placeholder="Tell us why you would love to join THR!BE"  
+                    className="w-full md:w-[502px] placeholder-[#87857F] text-[16px] md:text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none"/></div>
                     {/* <div className="block min-w-[100%]"><input id="job" type="text" placeholder="Tell us why you would love to join THR!BE"  className="w-[100%] placeholder-[#87857F] text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none"/></div> */}
                     </div>
             </div>
@@ -183,7 +186,7 @@ const JoinCommunity = () => {
                     .</div>
                     <label htmlFor="reason_for_joining" className="">I will love to join THRIBE because </label>
                     <div><input
-                     name="reason_to_join"
+                    name="reason_to_join"
                     value={data.reason_to_join}
                     onChange={onChangeFormDataFunction}
                     id="reason_for_joining" 

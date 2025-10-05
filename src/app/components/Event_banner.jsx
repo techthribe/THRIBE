@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const EventBanner = ({img, type, description, background, btnClassname, name, role, date, time, btnText, btnLink, venue,}) => {
     return(
-         <div className=" text-[18px] md:text-[20px] leading-[150%] tracking-[1%]">
+         <div className="scroll-fade opacity-0 text-[18px] md:text-[20px] leading-[150%] tracking-[1%]">
                     <div className={`p-[16px] md:p-[40px] w-full rounded-[40px] ${background} flex flex-col md:flex-row justify-between gap-x-[20px] xl:gap-x-[40px] items-center`}>
                         <div className="w-full md:w-[150px] rounded-[20px] md:rounded-0 h-[440px] md:h-[212px] bg-[#fff] flex justify-center items-center p-[20px] md:p-0"> 
                             <div className="relative w-full md:w-[129px] h-[398px] md:h-[192px]">

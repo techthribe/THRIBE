@@ -95,41 +95,44 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-  const sections = gsap.utils.toArray(".fade-section");
+     gsap.fromTo(
+    ".fade-box",
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+  );
 
-  sections.forEach((section) => {
-    const elements = section.querySelectorAll(":scope > *"); 
-    // selects direct children inside the section
-
-    gsap.from(elements, {
-      autoAlpha: 0,
-      y: 40,
-      duration: 0.8,
-      ease: "power2.out",
-      stagger: 0.15, // 👈 stagger between each child
-      scrollTrigger: {
-        trigger: section,
-        start: "top 80%",
-        toggleActions: "play none none none",
-        once: true, // 👈 only plays once
-      },
-    });
-  });
-
-  return () => {
-    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-  };
+  // return () => {
+  //   ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  // };
 }, []);
 
-
-
+// fade on scroll
+ useEffect(() => {
+    gsap.utils.toArray(".scroll-fade").forEach((el) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  }, []);
 
   return (
    <div className="overflow-x-hidden">
     <NavigationBar />
     <MobileNav />
-    <section className="text-[#354764] tracking-[1%] leading-[150%] max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 pt-[20px] md:pt-[105px] text-center">
-      <div className="fade-section space-y-[16px] tracking-[1%] ">
+    <section className="fade-box opacity-0 text-[#354764] tracking-[1%] leading-[150%] max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 pt-[20px] md:pt-[105px] text-center">
+      <div className="space-y-[16px] tracking-[1%] ">
       <h2 className="text-[16px] md:text-[18px] font-[400] ">Belong<span className="text-[#F97502]">.</span> Share<span className="text-[#F97502]">.</span> Thrive!</h2>
       
       <div className="flex space-x-[16px] items-center justify-center">
@@ -225,7 +228,7 @@ export default function Home() {
 
 
     {/* what is thribe */}
-    <section className="fade-section py-[40px] md:py-[120px] max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 flex flex-col xl:flex-row gap-[40px]">
+    <section className="scroll-fade opacity-0 py-[40px] md:py-[120px] max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 flex flex-col xl:flex-row gap-[40px]">
       <div className="w-full xl:w-[600px] space-y-[24px]">
         <div className="font-clash font-[600]">
           <h1 className="text-primaryColor font-[400] text-[16px]">WHAT IS THR!BE?</h1>
@@ -275,7 +278,7 @@ export default function Home() {
 
     {/* why TRibe */}
     <section className="py-[40px] md:py-[120px] w-full bg-[#FEF1E6]">
-      <div className="fade-section max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0">
+      <div className="scroll-fade max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0">
         <div className="space-y-[16px]">
           <h2 className="text-[16px] font-[400] leading-[150%] tracking-[16%] text-[#E36A02]">WHY THR!BE?</h2>
           <h1 className="font-clash text-[26px] md:text-[46px] leading-[100%] font-[600] tracking-[3%]">Why <span className="text-[#E36A02]">THR!BE</span> Exists</h1>
@@ -320,7 +323,7 @@ export default function Home() {
 
     {/* what we do inside thribe */}
     <section className="py-[40px] md:py-[120px] w-full bg-[#013D37]">
-      <div className="max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 fade-section">
+      <div className="scroll-fade max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 fade-section">
         <div className="space-y-[16px] text-[#C2C7D0] leading-[150%]">
         <h1 className=" text-[16px] tracking-[16%] ">WHAT WE DO INSIDE THR!BE</h1>
         <h2 className="flex items-center gap-x-[12px] font-clash font-[600] text-[26px] md:text-[46px] leading-[100%] tracking-[3%] text-[#fff]">
@@ -364,11 +367,11 @@ export default function Home() {
     </section>
 
     {/* testimonials */}
-    <Testimaonial className="fade-section" />
+    <Testimaonial />
 
     {/* pricing */}
     <section className="py-[40px] md:py-[120px] leading-[150%]" id="price">
-      <div className="mx-auto max-w-[1248px] px-[16px] md:px-[20px] xl:px-0 fade-section">
+      <div className="scroll-fade opacity-0 mx-auto max-w-[1248px] px-[16px] md:px-[20px] xl:px-0 fade-section">
         
         <h1 className="text-[16px] tracking-[16%] text-[#107269]">PRICING</h1>
         <h3 className="font-clash font-[600] my-[16px] text-[#0A1A18] text-[26px] md:text-[46px] leading-[100%] tracking-[3%] flex text-left flex-row flex-wrap md:items-center gap-y-[16px] gap-y-0 sm:gap-x-[12px] ">
@@ -474,8 +477,8 @@ export default function Home() {
       </div> 
     </section>
 
-      <Collaborate className="fade-section" />    
-      <JoinCommunity className="fade-section" />
+      <Collaborate />    
+      <JoinCommunity />
       <Footer />
    </div>
   );

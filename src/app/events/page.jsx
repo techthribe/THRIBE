@@ -1,4 +1,6 @@
 "use client"
+import { useEffect } from "react";
+import gsap from "gsap";
 import NavigationBar from "../components/navigation";
 import MobileNavigationBar from "../components/MobileNav";
 import Image from "next/image";
@@ -6,14 +8,49 @@ import Event_banner from "../components/Event_banner"
 import JoinCommunity from "../components/joinCommunity";
 import Footer from "../components/Footer";
 import Link from "next/link";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Events = () => {
+    useEffect(() => {
+     gsap.fromTo(
+    ".fade-box",
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+  );
+
+  // return () => {
+  //   ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  // };
+}, []);
+
+// fade on scroll
+ useEffect(() => {
+    gsap.utils.toArray(".scroll-fade").forEach((el) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  }, []);
+
     return(
         <main>
             <NavigationBar />
             <MobileNavigationBar />
             <section className="max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 pt-[80px] md:pt-[148px] pb-[92px] md:pb-[159px] tracking-[1%] space-y-[40px]">
-            <div className="max-w-[1170px]">
+            <div className="fade-box opacity-0 max-w-[1170px]">
                 <h1 className="text-[16px] leading-[150%] tracking-[16%] text-[#087C72]">THR!BE EVENTS</h1>
                 <h2 className="font-[600] leading-[120%] text-[#0A1A18] text-[32px] md:text-[66px] tracking-[1%] font-clash mt-[16px] mb-[24px]">Events That Make Tech Feel Human</h2>
                 <p className="max-w-[760px] text-[18px] md:text-[20px] leading-[150%] tracking-[1%] text-secondaryColor">
@@ -36,6 +73,7 @@ const Events = () => {
             </div> 
             <main className="w-full bg-[#0A1A18]" id="events">
             <section className="max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 py-[40px] md:py-[120px] tracking-[1%]">
+               <div className="scroll-fade opacity-0">
                <h3 className="text-[16px] leading-[150%] tracking-[16%] text-[#C2C7D0]">NEW!</h3>
                 <h2 className="mt-[16px] flex items-center gap-x-[12px] font-clash font-[600] text-[26px] md:text-[48px] leading-[100%] md:leading-[120%] tracking-[1%] text-[#fff]">
                 <span>Upcoming Events</span>
@@ -43,6 +81,7 @@ const Events = () => {
                 <Image src="/icons/calender.png" fill alt="thribe community" className="object-center" />
                 </div>
                 </h2>
+                </div>
 
                 <div className="mt-[24px] md:mt-[48px] ">
                 <Event_banner
@@ -62,6 +101,7 @@ const Events = () => {
                 </div>
 
                 <div className="mt-[80px]">
+                    <div className="scroll-fade opacity-0">
                     <h3 className="text-[16px] leading-[150%] tracking-[16%] text-[#C2C7D0]">YOU MISSED...</h3>
                     <h2 className="mt-[16px] flex items-center gap-x-[12px] font-clash font-[600] text-[26px] md:text-[48px] leading-[100%] md:leading-[120%] tracking-[1%] text-[#fff]">
                     <span>Past Events</span>
@@ -69,6 +109,7 @@ const Events = () => {
                     <Image src="/img/clock.png" fill alt="thribe community" className="object-center" />
                     </div>
                     </h2>
+                    </div>
                     <div className="mt-[48px] space-y-[40px]">
                      <Event_banner
                     img="/img/event-banner8.png"
