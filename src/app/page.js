@@ -14,6 +14,9 @@ import Collaborate from "./components/collaborate";
 import Footer from "./components/Footer";
 import Link from "next/link";
 import { useAllContext } from "./context/allcontext";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+
 
 
 export default function Home() {
@@ -91,13 +94,44 @@ export default function Home() {
     }
   }, []);
 
+  useEffect(() => {
+     gsap.fromTo(
+    ".fade-box",
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+  );
 
+  // return () => {
+  //   ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  // };
+}, []);
+
+// fade on scroll
+ useEffect(() => {
+    gsap.utils.toArray(".scroll-fade").forEach((el) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  }, []);
 
   return (
    <div className="overflow-x-hidden">
     <NavigationBar />
     <MobileNav />
-    <section className="text-[#354764] tracking-[1%] leading-[150%] max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 pt-[20px] md:pt-[105px] text-center">
+    <section className="fade-box opacity-0 text-[#354764] tracking-[1%] leading-[150%] max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 pt-[20px] md:pt-[105px] text-center">
       <div className="space-y-[16px] tracking-[1%] ">
       <h2 className="text-[16px] md:text-[18px] font-[400] ">Belong<span className="text-[#F97502]">.</span> Share<span className="text-[#F97502]">.</span> Thrive!</h2>
       
@@ -138,7 +172,7 @@ export default function Home() {
       </div>
 
       {/* image collage for mobile view */}
-      <div className="flex flex-col md:hidden justify-between gap-y-[16px] mt-[40px]">
+      <div className="fade-section flex flex-col md:hidden justify-between gap-y-[16px] mt-[40px]">
         <div className="flex gap-x-[7px] w-full">
         <div className="relative w-[50%] h-[182px]">
           <Image src="/img/frame1.png" fill alt="thribe community" className="object-fit" />
@@ -154,7 +188,7 @@ export default function Home() {
       {/* end of image collage for mobile view */}
 
       {/* image collage for desktop view */}
-      <div className="hidden md:flex justify-between space-x-[24px] items-end mt-[-56px]">
+      <div className="fade-section hidden md:flex justify-between space-x-[24px] items-end mt-[-56px]">
         <div className="relative w-[360px] h-[392px]">
           <Image src="/img/frame1.png" fill alt="thribe community" className="object-fit" />
         </div>
@@ -194,7 +228,7 @@ export default function Home() {
 
 
     {/* what is thribe */}
-    <section className="py-[40px] md:py-[120px] max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 flex flex-col xl:flex-row gap-[40px]">
+    <section className="scroll-fade opacity-0 py-[40px] md:py-[120px] max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 flex flex-col xl:flex-row gap-[40px]">
       <div className="w-full xl:w-[600px] space-y-[24px]">
         <div className="font-clash font-[600]">
           <h1 className="text-primaryColor font-[400] text-[16px]">WHAT IS THR!BE?</h1>
@@ -244,7 +278,7 @@ export default function Home() {
 
     {/* why TRibe */}
     <section className="py-[40px] md:py-[120px] w-full bg-[#FEF1E6]">
-      <div className="max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0">
+      <div className="scroll-fade max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0">
         <div className="space-y-[16px]">
           <h2 className="text-[16px] font-[400] leading-[150%] tracking-[16%] text-[#E36A02]">WHY THR!BE?</h2>
           <h1 className="font-clash text-[26px] md:text-[46px] leading-[100%] font-[600] tracking-[3%]">Why <span className="text-[#E36A02]">THR!BE</span> Exists</h1>
@@ -253,17 +287,20 @@ export default function Home() {
        
         <div className="flex flex-col md:flex-row mt-[24px] md:mt-[48px] justify-between md:gap-x-[24px] gap-y-[24px] md:gap-y-0 items-center">
   {/* Video Section */}
-  <div className="relative w-[343px] md:w-[711px] h-[173px] md:h-[360px] rounded-[16px] overflow-hidden">
-    <video
-      className="absolute inset-0 w-full h-full object-cover"
-      muted
-      controls
-    >
-     
-      <source src=" https://res.cloudinary.com/chiaka/video/upload/f_auto,q_auto/v1759511250/0929_wiyzum.mov" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
+  {/* <div className="relative w-[343px] md:w-[711px] h-[173px] md:h-[360px] rounded-[16px] overflow-hidden"> */}
+  <video
+    className="w-[343px] md:w-[711px] h-[173px] md:h-[360px] object-cover"
+    muted
+    controls
+    playsInline
+  >
+    <source
+      src="https://res.cloudinary.com/chiaka/video/upload/f_auto,q_auto/v1759511250/0929_wiyzum.mov"
+      type="video/mp4"
+    />
+    Your browser does not support the video tag.
+  </video>
+{/* </div> */}
 
   {/* Text Section */}
   <div className="w-full md:w-[513px] leading-[150%] tracking-[2%] text-[#354764]">
@@ -286,7 +323,7 @@ export default function Home() {
 
     {/* what we do inside thribe */}
     <section className="py-[40px] md:py-[120px] w-full bg-[#013D37]">
-      <div className="max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0">
+      <div className="scroll-fade max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 fade-section">
         <div className="space-y-[16px] text-[#C2C7D0] leading-[150%]">
         <h1 className=" text-[16px] tracking-[16%] ">WHAT WE DO INSIDE THR!BE</h1>
         <h2 className="flex items-center gap-x-[12px] font-clash font-[600] text-[26px] md:text-[46px] leading-[100%] tracking-[3%] text-[#fff]">
@@ -334,7 +371,7 @@ export default function Home() {
 
     {/* pricing */}
     <section className="py-[40px] md:py-[120px] leading-[150%]" id="price">
-      <div className="mx-auto max-w-[1248px] px-[16px] md:px-[20px] xl:px-0">
+      <div className="scroll-fade opacity-0 mx-auto max-w-[1248px] px-[16px] md:px-[20px] xl:px-0 fade-section">
         
         <h1 className="text-[16px] tracking-[16%] text-[#107269]">PRICING</h1>
         <h3 className="font-clash font-[600] my-[16px] text-[#0A1A18] text-[26px] md:text-[46px] leading-[100%] tracking-[3%] flex text-left flex-row flex-wrap md:items-center gap-y-[16px] gap-y-0 sm:gap-x-[12px] ">

@@ -151,7 +151,7 @@ const Collaborate = () => {
 
   return (
     <section className="py-[40px] md:py-[120px] w-full">
-      <div className="max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0">
+      <div className="scroll-fade opacity-0 max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0">
         {/* Heading */}
         <h1 className="text-[16px] tracking-[16%] text-[#354764] uppercase">
           SUPPORT, PARTNER, COLLABORATE
@@ -260,7 +260,7 @@ const Collaborate = () => {
             >
               <Image
                 src={
-                  !hoverJoinTournament ? "/img/build3.png" : animationImages[currentImg]
+                  !hoverJoinTournament ? "https://res.cloudinary.com/chiaka/image/upload/v1759653376/Gemini_Generated_Image_8ulrf68ulrf68ulr_2_1_wdqzug.png" : animationImages[currentImg]
                 }
                 fill
                 alt="build with thribe community"

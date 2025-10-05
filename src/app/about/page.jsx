@@ -11,6 +11,8 @@ import Footer from "../components/Footer";
 import gsap from "gsap";
 import Link from "next/link";
 import { useAllContext } from "../context/allcontext";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 
 const About = () => {
@@ -34,6 +36,40 @@ const About = () => {
             },
             });
     },[])
+
+     useEffect(() => {
+     gsap.fromTo(
+    ".fade-box",
+    { opacity: 0, y: 30 },
+    { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+  );
+
+  // return () => {
+  //   ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+  // };
+}, []);
+
+
+    // fade on scroll
+ useEffect(() => {
+    gsap.utils.toArray(".scroll-fade").forEach((el) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  }, []);
     
 
     return (
@@ -41,7 +77,7 @@ const About = () => {
             <section className="bg-[linear-gradient(180deg,rgba(2,18,16,0.54)_25.03%,rgba(2,18,16,0.9)_79.92%),url('https://res.cloudinary.com/chiaka/image/upload/v1758228838/thribe_banner_vqi0br.png')] sm:bg-[linear-gradient(180deg,rgba(2,18,16,0.54)_25.03%,rgba(2,18,16,0.9)_79.92%),url('https://res.cloudinary.com/chiaka/image/upload/v1757761490/thribe_hyoxv7.png')]  bg-cover w-full pb-[94px] sm:pb-[142px]">
                 <NavigationBar />
                 <MobileNavigationBar/>
-                <div className="max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 text-[#fff] tracking-[1%] space-y-[24px] sm:space-y-[40px]">
+                <div className="fade-box opacity-0 max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 text-[#fff] tracking-[1%] space-y-[24px] sm:space-y-[40px]">
                     <h2 className="font-clash mt-[346px] sm:mt-[369px] font-[600] leading-[100%] text-[32px] sm:text-[66px] flex items-center gap-x-[12px]">
                     <span>Our Goal</span>
                     <div className="relative w-[36px] sm:w-[48px] h-[36px] sm:h-[48px]">
@@ -58,7 +94,7 @@ const About = () => {
             </section>
             
             <section className="max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 pt-[40px] sm:pt-[120px] space-y-[40px]">
-                <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-x-[42px] gap-y-[24px]">
+                <div className="scroll-fade opacity-0 flex flex-col-reverse md:flex-row justify-between items-center gap-x-[42px] gap-y-[24px]">
                     <div className="relative w-full md:w-[480px] h-[351px] md:h-[446px] rounded-[20px]">
                     <Image src="https://res.cloudinary.com/chiaka/image/upload/v1757778453/thribe3_sd49zi.png" fill alt="thribe community goal" className="object-center rounded-[20px]" />
                     </div>
@@ -78,7 +114,7 @@ const About = () => {
                 </div>
 
                 {/* who we are */}
-               <div className="w-full bg-[#000] flex flex-col md:flex-row justify-between gap-y-[24px] md:gap-y-0 md:gap-x-[42px] items-center p-[24px] sm:p-[40px] rounded-[16px] sm:rounded-[20px] bg-[#E8F6F4]">
+               <div className="scroll-fade opacity-0 w-full bg-[#000] flex flex-col md:flex-row justify-between gap-y-[24px] md:gap-y-0 md:gap-x-[42px] items-center p-[24px] sm:p-[40px] rounded-[16px] sm:rounded-[20px] bg-[#E8F6F4]">
                     <div className="w-full md:w-[679px] space-y-[12px]  leading-[150%] text-secondaryColor tracking-[1%]">
                         <h2 className="font-[600] font-clash text-[26px] sm:text-[46px] text-[#087C72] leading-[100%]">Who We Are</h2>
                         <div>THR!BE is not your regular tech community. We&#39;re a collective of thinkers, makers, designers, developers, 
@@ -95,7 +131,7 @@ const About = () => {
                 </div>
 
                 {/* where we're headed */}
-                 <div className="w-full bg-[#000] flex flex-col md:flex-row justify-between gap-y-[24px] md:gap-y-0 md:gap-x-[42px] items-center p-[24px] sm:p-[40px] rounded-[16px] sm:rounded-[20px] bg-[#FEF1E6]">
+                 <div className="scroll-fade opacity-0 w-full bg-[#000] flex flex-col md:flex-row justify-between gap-y-[24px] md:gap-y-0 md:gap-x-[42px] items-center p-[24px] sm:p-[40px] rounded-[16px] sm:rounded-[20px] bg-[#FEF1E6]">
                     <div className="w-full md:w-[679px] space-y-[12px] leading-[150%] text-secondaryColor tracking-[1%]">
                         <h2 className="font-[600] font-clash text-[26px] sm:text-[46px] text-[#B15301] leading-[100%]">Where We&#39;re Headed</h2>
                         <div>We want to be the most intentional, human-first tech community on the continent. 
@@ -112,7 +148,7 @@ const About = () => {
                 </div>
                 
                 {/* our vision */}
-                 <div className="w-full bg-[#000] flex flex-col md:flex-row justify-between gap-y-[24px] md:gap-y-0 md:gap-x-[42px] items-center p-[24px] sm:p-[40px] rounded-[16px] sm:rounded-[20px] bg-[#FFF6DF]">
+                 <div className="scroll-fade opacity-0 w-full bg-[#000] flex flex-col md:flex-row justify-between gap-y-[24px] md:gap-y-0 md:gap-x-[42px] items-center p-[24px] sm:p-[40px] rounded-[16px] sm:rounded-[20px] bg-[#FFF6DF]">
                     <div className="w-full md:w-[679px] space-y-[12px] leading-[150%] text-secondaryColor tracking-[1%]">
                         <h2 className="font-[600] font-clash text-[26px] sm:text-[46px] text-[#6B5F40] leading-[100%]">Our Vision</h2>
                         <div>
@@ -129,7 +165,7 @@ const About = () => {
             </section>
 
             <div className="mt-[120px] bg-[#F5F6F7] hidden lg:block">
-            <section className="overflow-x-hidden max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 py-[80px] bg-[#F5F6F7] flex flex-col items-center gap-[70px]">
+            <section className="scroll-fade opacity-0 overflow-x-hidden max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 py-[80px] bg-[#F5F6F7] flex flex-col items-center gap-[70px]">
                 <div className="flex justify-between w-full">
                 <h2 className="leading-[100%] text-[46px] font-clash font-[600] tracking-[3%] text-[#0A1A18] flex space-x-[12px]">
                 <span>Our Partners</span>
@@ -178,7 +214,7 @@ const About = () => {
 
             {/* meet the team */}
             <div className="bg-[#001A17] mt-[40px] lg:mt-0">
-            <section className="max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 py-[40px] sm:py-[120px]">
+            <section className="scroll-fade opacity-0 max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 py-[40px] sm:py-[120px]">
             <div className="space-y-[16px] text-[#C2C7D0] leading-[150%]">
                 <h1 className=" text-[16px] tracking-[16%] ">COMMUNITY ELDERS</h1>
                 <h2 className="flex items-center gap-x-[12px] font-clash font-[600] text-[26px] sm:text-[46px] leading-[100%] tracking-[3%] text-[#fff]">
@@ -233,7 +269,7 @@ const About = () => {
 
             {/* why join thribe */}
             <div className="bg-[#693101]">
-              <section className="max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 py-[40px] sm:py-[120px]">
+              <section className="scroll-fade opacity-0 max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 py-[40px] sm:py-[120px]">
                 <div className="flex flex-wrap justify-between items-start gap-y-[40px]">
                     <div className="w-full md:w-[448px]">
                         <h5 className="text-[16px] leading-[150%] tracking-[16%] uppercase text-[#FFE198]">WHY join THR!BE?</h5>
