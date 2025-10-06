@@ -306,8 +306,8 @@ export default function Home() {
   <div className="w-full md:w-[513px] leading-[150%] tracking-[2%] text-[#354764]">
     <p className="mb-[24px]">
       Working in tech can feel cold, competitive, and isolating — we&#39;re here to change that. THR!BE was built for humans first, 
-      not hustle culture. Tech isn&#39;t just about work — it&#39;s about people. At THR!BE, you&#39;ll find a tribe that gets it. 
-      We mix learning with laughter, growth with community, and celebration with impact. We laugh, play, grow, and thrive — together.
+      not hustle culture. Tech isn&#39;t just about work - it&#39;s about people. At THR!BE, you&#39;ll find a tribe that gets it. 
+      We mix learning with laughter, growth with community, and celebration with impact. We laugh, play, grow, and thrive - together.
     </p>
     <Link href="/#price">
       <Button

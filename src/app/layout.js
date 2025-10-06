@@ -7,11 +7,13 @@ import JoinTournament from "./components/Modals/JoinTournament"
 import PartnerWithUs from "./components/Modals/PartnerWithUs"
 import PremiumMember from "./components/Modals/PremiumMember"
 import PremiumThankYouMember from "./components/Modals/PremiumThankYouModal";
+import GaListener from "./components/ga-listener";
 import FreeThankYouModal from "./components/Modals/FreeThankYouModal";
 import PartnerThankYouMessage from "./components/Modals/PartnerThankYouMessage";
 import LendVoiceThankYouMessage from "./components/Modals/LendVoiceThankYouMessage";
 import LendYourVoiceMobileSideBar from "./components/Modals/LendYourVoiceMobileLinks"
 import PartnerMobileSideBar from "./components/Modals/PartnerMobileLinks"
+import Script from "next/script";
 
 
 const outfit = Outfit({
@@ -54,9 +56,22 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
           rel="stylesheet"
         />
+         <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-E7F1PT141N`}
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-E7F1PT141N');
+          `}
+        </Script>
       </head>
       <body 
         className={outfit.className}>
+          <GaListener />
          <AllContextProvider>
             <LendYourVoice />
             <JoinTournament />
