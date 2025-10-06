@@ -82,7 +82,7 @@ const TeamCard = ({
       <div
         className={`${
           hoverCard ? "block" : "hidden"
-        } ${classnameHover} text-left text-[#fff] rounded-[20px] h-full p-[40px] space-y-[24px]`}
+        } ${classnameHover} text-left text-[#fff] rounded-[20px] w-full h-full p-[40px] space-y-[24px]`}
       >
         <div className="relative w-[80px] sm:w-[50px] h-[80px] sm:h-[50px] rounded-full">
           <Image

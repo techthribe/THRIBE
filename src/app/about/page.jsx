@@ -73,7 +73,7 @@ const About = () => {
     
 
     return (
-        <main className="overflow-x-none">
+        <main className="overflow-x-hidden">
             <section className="bg-[linear-gradient(180deg,rgba(2,18,16,0.54)_25.03%,rgba(2,18,16,0.9)_79.92%),url('https://res.cloudinary.com/chiaka/image/upload/v1758228838/thribe_banner_vqi0br.png')] sm:bg-[linear-gradient(180deg,rgba(2,18,16,0.54)_25.03%,rgba(2,18,16,0.9)_79.92%),url('https://res.cloudinary.com/chiaka/image/upload/v1757761490/thribe_hyoxv7.png')]  bg-cover w-full pb-[94px] sm:pb-[142px]">
                 <NavigationBar />
                 <MobileNavigationBar/>
@@ -225,7 +225,7 @@ const About = () => {
                 </h2>
                 <h3 className="tracking-[2%]">Our bold team holds the vision, energy, and safety of the village.</h3>
             </div>
-            <div className="mt-[24px] sm:mt-[80px] flex justify-between flex-wrap gap-y-[24px] lg:gap-y-[40px] xl:gap-y-0">
+            <div className="mt-[24px] sm:mt-[80px] flex justify-between flex-wrap gap-y-[24px] lg:gap-y-[40px]">
              <TeamCard 
               classname="bg-[#E8F6F4]"
               classnameHover= "bg-[#0A443E]"
@@ -243,6 +243,15 @@ const About = () => {
                 nickname="AKA Khing"  
                 role="The Strategist" 
                 img="/img/member2.png" 
+            />
+            <TeamCard 
+                classname="bg-[#F5F2E6]" 
+                classnameHover= "bg-[#676661]"
+                hoverText="Lawyer. Our calm compass in legal storms. Reviews contracts, protects the village and ensures THR!BE runs with integrity."
+                name="Mariam Abdul" 
+                nickname="AKA Yemi"  
+                role="The Legal Guardian" 
+                img="/img/member5.png" 
             />
             <TeamCard 
             classname="bg-[#FFF6DF]" 
