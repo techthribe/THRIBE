@@ -19,6 +19,22 @@ const About = () => {
     const {togglePartnerWithUsModal} = useAllContext();
     const contentRef = useRef(null);
     const tweenRef = useRef(null);
+      const containerRef = useRef(null);
+        const scrollAmount = 220; // should match card width + gap
+
+        const scrollLeft = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
+
+
 
     useEffect(() => {
         const contentWidth = contentRef.current.scrollWidth / 3;
@@ -85,10 +101,9 @@ const About = () => {
                     </div>
                     </h2>
                     <div className="leading-[150%] max-w-[764px]">
-                        Is to build a tech-powered, value-driven community where individuals 
-                        don&#39;t just exist but build valuable relationships, gain visibility, collaborate and 
-                        contribute to real-world impact. 
-                        A tribe of people that thrive through connection, collaboration, and collective growth.
+                        Is to create a human-first community where people don&#39;t just work in silos but share stories, find clarity, 
+                        connect and discover balance through play.
+                         A tribe that thrives by being real, supporting each other, and growing both in and beyond tech.
                     </div>
                 </div>
             </section>
@@ -100,15 +115,18 @@ const About = () => {
                     </div>
                     <div className="w-full md:w-[726px] space-y-[24px] leading-[150%] text-secondaryColor tracking-[1%]">
                         <h2 className="font-[600] font-clash text-[26px] sm:text-[46px] text-[#0A1A18] leading-[100%]"><span className="text-primaryColor">THR!BE</span> began as a quiet escape</h2>
-                        <p>A place to laugh, breathe, and break free from the chaos of work and burnout.
-                            What started as one person looking for connection became a movement of techies, creatives, 
-                            and builders craving something deeper: a human space in tech. We didn&#39;t want just another curated, 
-                            cold community, we wanted something warm. Real. Imperfect. A village where people could grow, rest, pivot, 
-                            laugh, mess up and still belong.
+                        <p>
+                        A place to laugh, breathe, and break free from the chaos of work and burnout.
+                        What started as one person looking for connection became a movement of techies, 
+                        creatives, and builders craving something deeper: a human space in tech. We didn&#39;t 
+                        want just another curated, cold community, we wanted something: Warm. Real. Imperfect. 
+                        A village where people could grow, rest, share, laugh, mess up and still belong.
                         </p>
-
-                        <p>THR!BE exists because we were never meant to do this alone. We&#39;re building the space we wish we 
-                            had and leaving the door wide open for the next person. Not just to join… but to thrive.
+                        <p>
+                        THR!BE exists because we were never meant to do this alone. 
+                        We are building the space we wish we had and leaving the door 
+                        wide open for the next person.Not just to join… but to thrive.
+                        
                         </p>
                     </div>
                 </div>
@@ -117,12 +135,12 @@ const About = () => {
                <div className="scroll-fade opacity-0 w-full bg-[#000] flex flex-col md:flex-row justify-between gap-y-[24px] md:gap-y-0 md:gap-x-[42px] items-center p-[24px] sm:p-[40px] rounded-[16px] sm:rounded-[20px] bg-[#E8F6F4]">
                     <div className="w-full md:w-[679px] space-y-[12px]  leading-[150%] text-secondaryColor tracking-[1%]">
                         <h2 className="font-[600] font-clash text-[26px] sm:text-[46px] text-[#087C72] leading-[100%]">Who We Are</h2>
-                        <div>THR!BE is not your regular tech community. We&#39;re a collective of thinkers, makers, designers, developers, 
-                            product managers, and creative minds building with heart. We&#39;re creating connection. 
-                            We&#39;re not just here to upskill, we&#39;re here to thrive.
-                        <p>
-                        This is your space to grow, laugh, collaborate, cry a little, and build work that matters. 
-                        </p>
+                        <div>
+                            THR!BE is a tech community and media space where honesty meets creativity. 
+                            We&#39;re building a platform where techies can openly share their wins, struggles, 
+                            failures, and breakthroughs through podcasts, blogs, memes, and real conversations. 
+                            Beyond talk, we foster connections, 
+                            guide newcomers, and create room for fun and balance with different activities.
                         </div>
                     </div>
                     <div className="relative w-full md:w-[445px] h-[253px] rounded-[20px] bg-[#C2C7D0]">
@@ -134,12 +152,12 @@ const About = () => {
                  <div className="scroll-fade opacity-0 w-full bg-[#000] flex flex-col md:flex-row justify-between gap-y-[24px] md:gap-y-0 md:gap-x-[42px] items-center p-[24px] sm:p-[40px] rounded-[16px] sm:rounded-[20px] bg-[#FEF1E6]">
                     <div className="w-full md:w-[679px] space-y-[12px] leading-[150%] text-secondaryColor tracking-[1%]">
                         <h2 className="font-[600] font-clash text-[26px] sm:text-[46px] text-[#B15301] leading-[100%]">Where We&#39;re Headed</h2>
-                        <div>We want to be the most intentional, human-first tech community on the continent. 
-                            A space that doesn&#39;t just celebrate the loud wins, but sees the quiet efforts
-                        <p>We&#39;re growing a network of support, learning, opportunity, and fun.</p>
-                        <p>
-                        THR!BE is becoming a movement and you&#39;re part of it.
-                        </p>
+                        <div>
+                            We are going to be the most open and balanced tech tribe on the continent. 
+                            A space that gives room for honest struggles, real stories, and playful escapes. 
+                            We&#39;re building a movement where guidance meets freedom, where tech meets fun, and where growth feels human. 
+                            THR!BE isn&#39;t just a community - 
+                            it&#39;s becoming the therapy couch, the playground, and the tribe you didn&#39;t know you needed.
                         </div>
                     </div>
                     <div className="relative w-full md:w-[445px] h-[253px] rounded-[20px] bg-[#C2C7D0]">
@@ -152,10 +170,11 @@ const About = () => {
                     <div className="w-full md:w-[679px] space-y-[12px] leading-[150%] text-secondaryColor tracking-[1%]">
                         <h2 className="font-[600] font-clash text-[26px] sm:text-[46px] text-[#6B5F40] leading-[100%]">Our Vision</h2>
                         <div>
-                            To become the most empowering and connected tech tribe in Africa and beyond. 
-                            A tribe of people from any background who can thrive through community, build with purpose, 
-                            and rise with others. We see a future where collaboration beats competition, 
-                            access replaces gatekeeping and growth is shared, not siloed.             
+                           To become the most open and relatable tech tribe in Africa and beyond. 
+                           We see a future where tech is not just about hard skills, where honesty fuels growth, 
+                           balance matters as much as success, and tech feels human. A future where games sit beside bootcamps, 
+                           where failures matter as much as successes, and where everyone feels seen, 
+                           heard, and supported on their journey.            
                         </div>
                     </div>
                     <div className="relative w-full md:w-[445px] h-[253px] rounded-[20px] bg-[#C2C7D0]">
@@ -214,7 +233,7 @@ const About = () => {
 
             {/* meet the team */}
             <div className="bg-[#001A17] mt-[40px] lg:mt-0">
-            <section className="scroll-fade opacity-0 max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 py-[40px] sm:py-[120px]">
+            <section className="scroll-fade opacity-0 max-w-[1228px] mx-auto px-[16px] md:px-[20px] xl:px-0 py-[40px] sm:py-[120px]">
             <div className="space-y-[16px] text-[#C2C7D0] leading-[150%]">
                 <h1 className=" text-[16px] tracking-[16%] ">COMMUNITY ELDERS</h1>
                 <h2 className="flex items-center gap-x-[12px] font-clash font-[600] text-[26px] sm:text-[46px] leading-[100%] tracking-[3%] text-[#fff]">
@@ -225,7 +244,9 @@ const About = () => {
                 </h2>
                 <h3 className="tracking-[2%]">Our bold team holds the vision, energy, and safety of the village.</h3>
             </div>
-            <div className="mt-[24px] sm:mt-[80px] flex justify-between flex-wrap gap-y-[24px] lg:gap-y-[40px]">
+            <div
+             ref={containerRef}
+            className="mt-[24px] sm:mt-[80px] flex flex-wrap lg:flex-nowrap gap-y-[24px] lg:gap-y-0 md:gap-x-[20px] lg:overflow-x-hidden lg:overflow-y-hidden">
              <TeamCard 
               classname="bg-[#E8F6F4]"
               classnameHover= "bg-[#0A443E]"
@@ -273,7 +294,27 @@ const About = () => {
             />
             
             </div>
+
+            {/* scroll button */}
+            <div className="mt-[32px] hidden lg:flex justify-between items-center ">
+            <div className="w-[80%] h-[1px] bg-[#354764]"></div>
+
+            
+            <div className="flex justify-between gap-x-[40px] w-[120px] shrink-0">
+            <div onClick={scrollLeft} className="flex items-center justify-center w-[40px] h-[40px] rounded-full cursor-pointer border border-[#fff]">
+               <span className="material-symbols-outlined text-[#fff]">
+                chevron_left
+                </span>
+            </div>
+            <div  onClick={scrollRight} className="flex items-center justify-center w-[40px] h-[40px] cursor-pointer rounded-full border border-[#fff]">
+                <span className="material-symbols-outlined text-[24px] text-[#fff]">
+                    chevron_right
+                </span>
+            </div>
+            </div>
+            </div>
             </section>
+        
             </div>
 
             {/* why join thribe */}
