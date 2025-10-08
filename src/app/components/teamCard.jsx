@@ -53,13 +53,13 @@ const TeamCard = ({
       onMouseEnter={!isMobile ? () => setHoverCard(true) : undefined}
       onMouseLeave={!isMobile ? () => setHoverCard(false) : undefined}
       onClick={handleClick}
-      className="w-full md:w-[48%] lg:w-[30%] xl:w-[280px] h-[354px] sm:h-[420px]"
+      className="relative w-full md:w-[48%] lg:w-[280px] h-[354px] sm:h-[420px]"
     >
       {/* Front */}
       <div
         className={`${
           hoverCard ? "hidden" : "block"
-        } ${classname} text-center text-[#0A1A18] rounded-[20px] p-[40px] space-y-[24px]`}
+        } ${classname} relative text-center text-[#0A1A18] rounded-[20px] p-[40px] space-y-[24px] w-full lg:w-[280px] h-[354px] sm:h-[420px]`}
       >
         <div className="relative w-[140px] sm:w-[200px] mx-auto h-[140px] sm:h-[200px] rounded-full">
           <Image
@@ -82,7 +82,7 @@ const TeamCard = ({
       <div
         className={`${
           hoverCard ? "block" : "hidden"
-        } ${classnameHover} text-left text-[#fff] rounded-[20px] w-full h-full p-[40px] space-y-[24px]`}
+        } ${classnameHover} text-left text-[#fff] rounded-[20px] p-[40px] space-y-[24px] w-full lg:w-[280px] h-[354px] sm:h-[420px]`}
       >
         <div className="relative w-[80px] sm:w-[50px] h-[80px] sm:h-[50px] rounded-full">
           <Image
@@ -92,13 +92,14 @@ const TeamCard = ({
             className="object-cover rounded-full"
           />
         </div>
-        <h1 className="font-[600] font-clash tracking-[3%] leading-[120%] text-[20px]">
+        <h1 className="font-[600] font-clash tracking-[3%] leading-[120%] text-[20px] w-full">
           {name}
         </h1>
-        <div>{hoverText}</div>
+        <div className="w-full">{hoverText}</div>
       </div>
     </div>
   );
 };
 
 export default TeamCard;
+

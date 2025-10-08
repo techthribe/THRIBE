@@ -19,6 +19,22 @@ const About = () => {
     const {togglePartnerWithUsModal} = useAllContext();
     const contentRef = useRef(null);
     const tweenRef = useRef(null);
+      const containerRef = useRef(null);
+        const scrollAmount = 220; // should match card width + gap
+
+        const scrollLeft = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+    }
+  };
+
+  const scrollRight = () => {
+    if (containerRef.current) {
+      containerRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
+
+
 
     useEffect(() => {
         const contentWidth = contentRef.current.scrollWidth / 3;
@@ -217,7 +233,7 @@ const About = () => {
 
             {/* meet the team */}
             <div className="bg-[#001A17] mt-[40px] lg:mt-0">
-            <section className="scroll-fade opacity-0 max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 py-[40px] sm:py-[120px]">
+            <section className="scroll-fade opacity-0 max-w-[1228px] mx-auto px-[16px] md:px-[20px] xl:px-0 py-[40px] sm:py-[120px]">
             <div className="space-y-[16px] text-[#C2C7D0] leading-[150%]">
                 <h1 className=" text-[16px] tracking-[16%] ">COMMUNITY ELDERS</h1>
                 <h2 className="flex items-center gap-x-[12px] font-clash font-[600] text-[26px] sm:text-[46px] leading-[100%] tracking-[3%] text-[#fff]">
@@ -228,7 +244,9 @@ const About = () => {
                 </h2>
                 <h3 className="tracking-[2%]">Our bold team holds the vision, energy, and safety of the village.</h3>
             </div>
-            <div className="mt-[24px] sm:mt-[80px] flex justify-between flex-wrap gap-y-[24px] lg:gap-y-[40px]">
+            <div
+             ref={containerRef}
+            className="mt-[24px] sm:mt-[80px] flex flex-wrap lg:flex-nowrap gap-y-[24px] lg:gap-y-0 md:gap-x-[20px] lg:overflow-x-hidden lg:overflow-y-hidden">
              <TeamCard 
               classname="bg-[#E8F6F4]"
               classnameHover= "bg-[#0A443E]"
@@ -276,7 +294,27 @@ const About = () => {
             />
             
             </div>
+
+            {/* scroll button */}
+            <div className="mt-[32px] hidden lg:flex justify-between items-center ">
+            <div className="w-[80%] h-[1px] bg-[#354764]"></div>
+
+            
+            <div className="flex justify-between gap-x-[40px] w-[120px] shrink-0">
+            <div onClick={scrollLeft} className="flex items-center justify-center w-[40px] h-[40px] rounded-full cursor-pointer border border-[#fff]">
+               <span className="material-symbols-outlined text-[#fff]">
+                chevron_left
+                </span>
+            </div>
+            <div  onClick={scrollRight} className="flex items-center justify-center w-[40px] h-[40px] cursor-pointer rounded-full border border-[#fff]">
+                <span className="material-symbols-outlined text-[24px] text-[#fff]">
+                    chevron_right
+                </span>
+            </div>
+            </div>
+            </div>
             </section>
+        
             </div>
 
             {/* why join thribe */}
