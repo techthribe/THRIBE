@@ -85,10 +85,9 @@ const About = () => {
                     </div>
                     </h2>
                     <div className="leading-[150%] max-w-[764px]">
-                        Is to build a tech-powered, value-driven community where individuals 
-                        don&#39;t just exist but build valuable relationships, gain visibility, collaborate and 
-                        contribute to real-world impact. 
-                        A tribe of people that thrive through connection, collaboration, and collective growth.
+                        Is to create a human-first community where people don&#39;t just work in silos but share stories, find clarity, 
+                        connect and discover balance through play.
+                         A tribe that thrives by being real, supporting each other, and growing both in and beyond tech.
                     </div>
                 </div>
             </section>
@@ -100,15 +99,18 @@ const About = () => {
                     </div>
                     <div className="w-full md:w-[726px] space-y-[24px] leading-[150%] text-secondaryColor tracking-[1%]">
                         <h2 className="font-[600] font-clash text-[26px] sm:text-[46px] text-[#0A1A18] leading-[100%]"><span className="text-primaryColor">THR!BE</span> began as a quiet escape</h2>
-                        <p>A place to laugh, breathe, and break free from the chaos of work and burnout.
-                            What started as one person looking for connection became a movement of techies, creatives, 
-                            and builders craving something deeper: a human space in tech. We didn&#39;t want just another curated, 
-                            cold community, we wanted something warm. Real. Imperfect. A village where people could grow, rest, pivot, 
-                            laugh, mess up and still belong.
+                        <p>
+                        A place to laugh, breathe, and break free from the chaos of work and burnout.
+                        What started as one person looking for connection became a movement of techies, 
+                        creatives, and builders craving something deeper: a human space in tech. We didn&#39;t 
+                        want just another curated, cold community, we wanted something: Warm. Real. Imperfect. 
+                        A village where people could grow, rest, share, laugh, mess up and still belong.
                         </p>
-
-                        <p>THR!BE exists because we were never meant to do this alone. We&#39;re building the space we wish we 
-                            had and leaving the door wide open for the next person. Not just to join… but to thrive.
+                        <p>
+                        THR!BE exists because we were never meant to do this alone. 
+                        We are building the space we wish we had and leaving the door 
+                        wide open for the next person.Not just to join… but to thrive.
+                        
                         </p>
                     </div>
                 </div>
@@ -117,12 +119,12 @@ const About = () => {
                <div className="scroll-fade opacity-0 w-full bg-[#000] flex flex-col md:flex-row justify-between gap-y-[24px] md:gap-y-0 md:gap-x-[42px] items-center p-[24px] sm:p-[40px] rounded-[16px] sm:rounded-[20px] bg-[#E8F6F4]">
                     <div className="w-full md:w-[679px] space-y-[12px]  leading-[150%] text-secondaryColor tracking-[1%]">
                         <h2 className="font-[600] font-clash text-[26px] sm:text-[46px] text-[#087C72] leading-[100%]">Who We Are</h2>
-                        <div>THR!BE is not your regular tech community. We&#39;re a collective of thinkers, makers, designers, developers, 
-                            product managers, and creative minds building with heart. We&#39;re creating connection. 
-                            We&#39;re not just here to upskill, we&#39;re here to thrive.
-                        <p>
-                        This is your space to grow, laugh, collaborate, cry a little, and build work that matters. 
-                        </p>
+                        <div>
+                            THR!BE is a tech community and media space where honesty meets creativity. 
+                            We&#39;re building a platform where techies can openly share their wins, struggles, 
+                            failures, and breakthroughs through podcasts, blogs, memes, and real conversations. 
+                            Beyond talk, we foster connections, 
+                            guide newcomers, and create room for fun and balance with different activities.
                         </div>
                     </div>
                     <div className="relative w-full md:w-[445px] h-[253px] rounded-[20px] bg-[#C2C7D0]">
@@ -134,12 +136,12 @@ const About = () => {
                  <div className="scroll-fade opacity-0 w-full bg-[#000] flex flex-col md:flex-row justify-between gap-y-[24px] md:gap-y-0 md:gap-x-[42px] items-center p-[24px] sm:p-[40px] rounded-[16px] sm:rounded-[20px] bg-[#FEF1E6]">
                     <div className="w-full md:w-[679px] space-y-[12px] leading-[150%] text-secondaryColor tracking-[1%]">
                         <h2 className="font-[600] font-clash text-[26px] sm:text-[46px] text-[#B15301] leading-[100%]">Where We&#39;re Headed</h2>
-                        <div>We want to be the most intentional, human-first tech community on the continent. 
-                            A space that doesn&#39;t just celebrate the loud wins, but sees the quiet efforts
-                        <p>We&#39;re growing a network of support, learning, opportunity, and fun.</p>
-                        <p>
-                        THR!BE is becoming a movement and you&#39;re part of it.
-                        </p>
+                        <div>
+                            We are going to be the most open and balanced tech tribe on the continent. 
+                            A space that gives room for honest struggles, real stories, and playful escapes. 
+                            We&#39;re building a movement where guidance meets freedom, where tech meets fun, and where growth feels human. 
+                            THR!BE isn&#39;t just a community - 
+                            it&#39;s becoming the therapy couch, the playground, and the tribe you didn&#39;t know you needed.
                         </div>
                     </div>
                     <div className="relative w-full md:w-[445px] h-[253px] rounded-[20px] bg-[#C2C7D0]">
@@ -152,10 +154,11 @@ const About = () => {
                     <div className="w-full md:w-[679px] space-y-[12px] leading-[150%] text-secondaryColor tracking-[1%]">
                         <h2 className="font-[600] font-clash text-[26px] sm:text-[46px] text-[#6B5F40] leading-[100%]">Our Vision</h2>
                         <div>
-                            To become the most empowering and connected tech tribe in Africa and beyond. 
-                            A tribe of people from any background who can thrive through community, build with purpose, 
-                            and rise with others. We see a future where collaboration beats competition, 
-                            access replaces gatekeeping and growth is shared, not siloed.             
+                           To become the most open and relatable tech tribe in Africa and beyond. 
+                           We see a future where tech is not just about hard skills, where honesty fuels growth, 
+                           balance matters as much as success, and tech feels human. A future where games sit beside bootcamps, 
+                           where failures matter as much as successes, and where everyone feels seen, 
+                           heard, and supported on their journey.            
                         </div>
                     </div>
                     <div className="relative w-full md:w-[445px] h-[253px] rounded-[20px] bg-[#C2C7D0]">
