@@ -114,7 +114,7 @@ export default function Modal({ }) {
       ></div>
 
       {/* modal content */}
-      <div className="overflow-y-auto tracking-[2%] leading-[150%] relative bg-[#E8F6F4] rounded-lg shadow-lg z-10 w-[95%] lg:w-[1200px] 2xl:w-[1404px] max-h-[90vh] rounded-[16px] py-[40px] xl:py-[120px] px-[16px] xl:px-[90px] mt-[20px]">
+      <div className="overflow-y-auto tracking-[2%] leading-[150%] relative bg-[#E8F6F4] rounded-lg shadow-lg z-10 w-[95%] lg:w-[1000px] xl:w-[1404px] max-h-[90vh] rounded-[16px] py-[40px] xl:py-[120px] px-[16px] xl:px-[90px] mt-[20px]">
         <div className="flex justify-between item-start">
         <div>
         <h2 className="text-[16px] tracking-[16%] text-primaryGreen">THR!BE WITH US FOR FREE</h2>
@@ -148,7 +148,7 @@ export default function Modal({ }) {
                     <div className="flex flex-col md:flex-row gap-y-[16px] md:gap-y-0 md:gap-x-[24px] w-full md:w-[542px]">
                     <label htmlFor="role" className="">and I am a </label>
                     <div className="relative md:flex md:gap-x-[3px]">
-                         <Image src="/icons/arrow-bottom-black.png" width={20} height={20} alt="thribe community" className="object-fit absolute bottom-0 right-0" />
+                         {/* <Image src="/icons/arrow-bottom-black.png" width={20} height={20} alt="thribe community" className="object-fit absolute bottom-0 right-0" />
                         <select id="role" 
                             name="role"
                             value={formDatas.role}
@@ -164,7 +164,16 @@ export default function Modal({ }) {
                             <option value="Graphic Designer" className="hover:bg-[#fff] cursor-pointer">Graphic Designer</option>
                             <option value="Graphic Designer" className="hover:bg-[#fff] cursor-pointer">Others</option>
                             
-                        </select>
+                        </select> */}
+                         <input 
+                            name="role"
+                            value={formDatas.role}
+                            onChange={onChangeFormDataFunctions}
+                            id="role" 
+                            type="text" 
+                            placeholder="What field are you in? (developer, designer...)"  
+                            className="w-[98%] placeholder-[#87857F] text-[16px] md:text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none"
+                    />
                          <div className="absolute md:relative bottom-[-7px] right-0">.</div>
                         </div>
                     </div>
@@ -244,7 +253,7 @@ export default function Modal({ }) {
                     />
                     <label htmlFor="role" className="">and I am a </label>
                     <div className="relative w-[433px]">
-                         <Image src="/icons/arrow-bottom-black.png" width={20} height={20} alt="thribe community" className="object-fit absolute bottom-0 right-0" />
+                         {/* <Image src="/icons/arrow-bottom-black.png" width={20} height={20} alt="thribe community" className="object-fit absolute bottom-0 right-0" />
                         <select id="role" 
                             name="role"
                             value={formDatas.role}
@@ -259,7 +268,16 @@ export default function Modal({ }) {
                             <option value="Backend Developer" className="hover:bg-[#fff] cursor-pointer">Backend Developer</option>
                             <option value="Graphic Designer" className="hover:bg-[#fff] cursor-pointer">Graphic Designer</option>
                             <option value="Others" className="hover:bg-[#fff] cursor-pointer">Others</option>
-                        </select>
+                        </select> */}
+                        <input 
+                            id="role" 
+                            name="role"
+                            value={formDatas.role}
+                            onChange={onChangeFormDataFunctions}
+                            type="text" 
+                            placeholder="What field are you in? (developer, designer...)"  
+                            className="w-[433px] placeholder-[#87857F] text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none"
+                        />
                     </div>
                     <label htmlFor="email" className="">My email address is</label>
                     <div>
