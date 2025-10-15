@@ -207,22 +207,22 @@ export default function Home() {
         <Image src="/img/carousel_gif_mobile.gif" fill alt="thribe community - tech community in africa" className="" unoptimized />
       </div>
       <div className="slide relative w-[750px] h-[62px] mt-[40px]">
-        <Image src="/img/carousel_gif_mobile.gif" fill alt="thribe community" className="" unoptimized />
+        <Image src="/img/carousel_gif_mobile.gif" fill alt="thribe community - tech community in africa" className="" unoptimized />
       </div>
       <div className="slide relative w-[750px] h-[62px] mt-[40px]">
-        <Image src="/img/carousel_gif_mobile.gif" fill alt="thribe community" className="" unoptimized />
+        <Image src="/img/carousel_gif_mobile.gif" fill alt="thribe community - tech community in africa" className="" unoptimized />
       </div>
     </div>
 
     <div ref={contentRef} className="md:flex w-[4320px] overflow-hidden hidden">
       <div className="slide relative w-[1440px] h-[122px] mt-[40px] md:mt-[120px] ">
-        <Image src="/img/carousel-gif.gif" fill alt="thribe community" className="" unoptimized />
+        <Image src="/img/carousel-gif.gif" fill alt="thribe community - tech community in africa" className="" unoptimized />
       </div>
       <div className="slide relative w-[1440px] h-[122px] mt-[40px] md:mt-[120px]">
-        <Image src="/img/carousel-gif.gif" fill alt="thribe community" className="" unoptimized />
+        <Image src="/img/carousel-gif.gif" fill alt="thribe community - tech community in africa" className="" unoptimized />
       </div>
       <div className="slide relative w-[1440px] h-[122px] mt-[40px] md:mt-[120px]">
-        <Image src="/img/carousel-gif.gif" fill alt="thribe community" className="" unoptimized />
+        <Image src="/img/carousel-gif.gif" fill alt="thribe community - tech community in africa" className="" unoptimized />
       </div>
     </div>
 
