@@ -45,8 +45,8 @@ const clashDisplay = localFont({
 export const metadata = {
   metadataBase: new URL("https://techthribe.com"), // 👈 your site URL
   title: {
-    default: "Thribe - Tech Community in Africa — Belong, Share, Thrive",
-    template: "%s | Thribe - Tech Community in Africa — Belong, Share, Thrive", // 👈 allows dynamic titles
+    default: "Thribe Community - Tech Community in Africa — Belong, Share, Thrive",
+    template: "%s | Thribe Community - Tech Community in Africa — Belong, Share, Thrive", // 👈 allows dynamic titles
   },
   description:
     "A vibrant, inclusive community for tech minds to share wins, struggles, lessons and real talk. We connect professionals, create safe spaces, and even kick ball together.",
@@ -72,16 +72,16 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "https://techthribe.com",
-    title: "Thribe - Tech Community in Africa — Belong, Share, Thrive",
+    title: "Thribe Community - Tech Community in Africa — Belong, Share, Thrive",
     description:
       "A vibrant, inclusive community for tech minds to share wins, struggles, lessons and real talk. We connect professionals, create safe spaces, and even kick ball together.",
-    siteName: "Thribe Community",
+    siteName: "Thribe Community - Tech Community in Africa — Belong, Share, Thrive",
     images: [
       {
         url: "https://res.cloudinary.com/chiaka/image/upload/v1759653376/Gemini_Generated_Image_8ulrf68ulrf68ulr_2_1_wdqzug.png", // 👈 Replace with your OG image
         width: 1200,
         height: 630,
-        alt: "Thribe Community",
+        alt: "Thribe Community - Tech Community in Africa — Belong, Share, Thrive",
       },
     ],
   },
