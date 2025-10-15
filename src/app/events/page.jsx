@@ -106,7 +106,7 @@ const Events = () => {
                     <h2 className="mt-[16px] flex items-center gap-x-[12px] font-clash font-[600] text-[26px] md:text-[48px] leading-[100%] md:leading-[120%] tracking-[1%] text-[#fff]">
                     <span>Past Events</span>
                     <div className="relative w-[26px] md:w-[46px] h-[26px] md:h-[46px]">
-                    <Image src="/img/clock.png" fill alt="thribe community" className="object-center" />
+                    <Image src="/img/clock.png" fill alt="thribe community icon" className="object-center" />
                     </div>
                     </h2>
                     </div>

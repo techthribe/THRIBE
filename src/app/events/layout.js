@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Thribe Community Events",
+  title: "Thribe Community Events - Tech Community in Africa",
   description: "These are conversations, masterclasses, and challenges designed to bring real techies together.",
 };
 

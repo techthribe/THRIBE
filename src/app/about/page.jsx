@@ -329,7 +329,7 @@ const About = () => {
                         <h2 className="flex items-center gap-x-[12px] font-clash font-[600] text-[26px] sm:text-[46px] leading-[100%] tracking-[3%] text-[#fff] mt-[24px] sm:mt-0">
                         <span>Different</span>
                         <div className="relative w-[36px] sm:w-[46px] h-[36px] sm:h-[46px] rounded-full">
-                        <Image src="/img/join-team.png" fill alt="thribe community" className="object-center rounded-full" />
+                        <Image src="/img/join-team.png" fill alt="thribe community - tech community in africa" className="object-center rounded-full" />
                         </div>
                         </h2>
                         {/* for web view */}
@@ -337,7 +337,7 @@ const About = () => {
                             <Link href="/#price">
                             <button className="cursor-pointer w-[192px] h-[47px] border border-[#FFE198] text-[#FFE198] rounded-[100px] flex items-center gap-x-[24px] justify-center">
                                 <span>Join THR!BE</span>
-                                <Image src="/icons/arrow-right.png" width={24} height={24} alt="thribe community" className="object-center" />
+                                <Image src="/icons/arrow-right.png" width={24} height={24} alt="thribe community - tech community in africa" className="object-center" />
                             </button>
                             </Link>
                         </div>

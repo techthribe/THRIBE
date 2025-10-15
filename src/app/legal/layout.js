@@ -5,8 +5,8 @@ import Image from "next/image";
 import Footer from "../components/Footer";
 
 export const metadata = {
-  title: "Thribe Community Legal documents",
-  description: "Thribe community",
+  title: "Thribe Community Legal documents - Tech Community in Africa",
+  description: "Thribe community Terms and Conditions",
 };
 
 export default function RootLayout({ children }) {

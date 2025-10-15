@@ -15,7 +15,6 @@ import LendYourVoiceMobileSideBar from "./components/Modals/LendYourVoiceMobileL
 import PartnerMobileSideBar from "./components/Modals/PartnerMobileLinks"
 import Script from "next/script";
 
-
 const outfit = Outfit({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"], 
@@ -44,9 +43,66 @@ const clashDisplay = localFont({
 });
 
 export const metadata = {
-  title: "Thribe Community",
-  description: "Thribe community",
+  metadataBase: new URL("https://techthribe.com"), // 👈 your site URL
+  title: {
+    default: "Thribe - Tech Community in Africa — Belong, Share, Thrive",
+    template: "%s | Thribe - Tech Community in Africa — Belong, Share, Thrive", // 👈 allows dynamic titles
+  },
+  description:
+    "A vibrant, inclusive community for tech minds to share wins, struggles, lessons and real talk. We connect professionals, create safe spaces, and even kick ball together.",
+  keywords: [
+    "Thribe Community",
+    "TechThribe",
+    "Tech Community in Africa",
+    "Technology",
+    "Innovation",
+    "Community",
+    "Design",
+    "Web Development",
+    "Startups",
+  ],
+  authors: [{ name: "Thanau Abbas", url: "https://techthribe.com" }],
+  creator: "Thribe Community",
+  publisher: "Thribe Community",
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://techthribe.com",
+    title: "Thribe - Tech Community in Africa — Belong, Share, Thrive",
+    description:
+      "A vibrant, inclusive community for tech minds to share wins, struggles, lessons and real talk. We connect professionals, create safe spaces, and even kick ball together.",
+    siteName: "Thribe Community",
+    images: [
+      {
+        url: "https://res.cloudinary.com/chiaka/image/upload/v1759653376/Gemini_Generated_Image_8ulrf68ulrf68ulr_2_1_wdqzug.png", // 👈 Replace with your OG image
+        width: 1200,
+        height: 630,
+        alt: "Thribe Community",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Thribe - Tech Community in Africa — Belong, Share, Thrive",
+    description:
+      "A vibrant, inclusive community for tech minds to share wins, struggles, lessons and real talk. We connect professionals, create safe spaces, and even kick ball together.",
+    creator: "@techthribe", // 👈 your handle (optional)
+    images: ["https://res.cloudinary.com/chiaka/image/upload/v1759653376/Gemini_Generated_Image_8ulrf68ulrf68ulr_2_1_wdqzug.png"],
+  },
+  icons: {
+    icon: "/brand.ico",
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
+  alternates: {
+    canonical: "https://techthribe.com",
+  },
 };
+
 
 export default function RootLayout({ children }) {
   return (
