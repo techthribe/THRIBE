@@ -190,13 +190,13 @@ export default function Home() {
       {/* image collage for desktop view */}
       <div className="fade-section hidden md:flex justify-between space-x-[24px] items-end mt-[-56px]">
         <div className="relative w-[360px] h-[392px]">
-          <Image src="/img/frame1.png" fill alt="thribe community" className="object-fit" />
+          <Image src="/img/frame1.png" fill alt="thribe community - tech community in africa" className="object-fit" />
         </div>
         <div className="relative w-[480px] h-[256px]">
-          <Image src="/img/frame2.png" fill alt="thribe community" className="object-fit" />
+          <Image src="/img/frame2.png" fill alt="thribe community - tech community in africa" className="object-fit" />
         </div>
         <div className="relative w-[360px] h-[392px]">
-          <Image src="/img/frame3.png" fill alt="thribe community" className="object-fit" />
+          <Image src="/img/frame3.png" fill alt="thribe community - tech community in africa" className="object-fit" />
         </div>
       </div>
       {/* image collage for desktop view ends here */}
@@ -204,7 +204,7 @@ export default function Home() {
 
     <div ref={mobileContentRef} className=" w-[2250px] overflow-hidden flex md:hidden ">
       <div className="slide relative w-[750px] h-[62px] mt-[40px]">
-        <Image src="/img/carousel_gif_mobile.gif" fill alt="thribe community" className="" unoptimized />
+        <Image src="/img/carousel_gif_mobile.gif" fill alt="thribe community - tech community in africa" className="" unoptimized />
       </div>
       <div className="slide relative w-[750px] h-[62px] mt-[40px]">
         <Image src="/img/carousel_gif_mobile.gif" fill alt="thribe community" className="" unoptimized />
@@ -236,7 +236,7 @@ export default function Home() {
           <h2 className="leading-[120%] text-[26px] md:text-[48px] tracking-[1%] text-primaryColor flex space-x-[12px] mt-[8px]">
             <span>Tech Community</span>
             <div className="relative w-[32px] md:w-[66px] h-[22px] md:h-[46px]">
-            <Image src="/img/community.png" fill alt="thribe community" className="object-fit" />
+            <Image src="/img/community.png" fill alt="thribe community - tech community in africa" className="object-fit" />
             </div>
             </h2>
         </div>
