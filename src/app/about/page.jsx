@@ -253,7 +253,7 @@ const About = () => {
               hoverText="Designer. Dreamer. Spark plug. Keeps the heart of thribe alivee with direction, creativity, and intentional chaos."
               name="Thanau Abbas"
               nickname="AKA Sultana"
-              role="The Vision Holder"
+              role="Founder & Visionary"
               img="/img/member1.png" 
             />
              <TeamCard 
