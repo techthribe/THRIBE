@@ -98,22 +98,6 @@ const JoinCommunity = () => {
                     <div className="flex flex-col md:flex-row gap-y-[16px] md:gap-y-0 md:gap-x-[24px] w-full md:w-[542px]">
                     <label htmlFor="role" className="">and I am a </label>
                     <div className="relative md:flex md:gap-x-[3px]">
-                        {/* <Image src="/icons/arrow-bottom-black.png" width={20} height={20} alt="thribe community" className="object-fit absolute bottom-0 right-0" /> */}
-                    {/* <select id="role" 
-                        name="role"
-                        value={data.role}
-                        onChange={onChangeFormDataFunction}
-                        className={`appearance-none cursor-pointer bg-[#FFF6DF] w-[98%] placeholder-[#87857F] ${data.role == "" ? "text-[#87857f]" : ""} text-[16px] md:text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none`}
-                        >
-                        <option value="" disabled>What field are you in? (developer, designer...)</option>
-                        <option value="Product Designer" className="hover:bg-[#fff] cursor-pointer">Product Designer</option>
-                        <option value="Product MAanager" className="hover:bg-[#fff] cursor-pointer">Product Manager</option>
-                        <option value="Unit Tester" className="hover:bg-[#fff] cursor-pointer">Unit Tester</option>
-                        <option value="Frontend Developer" className="hover:bg-[#fff] cursor-pointer">Frontend Developer</option>
-                        <option value="Backend Developer" className="hover:bg-[#fff] cursor-pointer">Backend Developer</option>
-                        <option value="Graphic Designer" className="hover:bg-[#fff] cursor-pointer">Graphic Designer</option>
-                        <option value="Graphic Designer" className="hover:bg-[#fff] cursor-pointer">Others</option>
-                    </select> */}
                     <input name="role" 
                     value={data.role}  
                     onChange={onChangeFormDataFunction}
@@ -164,22 +148,6 @@ const JoinCommunity = () => {
                     />
                     <label htmlFor="job" className="">and I am a </label>
                     <div className="relative w-[400px]">
-                    {/* <Image src="/icons/arrow-bottom-black.png" width={20} height={20} alt="thribe community" className="object-fit absolute bottom-0 right-0" />
-                    <select id="role" 
-                        name="role"
-                        value={data.role}
-                        onChange={onChangeFormDataFunction}
-                        className={`appearance-none cursor-pointer bg-[#FFF6DF] w-[400px] placeholder-[#87857F] ${data.role == "" ? "text-[#87857f]" : ""} text-[18px]  border border-x-0 border-t-0  border-b-[#0A1A18] inline px-[5px] outline-none`}
-                    >
-                        <option value="" disabled>What field are you in? (developer, designer...)</option>
-                        <option value="Product Designer" className="hover:bg-[#fff] cursor-pointer">Product Designer</option>
-                        <option value="Product MAanager" className="hover:bg-[#fff] cursor-pointer">Product Manager</option>
-                        <option value="Unit Tester" className="hover:bg-[#fff] cursor-pointer">Unit Tester</option>
-                        <option value="Frontend Developer" className="hover:bg-[#fff] cursor-pointer">Frontend Developer</option>
-                        <option value="Backend Developer" className="hover:bg-[#fff] cursor-pointer">Backend Developer</option>
-                        <option value="Graphic Designer" className="hover:bg-[#fff] cursor-pointer">Graphic Designer</option>
-                        <option value="Others" className="hover:bg-[#fff] cursor-pointer">Others</option>
-                    </select> */}
                     <input 
                     name="role"
                     value={data.role}
