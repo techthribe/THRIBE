@@ -6,6 +6,7 @@ import Image from "next/image";
 // import JoinCommunity from "../components/joinCommunity";
 import JoinCommunity from "../components/joinCommunity";
 import Testimonial from "../components/testimonials";
+import BlogCard from "../components/BlogCard";
 import Footer from "../components/Footer";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -82,10 +83,41 @@ const Events = () => {
             <section className="py-[74px] bg-[#fff]">
                 <div className="max-w-[1248px] mx-auto">
                     <h3 className="text-[46px] leading-[100%] tracking-[0.03em] text-[#0A1A18] font-[600] font-clash">All Blog & News</h3>
-                    <div className="mt-[40px]">
+                    <div className="mt-[40px] text-[20px] leading-[150%] tracking-[0.01em] text-[#354764]">
                         <div className="flex justify-between">
+                        <div className="px-[62px] flex justify-between w-[534px] h-[62px] items-center border border-x-0 border-t-0 border-b-[#C2C7D0]">
+                            <div className="text-[#107269] cursor-pointer">All</div>
+                            <div className="cursor-pointer">Blog</div>
+                            <div className="cursor-pointer">News</div>
+                        </div>
+
+                        <div  className="w-[351px] h-[62px] relative">
+                            <Image src="/icons/search-status.png" alt="thribe - Tech Community" width={24} height={24} className="absolute top-[16px] right-[19px]"  />
+                            <input type="text" placeholder="Search" className="py-[16px] pl-[24px] pr-[40px] w-[351px] h-full rounded-[30px] border border-[#C2C7D0] outline-none" />
+                        </div>
+                        </div>
+
+                        {/* cards */}
+                        <div className="flex flex-wrap gap-[24px] mt-[40px]">
+                        <BlogCard
+                            mediaImage='https://res.cloudinary.com/chiaka/image/upload/v1763997118/Frame_1000002107_plmqou.png'
+                            title="Tech, Design, and the Art of Staying Human"
+                            author="Thanau Abbas"
+                            date="July 19,2025"
+                            readTime="3 mins read"
+                            type="BLOG"
+                        />
+                         <BlogCard
+                            mediaImage='https://res.cloudinary.com/chiaka/image/upload/v1764067467/Frame_1000002108_hmxqzr.png'
+                            title="Beyond the Words: The Psychology of Feedback in Design, Work, and Life."
+                            author="Thanau Abbas"
+                            date="July 19,2025"
+                            readTime="3 mins read"
+                            type="BLOG"
+                        />
 
                         </div>
+
                     </div>
 
                 </div>
