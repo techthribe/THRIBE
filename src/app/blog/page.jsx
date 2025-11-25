@@ -47,26 +47,26 @@ const Events = () => {
                 </p>
             </div>
             </section>
-            <section className="w-full  bg-[#fff] py-[74px]">
+            <section className="w-full  bg-[#fff] py-[40px] md:py-[74px] px-[16px] md:px-[20px] xl:px-0">
                 <div className="max-w-[1248px] mx-auto">
-                <h3 className="text-[46px] leading-[100%] tracking-[3%] text-[#0A1A18] font-[600] font-clash">Recent</h3>
-                <div className="mt-[40px] p-[40px] rounded-[40px] bg-[#F5F6F7]">
-                    <div className="flex gap-[24px] items-center">
-                        <div className="w-[572px] h-[407px] relative">
+                <h3 className="text-[26px] md:text-[46px] leading-[100%] tracking-[3%] text-[#0A1A18] font-[600] font-clash">Recent</h3>
+                <div className="mt-[24px] md:mt-[40px] p-[24px] md:p-[40px] rounded-[40px] bg-[#F5F6F7]">
+                    <div className="flex flex-col md:flex-row gap-[24px] items-center">
+                        <div className="w-full md:w-[572px] h-[295px] md:h-[407px] relative">
                             <Image fill src="https://res.cloudinary.com/chiaka/image/upload/v1763997118/Frame_1000002107_plmqou.png" alt="techthribe blog and news" />
                         </div>
-                        <div className="w-[572px]">
+                        <div className="w-full md:w-[572px]">
                             <button className="W-[68px] h-[32px] bg-[#107269] py-[4px] px-[12px] rounded-[10px] leading-[150%] text-[16px] text-[#FFE198]">BLOG</button>
-                            <div className="mt-[24px]">
-                                <h2 className="font-clash text-[46px] leading-[130%] tracking-[0.01em] font-[600]">Tech, Design, and the Art of Staying Human</h2>
-                                <p className="mt-[16px] text-[#354764] leading-[150%] text-[20px] tracking-[0.01em]">
+                            <div className="mt-[16px] md:mt-[24px]">
+                                <h2 className="font-clash text-[20px] md:text-[46px] leading-[130%] tracking-[0.01em] font-[600]">Tech, Design, and the Art of Staying Human</h2>
+                                <p className="mt-[16px] text-[#354764] leading-[150%] text-[16px] md:text-[20px] tracking-[0.01em]">
                                     I started Tech Thribe (THR!BE) because I&apos;ve seen how easy it is to lose yourself in the speed and pressure of tech - the endless deadlines, 
                                     the constant need to “keep up,” and the quiet burnout that follows. This piece is personal...
                                 </p>
-                                <div className="mt-[32px] flex justify-between text-[18px] leading-[150%] tracking-[0.01em] text-[#354764]">
-                                    <div className="flex items-center gap-[2px]">
+                                <div className="mt-[16px] md:mt-[32px] gap-y-[12px] flex flex-col sm:flex-row justify-between text-[16px] md:text-[18px] leading-[150%] tracking-[0.01em] text-[#354764]">
+                                    <div className="flex items-center gap-[10px]">
                                     <span className="text-[#0A1A18]">Thanau Abbas</span>
-                                    <span>.</span>
+                                    <div className="w-[2px] h-[2px] bg-[#0A1A18]"></div>
                                     <span >Nov 4, 2025</span>
                                     </div>
                                     <span>3 mins read</span>
@@ -80,12 +80,12 @@ const Events = () => {
                 </div>
             </section>
 
-            <section className="py-[74px] bg-[#fff]">
+            <section className="py-[24px] md:py-[74px] bg-[#fff] px-[16px] md:px-[20px] xl:px-0">
                 <div className="max-w-[1248px] mx-auto">
-                    <h3 className="text-[46px] leading-[100%] tracking-[0.03em] text-[#0A1A18] font-[600] font-clash">All Blog & News</h3>
-                    <div className="mt-[40px] text-[20px] leading-[150%] tracking-[0.01em] text-[#354764]">
-                        <div className="flex justify-between">
-                        <div className="px-[62px] flex justify-between w-[534px] h-[62px] items-center border border-x-0 border-t-0 border-b-[#C2C7D0]">
+                    <h3 className="text-[26px] md:text-[46px] leading-[100%] tracking-[0.03em] text-[#0A1A18] font-[600] font-clash">All Blog & News</h3>
+                    <div className="mt-[24px] md:mt-[40px] text-[18px] sm:text-[20px] leading-[150%] tracking-[0.01em] text-[#354764]">
+                        <div className="flex justify-between flex-col lg:flex-row gap-[24px]">
+                        <div className="px-[30px] md:px-[62px] flex justify-between w-full lg:w-[534px] h-[62px] items-center border border-x-0 border-t-0 border-b-[#C2C7D0]">
                             <div className="text-[#107269] cursor-pointer">All</div>
                             <div className="cursor-pointer">Blog</div>
                             <div className="cursor-pointer">News</div>
@@ -98,7 +98,7 @@ const Events = () => {
                         </div>
 
                         {/* cards */}
-                        <div className="flex flex-wrap gap-[24px] mt-[40px]">
+                         <div className="flex flex-wrap justify-center min-[882px]:justify-start gap-[24px] mt-[40px]">
                         <BlogCard
                             mediaImage='https://res.cloudinary.com/chiaka/image/upload/v1763997118/Frame_1000002107_plmqou.png'
                             title="Tech, Design, and the Art of Staying Human"
@@ -122,7 +122,7 @@ const Events = () => {
 
                 </div>
 
-            </section>
+            </section> 
             </div>
             <JoinCommunity />
             {/* <Testimonial /> */}

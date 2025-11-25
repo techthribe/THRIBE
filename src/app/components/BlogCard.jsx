@@ -11,7 +11,7 @@ const BlogCard = ({mediaImage, title, author, date, readTime, type}) => {
                 {title}
                 </p>
              </div>
-             <div className="flex justify-between text-[16px] leading-[150%] tracking-[0.01em] text-[#0A1A18]">
+             <div className="flex flex-col gap-[12px] md:flex-row justify-between text-[16px] leading-[150%] tracking-[0.01em] text-[#0A1A18]">
                 <div className="flex gap-[8px] items-center">
                 <span>{author}</span>
                 <div className="w-[2px] rounded-full h-[2px] bg-[#000]"></div>
