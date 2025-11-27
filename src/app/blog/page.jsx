@@ -9,11 +9,13 @@ import Testimonial from "../components/testimonials";
 import BlogCard from "../components/BlogCard";
 import Footer from "../components/Footer";
 import gsap from "gsap";
+import {BlogPosts} from "../data/Blogpost"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Events = () => {
+    console.log(BlogPosts)
      useEffect(() => {
         gsap.utils.toArray(".scroll-fade").forEach((el) => {
           gsap.fromTo(
@@ -99,23 +101,21 @@ const Events = () => {
 
                         {/* cards */}
                          <div className="flex flex-wrap justify-center min-[882px]:justify-start gap-[24px] mt-[40px]">
-                        <BlogCard
-                            mediaImage='https://res.cloudinary.com/chiaka/image/upload/v1763997118/Frame_1000002107_plmqou.png'
-                            title="Tech, Design, and the Art of Staying Human"
-                            author="Thanau Abbas"
-                            date="July 19,2025"
-                            readTime="3 mins read"
-                            type="BLOG"
+                       {
+                        BlogPosts.map((post, i) => (
+                            <div key={i}>
+                             <BlogCard
+                            mediaImage={post.image}
+                            title={post.title}
+                            author={post.author}
+                            date={post.postDate}
+                            readTime={post.readTime}
+                            type={post.type}
                         />
-                         <BlogCard
-                            mediaImage='https://res.cloudinary.com/chiaka/image/upload/v1764067467/Frame_1000002108_hmxqzr.png'
-                            title="Beyond the Words: The Psychology of Feedback in Design, Work, and Life."
-                            author="Thanau Abbas"
-                            date="July 19,2025"
-                            readTime="3 mins read"
-                            type="BLOG"
-                        />
-
+                        </div>
+                    
+                        ))
+                       }
                         </div>
 
                     </div>
