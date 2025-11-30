@@ -22,7 +22,7 @@ const Post = () => {
             <NavigationBar />
             <MobileNavigationBar />
             {filteredPosts.length == 1 ? <section className="relative max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 pt-[24px] tracking-[1%] space-y-[24px] leading-[150%]">
-            <div className="flex gap-x-[35px]" onClick={() => router.back()}> 
+            <div className="flex gap-x-[35px] cursor-pointer" onClick={() => router.back()}> 
                 <Image src="/icons/arrow-left.png" width={24} height={24} alt="thribe community" />
                 <span className="text-[#000] leading">Back</span>
             </div>

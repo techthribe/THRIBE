@@ -1,5 +1,5 @@
 "use client"
-import { useEffect} from "react";
+import { useEffect, useState} from "react";
 import NavigationBar from "../components/navigation2";
 import MobileNavigationBar from "../components/MobileNav";
 import Image from "next/image";
@@ -11,11 +11,52 @@ import Footer from "../components/Footer";
 import gsap from "gsap";
 import {BlogPosts} from "../data/Blogpost"
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Events = () => {
-      
+      const [searchType, setSearchType] = useState("all")
+      const [filteredPosts, setFilteredPosts] = useState([]);
+      const [searchInput, setSearchInput] = useState("")
+
+      const onChangeSearchInput = (e) => {
+        setSearchInput(e.target.value)
+
+      }
+
+      useEffect(() => {
+        setFilteredPosts(BlogPosts)
+
+         if(searchType == "all"){
+            if(searchInput == ""){
+                setFilteredPosts(BlogPosts)
+            }
+            else{
+                  const filtered = filteredPosts.filter(post =>
+                post.title.toLowerCase().includes(searchInput.toLowerCase())
+            );
+            setFilteredPosts(filtered);
+            }    
+        }
+        else{
+            let filterBySearch = BlogPosts.filter(x => x.type.toLowerCase() == searchType)
+            setFilteredPosts(filterBySearch)
+
+            if(searchInput){
+                  const filtered = filteredPosts.filter(post =>
+                post.title.toLowerCase().includes(searchInput.toLowerCase())
+            );
+            setFilteredPosts(filtered);
+            }    
+        }
+       
+        console.log(filteredPosts)
+    }, [searchType, searchInput])
+
+      const changeSearchType = (type) => {
+        setSearchType(type)
+      }
      useEffect(() => {
         gsap.utils.toArray(".scroll-fade").forEach((el) => {
           gsap.fromTo(
@@ -87,23 +128,29 @@ const Events = () => {
                     <h3 className="text-[26px] md:text-[46px] leading-[100%] tracking-[0.03em] text-[#0A1A18] font-[600] font-clash">All Blog & News</h3>
                     <div className="mt-[24px] md:mt-[40px] text-[18px] sm:text-[20px] leading-[150%] tracking-[0.01em] text-[#354764]">
                         <div className="flex justify-between flex-col lg:flex-row gap-[24px]">
-                        <div className="px-[30px] md:px-[62px] flex justify-between w-full lg:w-[534px] h-[62px] items-center border border-x-0 border-t-0 border-b-[#C2C7D0]">
-                            <div className="text-[#107269] cursor-pointer">All</div>
-                            <div className="cursor-pointer">Blog</div>
-                            <div className="cursor-pointer">News</div>
-                        </div>
+                        <div className="px-[10px] md:px-[62px] flex gap-[45px] justify-between w-full lg:w-[534px] h-[62px] items-center border border-x-0 border-t-0 border-b-[#C2C7D0]">
+                            <div onClick={() => changeSearchType("all")} className={`${searchType === "all"? "border-b-[#107269] text-[#107269]" : "border-b-0 text-[#354764]"} w-[84px] md:w-[148px] h-[62px] text-center px-[10px] py-[16px] cursor-pointer border-[3px] border-x-0 border-t-0`}>All</div>
+                            <div onClick={() => changeSearchType("blog")} className={`${searchType === "blog"? "border-b-[#107269] text-[#107269]" : "border-b-0 text-[#354764]"} w-[84px] md:w-[148px] h-[62px] text-center px-[10px] py-[16px] cursor-pointer border-[3px]  border-x-0 border-t-0`}>Blog</div>
+                            <div onClick={() => changeSearchType("news")} className={`${searchType === "news"? "border-b-[#107269] text-[#107269]" : "border-b-0 text-[#354764]"} w-[84px] md:w-[148px] h-[62px] text-center px-[10px] py-[16px] cursor-pointer border-[3px]  border-x-0 border-t-0`}>News</div>
+                            </div>
 
-                        <div  className="w-[351px] h-[62px] relative">
+                        <div  className="w-full md:w-[351px] h-[62px] relative">
                             <Image src="/icons/search-status.png" alt="thribe - Tech Community" width={24} height={24} className="absolute top-[16px] right-[19px]"  />
-                            <input type="text" placeholder="Search" className="py-[16px] pl-[24px] pr-[40px] w-[351px] h-full rounded-[30px] border border-[#C2C7D0] outline-none" />
+                            <input 
+                            type="text"
+                            value={searchInput}
+                            onChange={onChangeSearchInput}
+                            placeholder="Search" 
+                            className="py-[16px] pl-[24px] pr-[40px] w-full md:w-[351px] h-full rounded-[30px] border border-[#C2C7D0] outline-none" />
                         </div>
                         </div>
 
                         {/* cards */}
-                         <div className="flex flex-wrap justify-center min-[882px]:justify-start gap-[24px] mt-[40px]">
+                         <div className="flex flex-wrap justify-center min-[882px]:justify-start gap-[24px] mt-[40px] w-full">
                        {
-                        BlogPosts.map((post, i) => (
-                            <div key={i}>
+                       filteredPosts.map((post, i) => (
+                            
+                            <Link href={`/blog/${post.linkTitle}`} key={i}>
                              <BlogCard
                             mediaImage={post.image}
                             title={post.title}
@@ -112,14 +159,14 @@ const Events = () => {
                             readTime={post.readTime}
                             type={post.type}
                         />
-                        </div>
+                        </Link>
                     
-                        ))
+                        )) 
                        }
+
+                       {filteredPosts.length == 0 ? <div className="flex items-center justify-center w-full h-[350px] text-[#000] font-[600] text-[26px] mt-[20px] text-center">No Post Available</div> : ""}
                         </div>
-
                     </div>
-
                 </div>
 
             </section> 
