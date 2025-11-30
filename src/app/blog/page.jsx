@@ -15,7 +15,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Events = () => {
-    console.log(BlogPosts)
+      
      useEffect(() => {
         gsap.utils.toArray(".scroll-fade").forEach((el) => {
           gsap.fromTo(

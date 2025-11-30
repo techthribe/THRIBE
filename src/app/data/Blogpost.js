@@ -65,8 +65,8 @@ export const BlogPosts = [
           The truth? Feedback isn&apos;t just information. It&apos;s communication - filtered through emotion, intent, and ego.
           </p>
           </div>
-          <div className='mt-[24px]'>
-          <h2 className="font-[600]">The Two Sides of Feedback</h2>
+          <div class='mt-[24px]'>
+          <h2 class="font-[600]">The Two Sides of Feedback</h2>
           <p>
           Every feedback exchange has two humans in it - the giver and the receiver. Both bring their own state of mind, experience, and self-awareness to the table. 
           </p>
@@ -85,28 +85,28 @@ export const BlogPosts = [
           </p>
           </div>
 
-          <div className="mt-[24px]>
-          <h2 className="font-[600]>The Four Types of Feedback</h2>
+          <div class="mt-[24px]">
+          <h2 class="font-[600]">The Four Types of Feedback</h2>
           <p>Here&apos;s how feedback shows up - in design, work, and life:</p>
-          <p>
-          <span className="font-[500]">1. Constructive Feedback:</span> Meant to improve the work - specific, clear, and actionable. For example; “The flow works, but the signup feels a bit long. Maybe we can simplify the steps.” The tone is usually helpful, balanced and solution-focused.
+          <p class="mt-[24px]">
+          <span class="font-[500]">1. Constructive Feedback:</span> Meant to improve the work - specific, clear, and actionable. For example; “The flow works, but the signup feels a bit long. Maybe we can simplify the steps.” The tone is usually helpful, balanced and solution-focused.
           </p>
-          <p>
-           <span className="font-[500]"> 2. Appreciative Feedback:</span> Reinforces positive behavior and effort. For example; “I love how you simplified the interface - it’s so intuitive.” The tone is usually warm, affirming and encouraging.
+          <p class="mt-[24px]">
+           <span class="font-[500]"> 2. Appreciative Feedback:</span> Reinforces positive behavior and effort. For example; “I love how you simplified the interface - it’s so intuitive.” The tone is usually warm, affirming and encouraging.
           </p>
-          <p>
-          <span className="font-[500]">3. Evaluative Feedback:,/span> Measures performance against a standard. For example; “This doesn’t meet the brand guideline.”The tone is usually neutral but can feel judgmental depending on delivery.
+          <p class="mt-[24px]">
+          <span class="font-[500]">3. Evaluative Feedback:,/span> Measures performance against a standard. For example; “This doesn’t meet the brand guideline.”The tone is usually neutral but can feel judgmental depending on delivery.
           </p>
-          <p>
-          <span className="font-[500]">4. Destructive Feedback:</span> Focuses on fault, not improvement. For example; “This makes no sense; did you even test it?”. The tone usually is ego-driven, disrespectful, emotionally charged.
+          <p class="mt-[24px]">
+          <span class="font-[500]">4. Destructive Feedback:</span> Focuses on fault, not improvement. For example; “This makes no sense; did you even test it?”. The tone usually is ego-driven, disrespectful, emotionally charged.
           </p>
           </div>
 
-          <div className="mt-[24px]>
-          <h2 className="font-[600]>The Characteristics of Good Feedback</h2>
+          <div class="mt-[24px]">
+          <h2 class="font-[600]">The Characteristics of Good Feedback</h2>
           <div>
           <p>Good feedback has five things in common:</p>
-          <ul>
+          <ul class="ml-[10px] list-disc list-inside">
             <li>It&apos;s clear, not vague.</li>
             <li>Focused on the work, not the person.</li>
             <li>Timely, not delayed.</li>
@@ -116,25 +116,25 @@ export const BlogPosts = [
           </div>
           </div>
 
-          <div className="mt-[24px]>
-          <h2 className="font-[600]>When Feedback Hurts</h2>
+          <div class="mt-[24px]">
+          <h2 class="font-[600]">When Feedback Hurts</h2>
           <div>
           <p>Sometimes feedback isn&apos;t really feedback - it&apos;s disguised frustration. 
           And sometimes defense isn&apos;t pride - it&apos;s insecurity trying to protect itself. 
           Even silence is feedback and often the loudest kind.
           </p>
 
-          <p className="mt-[24px]>
+          <p class="mt-[24px]">
           “This is… interesting.” could mean “I don&apos;t like it but I don&apos;t want to argue.” 
           Or “I&apos;ll think about it.” could be “I&apos;ve already decided no.”
           </p>
           </div>
           </div>
 
-          <div className="mt-[24px]>
-          <h2 className="font-[600]>How to Give Feedback That Lands</h2>
+          <div class="mt-[24px]">
+          <h2 class="font-[600]">How to Give Feedback That Lands</h2>
           <div>   
-          <ul>
+          <ul class="list-disc ml-[30px]">
             <li>
             Regulate yourself first - don&apos;t give feedback angry or tired.
             </li>
@@ -154,10 +154,10 @@ export const BlogPosts = [
           </div>
           </div>
 
-          <div className="mt-[24px]>
-          <h2 className="font-[600]>How to Receive Feedback Without Losing Yourself</h2>
+          <div class="mt-[24px]">
+          <h2 class="font-[600]">How to Receive Feedback Without Losing Yourself</h2>
           <div>   
-          <ul>
+          <ul class="list-disc ml-[30px]">
             <li>
             Listen for intent, not tone. Sometimes people mean well but express it poorly.
             </li>
@@ -174,15 +174,15 @@ export const BlogPosts = [
           </div>
           </div>
 
-          <div className="mt-[24px]>
-          <h2 className="font-[600]>Feedback as Connection</h2>
+          <div class="mt-[24px]">
+          <h2 class="font-[600]">Feedback as Connection</h2>
           <div>
           <p>
           When done right, feedback isn&apos;t about proving who&apos;s smarter - it&apos;s about helping each other grow and as creatives, 
           teammates, and humans, we owe it to each other to make feedback a bridge, not a wall
           </p>
 
-          <p className="mt-[24px]>
+          <p class="mt-[24px]">
           Because behind every critique is a person trying to be understood.And in giving and receiving feedback, 
           our goal should to empathetically communicate while staying human. 💚
           </p>
