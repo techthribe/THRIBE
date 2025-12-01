@@ -92,9 +92,9 @@ const NavigationBar = () => {
                     </span>
                     
                     <div className={`${openMedia ? "block" : "hidden"} transition-all duration-500 ease-in-out min-w-[244px] text-secondaryColor text-[16px] z-50 bg-[#fff] space-y-[16px] absolute top-[100%] left-0 rounded-[20px] p-[16px] shadow-[0px_2px_10px_0px_#0000001A]`}>
-                         <Link href="#" className="flex space-x-[10px]">
+                         <Link href="/blog" className="flex space-x-[10px]">
                          <span>Blog & News</span>
-                         <button className="bg-[#FEF1E6] w-[93px] h-[28px] rounded-[10px] text-[#B15301] text-[12px]">Coming soon</button>
+                         {/* <button className="bg-[#FEF1E6] w-[93px] h-[28px] rounded-[10px] text-[#B15301] text-[12px]">Coming soon</button> */}
                         </Link>
                          
                          <Link href="#" className="flex space-x-[10px]">
