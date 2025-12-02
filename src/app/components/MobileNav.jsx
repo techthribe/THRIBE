@@ -75,7 +75,7 @@ const MobileNavigationBar = () => {
                 </Link>
 
                 <div className={` ${toggleMediaSubLinks ? "hidden" : "block"} transition-all ease-in px-[10px] space-y-[24px] mt-[24px] `}>
-                        <Link href="/blog" className="flex space-x-[10px]">
+                        <Link onClick={toggleMobileNavbarFunction} href="/blog" className="flex space-x-[10px]">
                          <span>Blog & News</span>
                          {/* <button className="bg-[#FEF1E6] w-[93px] h-[28px] rounded-[10px] text-[#B15301] text-[12px]">Coming soon</button> */}
                         </Link>

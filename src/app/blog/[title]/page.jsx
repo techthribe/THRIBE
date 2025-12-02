@@ -21,14 +21,14 @@ const Post = () => {
         <main>
             <NavigationBar />
             <MobileNavigationBar />
-            {filteredPosts.length == 1 ? <section className="relative max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 pt-[24px] tracking-[1%] space-y-[24px] leading-[150%]">
+            {filteredPosts.length == 1 ? <section className="relative max-w-[1248px] mx-auto px-[16px] md:px-[20px] xl:px-0 pt-0 md:pt-[24px] tracking-[1%] space-y-[24px] leading-[150%]">
             <div className="flex gap-x-[35px] cursor-pointer" onClick={() => router.back()}> 
                 <Image src="/icons/arrow-left.png" width={24} height={24} alt="thribe community" />
                 <span className="text-[#000] leading">Back</span>
             </div>
 
             <section className="w-full relative min-h-screen">
-                <div className="relative w-full md:absolute md:left-[-270px] md:top-[287px] md:-translate-y-1/2 md:transform md:-rotate-90 flex justify-between gap-x-[24px] items-center px-4 py-2">
+                <div className="relative md:absolute md:left-[-270px] md:top-[287px] md:-translate-y-1/2 md:transform md:-rotate-90 flex justify-between gap-x-[24px] items-center px-4 md:py-2">
                     <div className="w-[50px] md:w-[160px] h-[1px] bg-[#FFE198]"></div>
                     <span className="uppercase font-[600] text-[16px] tracking-[16%] text-[#107269]">THR!BE Blog post</span>
                     <div className="w-[50px] md:w-[160px] h-[1px] bg-[#FFE198]"></div>
