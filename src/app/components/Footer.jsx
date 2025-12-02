@@ -134,10 +134,9 @@ const Footer = () => {
                     <h3 className="text-[#6B788E] text-[20px] leading-[150%] tracking-[2%] md:px-[10px]">MEDIA</h3>
                     <div className="mt-[38px] text-[#354764] text-[20px] tracking-[2%] flex flex-col gap-y-[18px]">
                         <span>
-                        <span className="md:px-[10px] flex items-center space-x-[10px] cursor-pointer">
+                        <Link href="/blog" className="md:px-[10px] flex items-center space-x-[10px] cursor-pointer">
                         <span>Blog & News</span>
-                         <button className="bg-[#FEF1E6] w-[93px] h-[28px] rounded-[10px] text-[#B15301] text-[12px]">Coming soon</button>
-                        </span>
+                        </Link>
                         </span>
                         <span>
                         <span href="#" className="md:p-[10px] flex space-x-[10px] cursor-pointer">

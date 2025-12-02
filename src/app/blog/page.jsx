@@ -94,6 +94,7 @@ const Events = () => {
                 <div className="max-w-[1248px] mx-auto">
                 <h3 className="text-[26px] md:text-[46px] leading-[100%] tracking-[3%] text-[#0A1A18] font-[600] font-clash">Recent</h3>
                 <div className="mt-[24px] md:mt-[40px] p-[24px] md:p-[40px] rounded-[40px] bg-[#F5F6F7]">
+                    <Link href="http://localhost:3000/blog/tech_design_and_the_art_of_staying_human">
                     <div className="flex flex-col md:flex-row gap-[24px] items-center">
                         <div className="w-full md:w-[572px] h-[295px] md:h-[407px] relative">
                             <Image fill src="https://res.cloudinary.com/chiaka/image/upload/v1763997118/Frame_1000002107_plmqou.png" alt="techthribe blog and news" />
@@ -118,6 +119,7 @@ const Events = () => {
                         </div>
 
                     </div>
+                    </Link>
 
                 </div>
                 </div>
