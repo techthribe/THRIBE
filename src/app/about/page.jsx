@@ -101,7 +101,7 @@ const About = () => {
                     </div>
                     </h2>
                     <div className="leading-[150%] max-w-[764px]">
-                        Is to create a human-first community where people don&#39;t just work in silos but share stories, find clarity, 
+                        Is to create a human-first tech community where people don&#39;t just work in silos but share stories, find clarity, 
                         connect and discover balance through play.
                          A tribe that thrives by being real, supporting each other, and growing both in and beyond tech.
                     </div>
