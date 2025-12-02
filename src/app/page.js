@@ -149,9 +149,16 @@ export default function Home() {
         </div>
         <h1 className="font-clash font-[600] leading-[100%] text-[32px] md:text-[66px] text-[#107269] flex justify-center">
         <span>Welcome to</span>
-        <div className="relative w-[126px] md:w-[260px] h-[32px] md:h-[69px]">
+        {/* <div className="relative w-[126px] md:w-[260px] h-[32px] md:h-[69px]">
           <Image src="/img/thribe.png" fill alt="thribe community" className="object-center" />
-        </div>
+        </div> */}
+        <span className="text-[66px] font-[600] leading-[100%] tracking-[4px] text-[#107269] 
+              drop-shadow-[-4px_-4px_0_#F3D37A] 
+              drop-shadow-[4px_-4px_0_#F3D37A]
+              drop-shadow-[-4px_4px_0_#F3D37A]
+              drop-shadow-[4px_4px_0_#F3D37A]">
+            THR!BE
+        </span>
          </h1>
       </div>
 
