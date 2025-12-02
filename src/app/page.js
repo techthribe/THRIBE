@@ -152,11 +152,7 @@ export default function Home() {
         {/* <div className="relative w-[126px] md:w-[260px] h-[32px] md:h-[69px]">
           <Image src="/img/thribe.png" fill alt="thribe community" className="object-center" />
         </div> */}
-        <span className="text-[66px] font-[600] leading-[100%] tracking-[4px] text-[#107269] 
-              drop-shadow-[-4px_-4px_0_#F3D37A] 
-              drop-shadow-[4px_-4px_0_#F3D37A]
-              drop-shadow-[-4px_4px_0_#F3D37A]
-              drop-shadow-[4px_4px_0_#F3D37A]">
+        <span className="drop-shadow-[-2px_-2px_0_#F3D37A] drop-shadow-[2px_-2px_0_#F3D37A] drop-shadow-[-2px_2px_0_#F3D37A] drop-shadow-[2px_2px_0_#F3D37A] md:drop-shadow-[-4px_-4px_0_#F3D37A] md:drop-shadow-[4px_-4px_0_#F3D37A] md:drop-shadow-[-4px_4px_0_#F3D37A] md:drop-shadow-[4px_4px_0_#F3D37A]">
             THR!BE
         </span>
          </h1>
