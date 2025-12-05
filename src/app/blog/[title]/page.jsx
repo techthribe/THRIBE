@@ -79,6 +79,14 @@ const Post = () => {
         </div>
 
         <section className="w-full min-h-screen">
+            {/* displays only on mobile */}
+            <div className="flex items-center gap-x-6 md:hidden">
+            <div className="h-px w-12 md:w-[150px] bg-[#FFE198]"  />
+            <span className="uppercase font-semibold text-[14px] tracking-widest text-[#107269]">
+              THR!BE BLOG POST
+            </span>
+            <div className="h-px w-12 md:w-[150px] bg-[#FFE198]" />
+          </div>
 
           {/* Main content layout */}
           <div className="flex flex-col md:flex-row justify-between gap-[40px] mt-[24px] w-full md:pl-[55px]">
@@ -160,7 +168,7 @@ const Post = () => {
                 <div className="flex items-center gap-x-[24px] text-[16px]">
                   <div className="hidden md:block">
                     {post.type === "BLOG" ? (
-                      <button className="w-[70px] h-[32px] bg-[#107269] px-[12px] rounded-[10px] text-[#FFE198]">
+                      <button className="w-[75px] h-[32px] bg-[#107269] px-[12px] rounded-[10px] text-[#FFE198] flex items-center justify-center">
                         BLOGS
                       </button>
                     ) : (
@@ -180,7 +188,7 @@ const Post = () => {
 
                 <div className="block md:hidden mt-[5px]">
                   {post.type === "BLOG" ? (
-                    <button className="w-[70px] h-[32px] bg-[#107269] px-[12px] rounded-[10px] text-[#FFE198]">
+                    <button className="w-[75px] h-[32px] bg-[#107269] rounded-[10px] text-[#FFE198] flex items-center justify-center">
                       BLOGS
                     </button>
                   ) : (
