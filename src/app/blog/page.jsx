@@ -96,8 +96,8 @@ const Events = () => {
                 <div className="mt-[24px] md:mt-[40px] p-[24px] md:p-[40px] rounded-[40px] bg-[#F5F6F7]">
                     <Link href="/blog/tech_design_and_the_art_of_staying_human">
                     <div className="flex flex-col md:flex-row gap-[24px] items-center">
-                        <div className="w-full md:w-[572px] h-[295px] md:h-[407px] relative">
-                            <Image fill src="https://res.cloudinary.com/chiaka/image/upload/v1763997118/Frame_1000002107_plmqou.png" alt="techthribe blog and news" />
+                        <div className="w-full md:w-[572px] h-[295px] md:h-[407px] relative rounded-[20px]">
+                            <Image fill src="https://res.cloudinary.com/chiaka/image/upload/v1765128613/152838D4-F2E8-4850-BB07-8E624E473987_1_jpzie1.png" className="rounded-[20px]" alt="techthribe blog and news" />
                         </div>
                         <div className="w-full md:w-[572px]">
                             <button className="W-[68px] h-[32px] bg-[#107269] py-[4px] px-[12px] rounded-[10px] leading-[150%] text-[16px] text-[#FFE198]">BLOG</button>

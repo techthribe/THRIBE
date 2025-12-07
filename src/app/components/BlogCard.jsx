@@ -4,7 +4,7 @@ const BlogCard = ({mediaImage, title, author, date, readTime, type}) => {
     return(
         <div className="bg-[#F5F6F7] p-[24px] rounded-[32px] w-full md:w-[400px] space-y-[16px] cursor-pointer box-border">
             <div className="relative h-[296px] rounded-[20px]">
-            <Image src={mediaImage} fill alt="techthribe - tech community in Nigeria" />
+            <Image src={mediaImage} fill alt="techthribe - tech community in Nigeria" className="rounded-[20px]" />
              </div>
              <div className="h-[80px] font-clash text-[20px] leading-[130%] tracking-[0.01em] font-[600]">
                 <p>
