@@ -1,7 +1,7 @@
 export const BlogPosts = [
   {
     id: 1,
-    image: "https://res.cloudinary.com/chiaka/image/upload/v1763997118/Frame_1000002107_plmqou.png",
+    image: "https://res.cloudinary.com/chiaka/image/upload/v1765128613/152838D4-F2E8-4850-BB07-8E624E473987_1_jpzie1.png",
     linkTitle: "tech_design_and_the_art_of_staying_human",
     title: "Tech, Design, and the Art of Staying Human",
     author: "By Thanau Abbas",
@@ -49,7 +49,7 @@ export const BlogPosts = [
   },
    {
     id: 2,
-    image: "https://res.cloudinary.com/chiaka/image/upload/v1764067467/Frame_1000002108_hmxqzr.png",
+    image: "https://res.cloudinary.com/chiaka/image/upload/v1765128613/1B0B3429-1151-40F9-BD98-E04B2549B201_1_lwck7s.png",
      linkTitle: "beyond_the_words_the_pschology_of_feedback_in_design_work_and_life",
     title: "Beyond the Words: The Psychology of Feedback in Design, Work, and Life.",
     author: "By Thanau Abbas",
