@@ -54,13 +54,7 @@ export const metadata = {
     "Thribe",
     "Thribe Community",
     "TechThribe",
-    "Tech Community in Africa",
-    "Technology",
-    "Innovation",
-    "Community",
-    "Design",
-    "Web Development",
-    "Startups",
+    "Tech Community in Africa"
   ],
   authors: [{ name: "Thanau Abbas", url: "https://techthribe.com" }],
   creator: "Thribe",
@@ -104,6 +98,20 @@ export const metadata = {
   },
 };
 
+    const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Thribe",
+    "legalName": "TechThribe",
+    "url": "https://techthribe.com",
+    "logo": "https://techthribe.com/logo.png",
+    "sameAs": [
+      "https://x.com/techthribe",
+      "https://www.instagram.com/thribe_hq?igsh=eDRudXpkd3N3MTh5&utm_source=qr",
+      "https://www.linkedin.com/company/tech-thribe/"
+    ],
+    "description": "Thribe is Africas digital innovation community — tech events, membership, networking."
+  }
 
 export default function RootLayout({ children }) {
   return (
@@ -125,6 +133,13 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-E7F1PT141N');
           `}
         </Script>
+        <head>
+        {/* Global schema for all pages */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       </head>
       <body 
         className={outfit.className}>
