@@ -30,7 +30,7 @@ const MobileNavigationBar = () => {
             <div className="relative w-[99px] md:w-[119px] h-[30px] md:h-[36px]">
             <Image 
              src="/logo.png"
-             alt="thribe community logo"
+             alt="thribe logo"
              fill
              className="object-center"
              />
@@ -44,7 +44,7 @@ const MobileNavigationBar = () => {
 
             <ul className="text-[15px] text-[#354764] tracking-[2%] space-y-[40px] py-[40px] w-full ">
                 <li><Link onClick={toggleMobileNavbarFunction} href="/" className={pathname==="/" ? "text-[#087C72] font-[600]" : ""}>Home</Link></li>
-                <li> <Link onClick={toggleMobileNavbarFunction} href="/about" className={pathname==="/about" ? "text-[#087C72] font-[600]" : ""}>About</Link></li>
+                <li> <Link onClick={toggleMobileNavbarFunction} href="/thribe" className={pathname==="/thribe" ? "text-[#087C72] font-[600]" : ""}>About</Link></li>
 
                 <div>
                 <Link href="#" className={` ${pathname==="/events" ? "text-[#087C72] font-[600]" : ""} flex justify-between items-center`} onClick={eventFunction}>
