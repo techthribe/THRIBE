@@ -88,7 +88,7 @@ const Footer = () => {
                     <h3 className="text-[#6B788E] leading-[150%] tracking-[2%] md:px-[10px]">Home</h3>
                     <div className="mt-[38px] text-[#354764] tracking-[2%] flex flex-col gap-y-[28px]">
                         <span>
-                        <Link href="/about" className="navLinkFooter md:p-[10px]">About</Link>
+                        <Link href="/thribe" className="navLinkFooter md:p-[10px]">About</Link>
                         </span>
                         <span>
                         <Link href="/events" className="navLinkFooter md:p-[10px]">Events</Link>

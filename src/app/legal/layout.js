@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
                 </div>
             </section>
             <div className="w-full h-[12px] relative">
-                <Image src="/img/legal-nav.png" fill alt="navigation" />
+                <Image src="/img/legal-nav.png" fill alt="thribe navigation" />
             </div>  
         {children}
         <Footer />

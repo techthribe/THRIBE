@@ -58,7 +58,7 @@ const NavigationBar = () => {
              <div className="hidden md:flex flex-row justify-between text-[16px] text-[#C2C7D0] items-center space-x-[40px]">
                <Link href="/"  className={`${pathname==="/" ? "text-[#fff] font-[600]" : ""} navLink`}>Home</Link>
                  
-                 <Link href="/about" className={`${pathname==="/about" ? "text-[#fff] font-[600]" : ""} navLink`}>About</Link>
+                 <Link href="/thribe" className={`${pathname==="/thribe" ? "text-[#fff] font-[600]" : ""} navLink`}>About</Link>
                   
                   <div className="navLink relative" ref={closeDropdowns}>
                     <span onClick={toggleOpenEventLink} className={`flex justify-between items-center cursor-pointer ${pathname==="/events" ? "text-[#087C72] font-[600]" : ""}`}>
